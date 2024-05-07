@@ -53,19 +53,20 @@ export default function SlideThree(props: any) {
               Alle bezoekers die gebruik maken van de aangeboden
               sportfaciliteiten van GRIP Boulderhal met een leeftijd van 16 jaar
               en ouder zijn verplicht deze algemene voorwaarden te ondertekenen.
-              "Bezoeker" zoals gebruikt in deze overeenkomst verwijst naar
-              personen die GRIP Boulderhal ("GRIP") bezoeken, als zelfstandig
-              boulderaar, deelnemer aan klim- of andere activiteiten of als
-              begeleider. Als de Bezoeker minderjarig is ("Minderjarige
-              Bezoeker"), moet ten minste één ouder of wettelijk aangestelde
-              voogd (ouder en voogd worden in dit document "Ouder" genoemd)
-              ondertekenen, als bewijs van hun instemming met deze algemene
-              voorwaarden, voor zichzelf en, voor zover maximaal toegestaan door
-              de Nederlandse wet, namens de minderjarige bezoeker die zijn of
-              haar kind of voogdijkind is (gezamenlijk "minderjarige bezoeker").
-              Met het oog op het gebruik van de diensten en faciliteiten van de
-              Boulderhal, erken, begrijp en stem ik, een volwassen bezoeker of
-              ouder van een minderjarig bezoekend kind
+              &ldquo;Bezoeker&ldquo; zoals gebruikt in deze overeenkomst
+              verwijst naar personen die GRIP Boulderhal (&ldquo;GRIP&ldquo;)
+              bezoeken, als zelfstandig boulderaar, deelnemer aan klim- of
+              andere activiteiten of als begeleider. Als de Bezoeker minderjarig
+              is (&ldquo;Minderjarige Bezoeker&ldquo;), moet ten minste één
+              ouder of wettelijk aangestelde voogd (ouder en voogd worden in dit
+              document &ldquo;Ouder&ldquo; genoemd) ondertekenen, als bewijs van
+              hun instemming met deze algemene voorwaarden, voor zichzelf en,
+              voor zover maximaal toegestaan door de Nederlandse wet, namens de
+              minderjarige bezoeker die zijn of haar kind of voogdijkind is
+              (gezamenlijk &ldquo;minderjarige bezoeker&ldquo;). Met het oog op
+              het gebruik van de diensten en faciliteiten van de Boulderhal,
+              erken, begrijp en stem ik, een volwassen bezoeker of ouder van een
+              minderjarig bezoekend kind
             </p>
           </div>
           <motion.div
@@ -87,10 +88,7 @@ export default function SlideThree(props: any) {
         </button>
       </div>
 
-      <NextButton
-        handleNext={props.handleNext}
-
-      />
+      <NextButton handleNext={props.handleNext} />
     </>
   );
 }
