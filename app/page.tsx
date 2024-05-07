@@ -34,6 +34,7 @@ export default function Home() {
             <Button
               specs="group-hover:fill-[#8CBE44] stroke-[#fff] fill-[#fff]"
               textColor="group-hover:fill-white"
+              linkTo="/wizard"
             />
           </div>
         </div>
@@ -57,7 +58,9 @@ export default function Home() {
             />
           </div>
           <div>
-            <h2 className="text-4xl">Waarom moet ik me registreren?</h2>
+            <h2 className="text-4xl font-semibold">
+              Waarom moet ik me registreren?
+            </h2>
             <p className="mt-3">
               Lorem ipsum dolor sit amet, GRIP consectetur adipiscing elit.
               Integer tempus, nibh sed sodales sagittis, arcu ipsum ultrices
@@ -75,6 +78,7 @@ export default function Home() {
               <Button
                 specs="group-hover:fill-[#8CBE44] stroke-[#8CBE44] fill-[#fff]"
                 textColor="group-hover:fill-white"
+                linkTo="/wizard"
               />
             </div>
 

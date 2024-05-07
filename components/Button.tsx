@@ -2,7 +2,7 @@ export default function Button(props: any) {
   return (
     <div className="relative flex justify-center items-center">
       <svg width="240.963" height="70.701" viewBox="0 0 243.963 70.701">
-        <a className="group transition-all" href="#">
+        <a className="group transition-all" href={props.linkTo}>
           <path
             id="Path_1029"
             data-name="Path 1029"
@@ -14,7 +14,7 @@ export default function Button(props: any) {
             x="50%"
             y="50%"
             dominant-baseline="middle"
-            text-anchor="middle"
+            textAnchor="middle"
             className={`font-bold text-xl transition-all ${props.textColor}`}>
             {" "}
             Nu registreren ›
