@@ -54,7 +54,8 @@ export default function WizardContent() {
         shadow: false,
       }}
       modules={[EffectCube, Pagination, Navigation]}
-      className="mySwiper !overflow-hidden">
+      className="mySwiper !overflow-hidden "
+      style={{ perspective: "2500px" }}>
       <SwiperSlide className="!bg-white !h-fit">
         <SlideOne handleNext={handleNext} />
       </SwiperSlide>

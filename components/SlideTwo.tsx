@@ -1,37 +1,11 @@
 import Image from "next/image";
 import NextButton from "./NextButton";
+import Warning from "./Warning";
 
 export default function SlideTwo(props: any) {
   return (
     <>
-      <div className="relative text-white px-5 pt-10 pb-20 w-full">
-        <Image
-          src="warningFlipped.svg"
-          fill
-          priority
-          sizes="100vw"
-          style={{
-            objectFit: "cover",
-            zIndex: -1,
-          }}
-          alt={""}
-        />
-
-        <h2 className="text-4xl font-bold">Ken de regels!</h2>
-        <p className="text-lg mt-5">
-          Voor je eigen veiligheid en de veiligheid van andere klimmers is het
-          belangrijk dat iedereen de regels kent. Accordeer elk onderdeel om aan
-          te geven dat je de tekst hebt gelezen en de regels begrijpt.
-          <br />
-          <br /> Je hoeft je maar één keer te registreren. Ben je eerder komen
-          boulderen bij Grip? Dan hoef je je dus niet opnieuw te registeren. Let
-          op! dit is geen reservering. Reserveren kan via onze website.
-          <br />
-          <br />
-          Heb je een vraag? Neem contact op.
-        </p>
-      </div>
-
+      <Warning />
       <form className="my-10 px-5 relative bg-white">
         <h1 className="text-5xl font-bold">Vitaliteit </h1>
         <ul className="list-disc px-5 mt-3">
