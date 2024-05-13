@@ -15,6 +15,13 @@ const variants = {
 
 export default function SlideThree(props: any) {
   const [openModal, setOpenModal] = useState(false);
+  const [tandcChecked, settandChecked] = useState(false);
+
+  const handleCheckboxChange = (event: any, setCheckedState: any) => {
+    setCheckedState(event.target.checked);
+  };
+
+  const isButtonDisabled = !tandcChecked;
   return (
     <>
       <Warning />
@@ -62,10 +69,21 @@ export default function SlideThree(props: any) {
           Lees verder
         </button>
       </div>
-
+      <div className="mt-3 px-5  flex gap-2 items-center">
+        <input
+          onChange={(e) => handleCheckboxChange(e, settandChecked)}
+          id="tandcCheck"
+          name="tandcCheck"
+          type="checkbox"
+        />
+        <label htmlFor="tandcCheck" className="font-bold text-lg">
+          Ik ga akkoord
+        </label>
+      </div>
+      <hr className="my-10" />
       <NextButton
         handleNext={props.handleNext}
-
+        isButtonDisabled={isButtonDisabled}
       />
     </>
   );

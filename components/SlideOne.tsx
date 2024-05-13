@@ -1,7 +1,25 @@
+import { useState } from "react";
 import NextButton from "./NextButton";
 import Warning from "./Warning";
 
 export default function SlideOne(props: any) {
+  const [fallZonesChecked, setFallZonesChecked] = useState(false);
+  const [baseChecked, setBaseChecked] = useState(false);
+  const [etiquetteChecked, setEtiquetteChecked] = useState(false);
+  const [minorChecked, setMinorChecked] = useState(false);
+  const [emergencyChecked, setEmergencyChecked] = useState(false);
+
+  const handleCheckboxChange = (event: any, setCheckedState: any) => {
+    setCheckedState(event.target.checked);
+  };
+
+  const isButtonDisabled =
+    !fallZonesChecked ||
+    !baseChecked ||
+    !etiquetteChecked ||
+    !minorChecked ||
+    !emergencyChecked;
+
   return (
     <>
       <Warning />
@@ -47,7 +65,12 @@ export default function SlideOne(props: any) {
           </ul>
 
           <div className="mt-3 flex gap-2 items-center">
-            <input id="baseCheck" name="baseCheck" type="checkbox" />
+            <input
+              onChange={(e) => handleCheckboxChange(e, setBaseChecked)}
+              id="baseCheck"
+              name="baseCheck"
+              type="checkbox"
+            />
             <label htmlFor="baseCheck" className="font-bold text-lg">
               Ik ga akkoord
             </label>
@@ -76,7 +99,12 @@ export default function SlideOne(props: any) {
           </ul>
 
           <div className="mt-3 flex gap-2 items-center">
-            <input id="fallZonesCheck" name="fallZonesCheck" type="checkbox" />
+            <input
+              onChange={(e) => handleCheckboxChange(e, setFallZonesChecked)}
+              id="fallZonesCheck"
+              name="fallZonesCheck"
+              type="checkbox"
+            />
             <label htmlFor="fallZonesCheck" className="font-bold text-lg">
               Ik ga akkoord
             </label>
@@ -107,7 +135,12 @@ export default function SlideOne(props: any) {
           </ul>
 
           <div className="mt-3 flex gap-2 items-center">
-            <input id="etiquetteCheck" name="etiquetteCheck" type="checkbox" />
+            <input
+              id="etiquetteCheck"
+              name="etiquetteCheck"
+              type="checkbox"
+              onChange={(e) => handleCheckboxChange(e, setEtiquetteChecked)}
+            />
             <label htmlFor="etiquetteCheck" className="font-bold text-lg">
               Ik ga akkoord
             </label>
@@ -143,7 +176,12 @@ export default function SlideOne(props: any) {
           </ul>
 
           <div className="mt-3 flex gap-2 items-center">
-            <input id="minorCheck" name="minorCheck" type="checkbox" />
+            <input
+              id="minorCheck"
+              name="minorCheck"
+              type="checkbox"
+              onChange={(e) => handleCheckboxChange(e, setMinorChecked)}
+            />
             <label htmlFor="minorCheck" className="font-bold text-lg">
               Ik ga akkoord
             </label>
@@ -162,7 +200,12 @@ export default function SlideOne(props: any) {
           </ul>
 
           <div className="mt-3 flex gap-2 items-center">
-            <input id="emergencyCheck" name="emergencyCheck" type="checkbox" />
+            <input
+              id="emergencyCheck"
+              name="emergencyCheck"
+              type="checkbox"
+              onChange={(e) => handleCheckboxChange(e, setEmergencyChecked)}
+            />
             <label htmlFor="emergencyCheck" className="font-bold text-lg">
               Ik ga akkoord
             </label>
@@ -171,8 +214,12 @@ export default function SlideOne(props: any) {
 
         <hr className="my-10" />
       </form>
+      {console.log(isButtonDisabled)}
 
-      <NextButton handleNext={props.handleNext} />
+      <NextButton
+        handleNext={props.handleNext}
+        isButtonDisabled={isButtonDisabled}
+      />
     </>
   );
 }

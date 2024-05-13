@@ -1,8 +1,17 @@
 import Image from "next/image";
 import NextButton from "./NextButton";
 import Warning from "./Warning";
+import { useState } from "react";
 
 export default function SlideTwo(props: any) {
+  const [baseChecked, setBaseChecked] = useState(false);
+
+  const handleCheckboxChange = (event: any, setCheckedState: any) => {
+    setCheckedState(event.target.checked);
+  };
+
+  const isButtonDisabled = !baseChecked;
+
   return (
     <>
       <Warning />
@@ -30,16 +39,20 @@ export default function SlideTwo(props: any) {
         </ul>
 
         <div className="mt-3 flex gap-2 items-center">
-          <input id="baseCheck" name="baseCheck" type="checkbox" />
-          <label htmlFor="baseCheck" className="font-bold text-lg">
+          <input
+            onChange={(e) => handleCheckboxChange(e, setBaseChecked)}
+            id="secBaseCheck"
+            name="secBaseCheck"
+            type="checkbox"
+          />
+          <label htmlFor="secBaseCheck" className="font-bold text-lg">
             Ik ga akkoord
           </label>
         </div>
       </form>
-
       <NextButton
         handleNext={props.handleNext}
-      
+        isButtonDisabled={isButtonDisabled}
       />
     </>
   );

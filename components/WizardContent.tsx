@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import { EffectCube, Pagination, Navigation } from "swiper/modules";
 import SlideOne from "@/components/SlideOne";
 import SlideTwo from "@/components/SlideTwo";
-import SlideFour from "@/components/FourthSlide";
+import SlideFour from "@/components/SlideFour";
 import SlideThree from "@/components/SlideThree";
 
 export default function WizardContent() {
@@ -42,14 +42,12 @@ export default function WizardContent() {
     <Swiper
       effect={"cube"}
       grabCursor={true}
+      ref={sliderRef}
       allowTouchMove={false}
       speed={500}
       autoHeight={true}
       loop={false}
       pagination={pagination}
-      navigation={{
-        nextEl: ".next",
-      }}
       cubeEffect={{
         shadow: false,
       }}

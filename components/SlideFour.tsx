@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
@@ -346,8 +344,7 @@ export default function SlideFour(props: any) {
           </div>
         </div>
       </form>
-
-      <NextButton handleNext={props.handleNext} />
+      
     </>
   );
 }
