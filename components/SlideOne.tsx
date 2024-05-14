@@ -24,8 +24,8 @@ export default function SlideOne(props: any) {
 
   return (
     <>
-      <div className="md:flex md:w-full md:px-5 gap-5 lg:gap-10 max-w-5xl mx-auto">
-        <div className="md:w-5/12 max-w-[25rem]">
+      <div className="md:flex mb-12 md:w-full md:px-5 gap-5 lg:gap-10 max-w-5xl mx-auto">
+        <div className="md:w-5/12 md:max-w-[25rem]">
           <RulesWarning />
         </div>
 
@@ -223,6 +223,7 @@ export default function SlideOne(props: any) {
           <NextButton
             handleNext={props.handleNext}
             isButtonDisabled={isButtonDisabled}
+            buttonText="Volgende stap ›"
           />
         </form>
       </div>

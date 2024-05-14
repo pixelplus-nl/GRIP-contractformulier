@@ -46,7 +46,6 @@ export default function WizardContent() {
     if (!sliderRef.current) return;
     const newIndex = sliderRef.current.swiper.activeIndex;
     setActiveIndex(newIndex);
-    console.log(`Active slide index: ${newIndex}`);
   };
 
   useEffect(() => {
@@ -72,6 +71,7 @@ export default function WizardContent() {
           translate: ["-20%", 0, -1],
         },
         next: {
+          shadow: true,
           translate: ["100%", 0, 0],
         },
       }}
@@ -99,7 +99,7 @@ export default function WizardContent() {
         />
       </SwiperSlide>
       <SwiperSlide className="!bg-white">
-        <SlideFour handleNext={handleNext} />
+        <SlideFour />
       </SwiperSlide>
     </Swiper>
   );

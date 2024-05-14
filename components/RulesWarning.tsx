@@ -29,7 +29,9 @@ export default function RulesWarning() {
       </p>
       <br />
       <div className="relative text-lg overflow-hidden w-fit">
-        <Link className="relative" href="#">
+        <Link
+          className="relative"
+          href="https://gripnijmegen.dewi-online.nl/iframe/club/156/reservations/activities">
           <motion.span
             transition={{ duration: 1, delay: 2 }}
             initial="hidden"

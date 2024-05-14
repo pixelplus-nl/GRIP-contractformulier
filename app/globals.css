@@ -50,6 +50,7 @@
 
 .swiper-pagination-bullet-active {
   border-bottom: 3px solid #6aacb8;
+  font-weight: 700;
 }
 
 input[type="radio"] {

@@ -25,11 +25,11 @@ export default function SlideThree(props: any) {
   return (
     <>
       <div className="md:flex mb-12 md:px-5 px-0 lg:gap-10 gap-5 max-w-5xl mx-auto">
-        <div className="hidden md:block md:w-5/12 max-w-[25rem]">
+        <div className="hidden md:block md:w-5/12 md:max-w-[25rem]">
           <Warning />
         </div>
 
-        <form className="mb-10 px-5 md:px-0 md:mt-0 md:w-7/12 h-full bg-white">
+        <form className=" px-5 md:px-0 md:mt-0 md:w-7/12 h-full bg-white">
           <h1 className="text-5xl font-bold">Algemene voorwaarden</h1>
 
           <motion.p
@@ -81,6 +81,7 @@ export default function SlideThree(props: any) {
             <NextButton
               handleNext={props.handleNext}
               isButtonDisabled={isButtonDisabled}
+              buttonText="Volgende stap ›"
             />
           </div>
         </form>

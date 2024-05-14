@@ -15,8 +15,8 @@ export default function SlideTwo(props: any) {
 
   return (
     <>
-      <div className="md:flex md:px-5 px-0 lg:gap-10 gap-5 max-w-5xl mx-auto">
-        <div className="hidden md:block md:w-5/12 max-w-[25rem]">
+      <div className="md:flex mb-12 md:px-5 px-0 lg:gap-10 gap-5 max-w-5xl mx-auto">
+        <div className="hidden md:block md:w-5/12 md:max-w-[25rem]">
           <RulesWarning />
         </div>
 
@@ -60,6 +60,7 @@ export default function SlideTwo(props: any) {
           <NextButton
             handleNext={props.handleNext}
             isButtonDisabled={isButtonDisabled}
+            buttonText="Volgende stap ›"
           />
         </form>
       </div>
