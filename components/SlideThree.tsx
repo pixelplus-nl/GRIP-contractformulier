@@ -58,7 +58,7 @@ export default function SlideThree(props: any) {
           </motion.p>
           <div className="bg-white relative">
             <button
-              className="bg-[#6AACB8] text-white px-2 py-2 mt-3 font-bold"
+              className="bg-[#6AACB8] text-white border-2 border-[#6AACB8] hover:bg-white transition-all hover:text-[#6AACB8] px-2 py-2 mt-3 font-bold"
               onClick={(e: any) => {
                 e.preventDefault();
                 props.setOpenModal(true);
