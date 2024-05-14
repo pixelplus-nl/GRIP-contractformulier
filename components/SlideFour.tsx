@@ -68,7 +68,7 @@ export default function SlideFour() {
           <Warning />
         </div>
 
-        <form action={submitForm} className="px-5 md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12" onSubmit={event => event.preventDefault()}>
+        <form className="px-5 md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12" onSubmit={event => event.preventDefault()}>
           <h1 className="text-5xl font-bold">Persoonlijke gegevens</h1>
           <div className="mb-5">
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8">
