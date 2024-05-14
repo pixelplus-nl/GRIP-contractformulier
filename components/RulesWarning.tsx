@@ -30,7 +30,7 @@ export default function RulesWarning() {
       <br />
       <div className="relative text-lg overflow-hidden w-fit">
         <Link
-          className="relative"
+          className="relative hover:opacity-70 transition-all"
           href="https://gripnijmegen.dewi-online.nl/iframe/club/156/reservations/activities">
           <motion.span
             transition={{ duration: 1, delay: 2 }}
@@ -38,7 +38,7 @@ export default function RulesWarning() {
             animate={{
               width: ["0%", "100%"],
             }}
-            className="border-b-2 border-white absolute bottom-0 inline-block"></motion.span>
+            className="border-b-2 border-white  absolute bottom-0 inline-block"></motion.span>
           Reserveren kan via onze website.
         </Link>
       </div>

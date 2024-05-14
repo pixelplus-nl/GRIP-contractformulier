@@ -4,7 +4,7 @@ import SignatureCanvas from "react-signature-canvas";
 import Warning from "./RulesWarning";
 import Footer from "./Footer";
 import SendInButton from "./SendInButton";
-import submitForm from "@/lib/submitForm";
+import { RxCross1 } from "react-icons/rx";
 
 const variants = {
   open: {
@@ -63,12 +63,14 @@ export default function SlideFour() {
 
   return (
     <>
-      <div className="md:flex mb-12 md:w-full md:px-5 gap-5 max-w-5xl mx-auto lg:gap-10">
+      <div className="md:flex mb-12 md:w-full md:px-5 gap-5 max-w-6xl lg:justify-between lg:px-0 mx-auto lg:gap-10">
         <div className="hidden md:block md:w-5/12 md:max-w-[25rem]">
           <Warning />
         </div>
 
-        <form className="px-5 md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12" onSubmit={event => event.preventDefault()}>
+        <form
+          className="px-5 md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12"
+          onSubmit={(event) => event.preventDefault()}>
           <h1 className="text-5xl font-bold">Persoonlijke gegevens</h1>
           <div className="mb-5">
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8">
@@ -216,7 +218,7 @@ export default function SlideFour() {
                         type="text"
                         name="country"
                         id="country"
-                        placeholder="Woonplaats"
+                        placeholder="Land"
                         autoComplete="country"
                         className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
@@ -365,8 +367,16 @@ export default function SlideFour() {
               <hr />
 
               <div>
-                <p>Handtekening voor akkoord</p>
-                <div className="w-full h-72 border-2 border-gray-200">
+                <div className="flex items-center justify-between">
+                  <p>Handtekening voor akkoord</p>
+                  <button
+                    className="text-[#C10000] flex cursor-pointer items-center gap-1 px-3 py-2"
+                    onClick={handleClear}>
+                    <RxCross1 color="#C10000" />
+                    Wissen
+                  </button>
+                </div>
+                <div className="w-full rounded-xl h-72 border-2 border-gray-200">
                   <SignatureCanvas
                     canvasProps={{
                       className: "w-full h-full",
@@ -376,11 +386,6 @@ export default function SlideFour() {
                   />
                 </div>
                 <div className="flex mt-3 justify-between">
-                  <button
-                    className="bg-[#C10000] text-white px-3 py-2"
-                    onClick={handleClear}>
-                    Wissen
-                  </button>
                   {/* <button
                     className="bg-[#8CBE44] text-white px-3 py-2"
                     onClick={handleGenerate}>
