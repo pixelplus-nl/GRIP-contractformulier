@@ -32,6 +32,13 @@ export default function SlideFour() {
     }
   };
 
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    submitForm(formData);
+  };
+
   useEffect(() => {
     const validateForm = () => {
       if (url === "") {
@@ -68,7 +75,7 @@ export default function SlideFour() {
           <Warning />
         </div>
 
-        <form className="px-5 md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12" onSubmit={event => event.preventDefault()}>
+        <form className="px-5 md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12" onSubmit={handleSubmit}>
           <h1 className="text-5xl font-bold">Persoonlijke gegevens</h1>
           <div className="mb-5">
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8">
