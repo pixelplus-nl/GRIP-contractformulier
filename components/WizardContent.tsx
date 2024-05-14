@@ -80,7 +80,7 @@ export default function WizardContent() {
       allowTouchMove={false}
       autoHeight={true}
       onSlideChange={handleSlideChange}
-      speed={500}
+      speed={750}
       loop={false}
       pagination={pagination}
       modules={[EffectCreative, Pagination, Navigation]}

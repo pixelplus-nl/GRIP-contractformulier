@@ -27,7 +27,7 @@ export default function SlideFour() {
     if (sign) {
       event.preventDefault();
       const dataUrl = sign.getTrimmedCanvas().toDataURL("image/png");
-     
+
       setUrl(dataUrl);
     }
   };
@@ -175,37 +175,52 @@ export default function SlideFour() {
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="flex gap-1">
-                <div className="w-full">
-                  <label
-                    htmlFor="postal-code"
-                    className="block text-sm font-medium leading-6 text-gray-900"></label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="postal-code"
-                      placeholder="Postcode"
-                      id="postal-code"
-                      autoComplete="postal-code"
-                      className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
-                    />
+                <div className="flex gap-1">
+                  <div className="w-full">
+                    <label
+                      htmlFor="postal-code"
+                      className="block text-sm font-medium leading-6 text-gray-900"></label>
+                    <div className="mt-2">
+                      <input
+                        type="text"
+                        name="postal-code"
+                        placeholder="Postcode"
+                        id="postal-code"
+                        autoComplete="postal-code"
+                        className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="w-full">
-                  <label
-                    htmlFor="city"
-                    className="block text-sm font-medium leading-6 text-gray-900"></label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="city"
-                      id="city"
-                      placeholder="Woonplaats"
-                      autoComplete="address-level2"
-                      className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
-                    />
+                  <div className="w-full">
+                    <label
+                      htmlFor="city"
+                      className="block text-sm font-medium leading-6 text-gray-900"></label>
+                    <div className="mt-2">
+                      <input
+                        type="text"
+                        name="city"
+                        id="city"
+                        placeholder="Woonplaats"
+                        autoComplete="address-level2"
+                        className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                      />
+                    </div>
+                  </div>
+                  <div className="w-full">
+                    <label
+                      htmlFor="counrty"
+                      className="block text-sm font-medium leading-6 text-gray-900"></label>
+                    <div className="mt-2">
+                      <input
+                        type="text"
+                        name="country"
+                        id="country"
+                        placeholder="Woonplaats"
+                        autoComplete="country"
+                        className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -292,14 +307,17 @@ export default function SlideFour() {
                   transition={{ duration: 1 }}
                   className="overflow-hidden">
                   <p className="pt-5">
-                    Graag ontvangen wij een lijst van de namen van de deelnemers
-                    in een excelbestand
+                    Voeg de namen toe van kinderen die u begeleidt.
                   </p>
-                  <div className="mt-3">
-                    <label htmlFor="participants">Selecteer bestand:</label>
+                  <div className="mt-3 flex gap-2 items-center">
+                    <label
+                      className="bg-[#6AACB8] hover:bg-white hover:text-[#6AACBB] border-2 border-[#6AACBB] cursor-pointer transition-all w-fit px-2 py-1 text-white font-semibold"
+                      htmlFor="participants">
+                      Voeg toe
+                    </label>
                     <input
                       id="participants"
-                      className="mt-2"
+                      className=""
                       name="participants"
                       type="file"
                       accept="application/pdf,application/vnd.ms-excel"

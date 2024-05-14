@@ -60,14 +60,6 @@ export default function SlideOne(props: any) {
                 terras.
               </li>
               <li>Hulphonden zijn welkom, overige huisdieren niet.</li>
-              <li>
-                Afsluitbare drinkflessen en bidons zijn toegestaan tijdens en
-                voorafgaand aan het boulderen.
-              </li>
-              <li>
-                Meegebrachte overige drank- en etenswaren mogen niet worden
-                genuttigd.
-              </li>
             </ul>
 
             <div className="mt-3 flex gap-2 items-center">
@@ -96,8 +88,8 @@ export default function SlideOne(props: any) {
               <li>
                 Loop niet door het gebied waar iemand die momenteel klimt zou
                 kunnen vallen. Wacht tot de andere klimmer weer beneden is. Wees
-                je constant bewust van wat er boven je is terwijl je over de mat
-                loopt.
+                je constant bewust van wat er boven je gebeurt terwijl je over
+                de mat loopt.
               </li>
               <li>
                 Als je iemand iets gevaarlijks ziet doen, attendeer diegene
@@ -127,7 +119,7 @@ export default function SlideOne(props: any) {
                 Klim om de beurt op plekken waar ook anderen boulderen. Wie als
                 eerste aan de boulder begint, heeft voorrang in de wand.
               </li>
-              <li>Ben altijd hoffelijk tegenover andere klimmers.</li>
+              <li>Wees altijd hoffelijk tegenover andere klimmers.</li>
               <li>
                 Oordeel niet te snel over anderen – ga uit van goede intenties.
               </li>

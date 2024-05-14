@@ -21,12 +21,12 @@ export default function SlideTwo(props: any) {
         </div>
 
         <form className="mb-10 px-5 md:px-0 md:mt-0 md:w-7/12 relative bg-white">
-          <h1 className="text-5xl font-bold">Vitaliteit </h1>
+          <h1 className="text-5xl font-bold">Validiteit</h1>
           <ul className="list-disc px-5 mt-3">
             <li>
               Ik verklaar hierbij dat ik, of het minderjarige bezoekende kind
               voor wie ik deze overeenkomst onderteken, in goede gezondheid
-              verkeer en geen mentale of fysieke handicap, beperking,
+              verkeer en geen mentale of fysieke beperking,
               verwonding, ziekte of kwaal heb waardoor ik niet deel kan nemen
               aan Boulderhalactiviteiten. Ik begrijp dat als mijn, of dat van
               het minderjarige bezoekende kind, mentale of fysieke toestand
