@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Warning() {
   return (
-    <div className="relative overflow-hidden text-white px-5 pt-10 pb-20 w-full">
+    <div className="relative md:w-full md:max-w-[21rem] h-fit overflow-hidden text-white px-5 pt-10 pb-20 w-full">
       <Image
         src="warning.svg"
         fill

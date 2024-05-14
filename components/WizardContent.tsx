@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import "swiper/css/effect-cube";
+import "swiper/css/effect-creative";
 import "swiper/css/pagination";
 
-import { EffectCube, Pagination, Navigation } from "swiper/modules";
+import { EffectCreative, Pagination, Navigation } from "swiper/modules";
 import SlideOne from "@/components/SlideOne";
 import SlideTwo from "@/components/SlideTwo";
 import SlideFour from "@/components/SlideFour";
@@ -16,6 +16,9 @@ import SlideThree from "@/components/SlideThree";
 
 export default function WizardContent() {
   const sliderRef = useRef<any | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
+  const [heightClassName, setHeightClassName] = useState("");
 
   const handleNext = useCallback(() => {
     if (!sliderRef.current) return;
@@ -38,32 +41,64 @@ export default function WizardContent() {
       );
     },
   };
+
+  const handleSlideChange = () => {
+    if (!sliderRef.current) return;
+    const newIndex = sliderRef.current.swiper.activeIndex;
+    setActiveIndex(newIndex);
+    console.log(`Active slide index: ${newIndex}`);
+  };
+
+  useEffect(() => {
+    let timerId: NodeJS.Timeout;
+
+    if (activeIndex === 2 && openModal) {
+      timerId = setTimeout(() => {
+        setHeightClassName("[&>div]:h-auto");
+      }, 1000);
+
+      return () => clearTimeout(timerId);
+    }
+
+    setHeightClassName("");
+  }, [activeIndex, openModal]);
+
   return (
     <Swiper
-      effect={"cube"}
+      effect={"creative"}
+      creativeEffect={{
+        prev: {
+          shadow: true,
+          translate: ["-20%", 0, -1],
+        },
+        next: {
+          translate: ["100%", 0, 0],
+        },
+      }}
       grabCursor={true}
       ref={sliderRef}
       allowTouchMove={false}
-      speed={500}
       autoHeight={true}
+      onSlideChange={handleSlideChange}
+      speed={500}
       loop={false}
       pagination={pagination}
-      cubeEffect={{
-        shadow: false,
-      }}
-      modules={[EffectCube, Pagination, Navigation]}
-      className="mySwiper !overflow-hidden "
-      style={{ perspective: "2500px" }}>
-      <SwiperSlide className="!bg-white !h-fit">
+      modules={[EffectCreative, Pagination, Navigation]}
+      className={`mySwiper3 ${heightClassName}`}>
+      <SwiperSlide className="!bg-white">
         <SlideOne handleNext={handleNext} />
       </SwiperSlide>
-      <SwiperSlide className="!bg-white !h-fit">
+      <SwiperSlide className="!bg-white">
         <SlideTwo handleNext={handleNext} />
       </SwiperSlide>
-      <SwiperSlide className="!bg-white !h-fit">
-        <SlideThree handleNext={handleNext} />
+      <SwiperSlide className="!bg-white !overflow-y-scroll">
+        <SlideThree
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+          handleNext={handleNext}
+        />
       </SwiperSlide>
-      <SwiperSlide className="!bg-white !h-fit">
+      <SwiperSlide className="!bg-white">
         <SlideFour handleNext={handleNext} />
       </SwiperSlide>
     </Swiper>

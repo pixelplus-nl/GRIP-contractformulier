@@ -16,8 +16,7 @@ export default function Button(props: any) {
             dominant-baseline="middle"
             textAnchor="middle"
             className={`font-bold text-xl transition-all ${props.textColor}`}>
-            {" "}
-            Nu registreren ›
+            START je inschrijving ›&nbsp;&nbsp;&nbsp;
           </text>
         </a>
       </svg>

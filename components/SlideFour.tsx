@@ -35,13 +35,17 @@ export default function SlideFour(props: any) {
   };
 
   return (
-    <>
-      <Warning />
+    <div className="md:flex md:px-5 gap-5">
+      <div className="hidden md:block">
+        <Warning />
+      </div>
 
-      <form className="mt-10 px-5 md bg-white">
+      <form
+        className="px-5 md:px-0 md:mt-0
+       bg-white w-full">
         <h1 className="text-5xl font-bold">Persoonlijke gegevens</h1>
         <div className=" pb-12">
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8">
             <div>
               <p className="text-xl text-black font-semibold">Naam</p>
               <div className="flex gap-1">
@@ -344,7 +348,6 @@ export default function SlideFour(props: any) {
           </div>
         </div>
       </form>
-      
-    </>
+    </div>
   );
 }

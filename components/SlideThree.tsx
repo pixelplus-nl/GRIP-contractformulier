@@ -1,20 +1,20 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NextButton from "./NextButton";
 import Warning from "./Warning";
+import Footer from "./Footer";
 
 const variants = {
   closed: {
-    height: "100%",
+    height: "50px",
   },
   open: {
-    height: "0",
+    height: "auto",
   },
 };
 
 export default function SlideThree(props: any) {
-  const [openModal, setOpenModal] = useState(false);
   const [tandcChecked, settandChecked] = useState(false);
 
   const handleCheckboxChange = (event: any, setCheckedState: any) => {
@@ -24,67 +24,68 @@ export default function SlideThree(props: any) {
   const isButtonDisabled = !tandcChecked;
   return (
     <>
-      <Warning />
+      <div className="md:flex md:px-5 px-0 gap-5">
+        <div className="hidden md:block">
+          <Warning />
+        </div>
 
-      <form className="mt-10 px-5 md relative h-full bg-white">
-        <h1 className="text-5xl font-bold">Algemene voorwaarden</h1>
+        <form className="mb-10 px-5 md:px-0 md:mt-0  max-w-5xl h-full bg-white">
+          <h1 className="text-5xl font-bold">Algemene voorwaarden</h1>
 
-        <div className="relative">
-          <div className="mt-3">
-            <p>
-              Alle bezoekers die gebruik maken van de aangeboden
-              sportfaciliteiten van GRIP Boulderhal met een leeftijd van 16 jaar
-              en ouder zijn verplicht deze algemene voorwaarden te ondertekenen.
-              &ldquo;Bezoeker&ldquo; zoals gebruikt in deze overeenkomst
-              verwijst naar personen die GRIP Boulderhal (&ldquo;GRIP&ldquo;)
-              bezoeken, als zelfstandig boulderaar, deelnemer aan klim- of
-              andere activiteiten of als begeleider. Als de Bezoeker minderjarig
-              is (&ldquo;Minderjarige Bezoeker&ldquo;), moet ten minste één
-              ouder of wettelijk aangestelde voogd (ouder en voogd worden in dit
-              document &ldquo;Ouder&ldquo; genoemd) ondertekenen, als bewijs van
-              hun instemming met deze algemene voorwaarden, voor zichzelf en,
-              voor zover maximaal toegestaan door de Nederlandse wet, namens de
-              minderjarige bezoeker die zijn of haar kind of voogdijkind is
-              (gezamenlijk &ldquo;minderjarige bezoeker&ldquo;). Met het oog op
-              het gebruik van de diensten en faciliteiten van de Boulderhal,
-              erken, begrijp en stem ik, een volwassen bezoeker of ouder van een
-              minderjarig bezoekend kind
-            </p>
-          </div>
-          <motion.div
+          <motion.p
             initial={"closed"}
             variants={variants}
-            animate={openModal ? "open" : "closed"}
-            transition={{ duration: 2 }}
-            className="bg-gradient-to-b z-20 absolute bottom-0 h-1/2 left-0 w-full from-transparent via-white/80 to-white"></motion.div>
-        </div>
-      </form>
-      <div className="bg-white w-full my-5 px-5 relative z-30">
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            setOpenModal(true);
-          }}
-          className="border-[#6AACB8]  hover:bg-[#6AACB8] font-bold hover:text-white transition-all border-2  w-full py-2">
-          Lees verder
-        </button>
+            animate={props.openModal ? "open" : "closed"}
+            transition={{ duration: 1 }}
+            className="overflow-hidden mt-3">
+            Alle bezoekers die gebruik maken van de aangeboden sportfaciliteiten
+            van GRIP Boulderhal met een leeftijd van 16 jaar en ouder zijn
+            verplicht deze algemene voorwaarden te ondertekenen.
+            &ldquo;Bezoeker&ldquo; zoals gebruikt in deze overeenkomst verwijst
+            naar personen die GRIP Boulderhal (&ldquo;GRIP&ldquo;) bezoeken, als
+            zelfstandig boulderaar, deelnemer aan klim- of andere activiteiten
+            of als begeleider. Als de Bezoeker minderjarig is
+            (&ldquo;Minderjarige Bezoeker&ldquo;), moet ten minste één ouder of
+            wettelijk aangestelde voogd (ouder en voogd worden in dit document
+            &ldquo;Ouder&ldquo; genoemd) ondertekenen, als bewijs van hun
+            instemming met deze algemene voorwaarden, voor zichzelf en, voor
+            zover maximaal toegestaan door de Nederlandse wet, namens de
+            minderjarige bezoeker die zijn of haar kind of voogdijkind is
+            (gezamenlijk &ldquo;minderjarige bezoeker&ldquo;). Met het oog op
+            het gebruik van de diensten en faciliteiten van de Boulderhal,
+            erken, begrijp en stem ik, een volwassen bezoeker of ouder van een
+            minderjarig bezoekend kind
+          </motion.p>
+          <div className="bg-white relative">
+            <button
+              className="bg-[#6AACB8] text-white px-2 py-2 mt-3 font-bold"
+              onClick={(e: any) => {
+                e.preventDefault();
+                props.setOpenModal(true);
+              }}>
+              Lees verder ›
+            </button>
+            <div className="mt-5 flex gap-2 items-center">
+              <input
+                onChange={(e) => handleCheckboxChange(e, settandChecked)}
+                id="tandcCheck"
+                name="tandcCheck"
+                type="checkbox"
+              />
+              <label htmlFor="tandcCheck" className="font-bold text-lg">
+                Ik ga akkoord
+              </label>
+            </div>
+
+            <hr className="my-10" />
+            <NextButton
+              handleNext={props.handleNext}
+              isButtonDisabled={isButtonDisabled}
+            />
+          </div>
+        </form>
       </div>
-      <div className="mt-3 px-5  flex gap-2 items-center">
-        <input
-          onChange={(e) => handleCheckboxChange(e, settandChecked)}
-          id="tandcCheck"
-          name="tandcCheck"
-          type="checkbox"
-        />
-        <label htmlFor="tandcCheck" className="font-bold text-lg">
-          Ik ga akkoord
-        </label>
-      </div>
-      <hr className="my-10" />
-      <NextButton
-        handleNext={props.handleNext}
-        isButtonDisabled={isButtonDisabled}
-      />
+      <Footer />
     </>
   );
 }

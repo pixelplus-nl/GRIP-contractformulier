@@ -1,10 +1,9 @@
 export default function NextButton(props: any) {
-  const handleNextClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const handleNextClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     props.handleNext();
   };
-
-  console.log(props.isButtonDisabled);
 
   return (
     <div className="px-5 z-40  relative mb-20 w-full flex justify-end">
