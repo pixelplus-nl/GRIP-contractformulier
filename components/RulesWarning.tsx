@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function Warning() {
+export default function RulesWarning() {
   return (
-    <div className="relative md:w-full md:max-w-[21rem] h-fit overflow-hidden text-white px-5 pt-10 pb-20 w-full">
+    <section className="relative md:w-[100%] h-fit overflow-hidden text-white px-5 pt-10 pb-20 w-full">
       <Image
         src="warning.svg"
         fill
@@ -35,7 +35,6 @@ export default function Warning() {
             initial="hidden"
             animate={{
               width: ["0%", "100%"],
-              
             }}
             className="border-b-2 border-white absolute bottom-0 inline-block"></motion.span>
           Reserveren kan via onze website.
@@ -43,6 +42,6 @@ export default function Warning() {
       </div>
       <br />
       <p className="text-lg">Heb je een vraag? Neem contact op</p>
-    </div>
+    </section>
   );
 }

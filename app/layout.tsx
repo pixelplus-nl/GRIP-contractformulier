@@ -21,7 +21,6 @@ export default function RootLayout({
       <body className={assistant.className}>
         <Header />
         {children}
-    
       </body>
     </html>
   );

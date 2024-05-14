@@ -1,8 +1,8 @@
-import Image from "next/image";
 import NextButton from "./NextButton";
-import Warning from "./Warning";
+
 import { useState } from "react";
 import Footer from "./Footer";
+import RulesWarning from "./RulesWarning";
 
 export default function SlideTwo(props: any) {
   const [baseChecked, setBaseChecked] = useState(false);
@@ -15,12 +15,12 @@ export default function SlideTwo(props: any) {
 
   return (
     <>
-      <div className="md:flex md:px-5 px-0  gap-5">
-        <div className="hidden md:block">
-          <Warning />
+      <div className="md:flex md:px-5 px-0 lg:gap-10 gap-5 max-w-5xl mx-auto">
+        <div className="hidden md:block md:w-5/12 max-w-[25rem]">
+          <RulesWarning />
         </div>
 
-        <form className="mb-10 px-5 md:px-0 md:mt-0 max-w-5xl relative bg-white">
+        <form className="mb-10 px-5 md:px-0 md:mt-0 md:w-7/12 relative bg-white">
           <h1 className="text-5xl font-bold">Vitaliteit </h1>
           <ul className="list-disc px-5 mt-3">
             <li>

@@ -15,7 +15,7 @@ export default function Button(props: any) {
             y="50%"
             dominant-baseline="middle"
             textAnchor="middle"
-            className={`font-bold text-xl transition-all ${props.textColor}`}>
+            className={`font-bold ml-5 text-xl transition-all ${props.textColor}`}>
             START je inschrijving ›&nbsp;&nbsp;&nbsp;
           </text>
         </a>

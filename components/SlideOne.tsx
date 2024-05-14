@@ -1,8 +1,8 @@
 import { useState } from "react";
 import NextButton from "./NextButton";
-import Warning from "./Warning";
 import React from "react";
 import Footer from "./Footer";
+import RulesWarning from "./RulesWarning";
 
 export default function SlideOne(props: any) {
   const [fallZonesChecked, setFallZonesChecked] = useState(false);
@@ -24,10 +24,12 @@ export default function SlideOne(props: any) {
 
   return (
     <>
-      <div className="md:flex md:px-5 gap-5">
-        <Warning />
+      <div className="md:flex md:w-full md:px-5 gap-5 lg:gap-10 max-w-5xl mx-auto">
+        <div className="md:w-5/12 max-w-[25rem]">
+          <RulesWarning />
+        </div>
 
-        <form className="mt-10 px-5 md:px-0 max-w-5xl  md:mt-0 bg-white">
+        <form className="mt-10 px-5 md:px-0 md:w-7/12  md:mt-0 bg-white">
           <h1 className="text-5xl font-bold">Algemene voorwaarden</h1>
 
           <div className="my-5">

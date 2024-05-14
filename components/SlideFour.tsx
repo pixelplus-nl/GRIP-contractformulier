@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import NextButton from "./NextButton";
-import Warning from "./Warning";
+import Warning from "./RulesWarning";
 
 const variants = {
   open: {
@@ -35,14 +35,14 @@ export default function SlideFour(props: any) {
   };
 
   return (
-    <div className="md:flex md:px-5 gap-5">
-      <div className="hidden md:block">
+    <div className="md:flex md:w-full md:px-5 gap-5 max-w-5xl mx-auto lg:gap-10">
+      <div className="hidden md:block md:w-5/12 max-w-[25rem]">
         <Warning />
       </div>
 
       <form
         className="px-5 md:px-0 md:mt-0
-       bg-white w-full">
+       bg-white md:w-7/12">
         <h1 className="text-5xl font-bold">Persoonlijke gegevens</h1>
         <div className=" pb-12">
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8">
@@ -75,7 +75,7 @@ export default function SlideFour(props: any) {
                       id="middle-name"
                       placeholder="Tussenv."
                       autoComplete="middle-name"
-                      className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                      className="block px-3  w-20 outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                     />
                   </div>
                 </div>

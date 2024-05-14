@@ -84,14 +84,14 @@ export default function WizardContent() {
       loop={false}
       pagination={pagination}
       modules={[EffectCreative, Pagination, Navigation]}
-      className={`mySwiper3 ${heightClassName}`}>
+      className={`mySwiper3 ${heightClassName} `}>
       <SwiperSlide className="!bg-white">
         <SlideOne handleNext={handleNext} />
       </SwiperSlide>
       <SwiperSlide className="!bg-white">
         <SlideTwo handleNext={handleNext} />
       </SwiperSlide>
-      <SwiperSlide className="!bg-white !overflow-y-scroll">
+      <SwiperSlide className="!bg-white ">
         <SlideThree
           openModal={openModal}
           setOpenModal={setOpenModal}
