@@ -32,10 +32,29 @@ export default function SlideFour() {
     }
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
+    const formData: any = new FormData(event.target);
 
-    const formData = new FormData(event.target);
+    // Convert the participants file to base64
+    const participants = formData.get("participants");
+
+    if (participants.size > 0) {      
+      const reader = new FileReader();
+
+      const base64 = await new Promise((resolve, reject) => {
+        reader.onloadend = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(participants);
+      });
+
+      formData.set("participants", base64);
+    }
+
+    // Convert the signature to base64
+    const signature = sign.getTrimmedCanvas().toDataURL("image/png");
+    formData.set("signature", signature);
+    
     submitForm(formData);
   };
 
