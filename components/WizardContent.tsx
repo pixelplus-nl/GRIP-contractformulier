@@ -19,13 +19,9 @@ export default function WizardContent() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const [heightClassName, setHeightClassName] = useState("");
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 630);
-
-  const handleNext = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slideNext();
-  }, []);
-
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth <= 640 : false
+  );
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 630);
@@ -34,6 +30,10 @@ export default function WizardContent() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleNext = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slideNext();
+  }, []);
 
   const pagination = isMobile
     ? {

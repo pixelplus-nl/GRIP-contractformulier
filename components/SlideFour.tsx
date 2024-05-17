@@ -63,7 +63,7 @@ export default function SlideFour() {
 
   return (
     <>
-      <div className="md:flex mb-12 md:w-full md:px-5 gap-5 max-w-6xl lg:justify-between lg:px-0 mx-auto lg:gap-10">
+      <div className="md:flex mb-12 md:w-full md:px-5 gap-5 max-w-6xl lg:justify-between xl:px-0 mx-auto lg:gap-10">
         <div className="hidden md:block md:w-5/12 md:max-w-[25rem]">
           <Warning />
         </div>

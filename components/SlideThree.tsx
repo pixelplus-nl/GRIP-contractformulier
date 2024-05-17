@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import NextButton from "./NextButton";
 import Warning from "./RulesWarning";
 import Footer from "./Footer";
@@ -24,7 +23,7 @@ export default function SlideThree(props: any) {
   const isButtonDisabled = !tandcChecked;
   return (
     <>
-      <div className="md:flex mb-12 md:px-5 px-0 lg:gap-10 gap-5 lg:px-0 lg:justify-between max-w-6xl mx-auto">
+      <div className="md:flex mb-12 md:px-5 px-0 lg:gap-10 gap-5 xl:px-0 lg:justify-between max-w-6xl mx-auto">
         <div className="hidden md:block md:w-5/12 md:max-w-[25rem]">
           <Warning />
         </div>

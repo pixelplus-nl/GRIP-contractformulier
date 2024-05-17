@@ -15,7 +15,7 @@ export default function SlideTwo(props: any) {
 
   return (
     <>
-      <div className="md:flex mb-12 md:px-5 px-0 lg:px-0 lg:gap-10 gap-5 lg:justify-between  max-w-6xl mx-auto">
+      <div className="md:flex mb-12 md:px-5 px-0 xl:px-0 lg:gap-10 gap-5 lg:justify-between  max-w-6xl mx-auto">
         <div className="hidden md:block md:w-5/12 md:max-w-[25rem]">
           <RulesWarning />
         </div>
