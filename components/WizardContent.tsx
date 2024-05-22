@@ -19,28 +19,47 @@ export default function WizardContent() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const [heightClassName, setHeightClassName] = useState("");
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth <= 640 : false
+  );
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 630);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleNext = useCallback(() => {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slideNext();
   }, []);
 
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index: number, className: string) {
-      return (
-        '<p class="' +
-        className +
-        " pagination_text" +
-        '">' +
-        "stap " +
-        "<span>" +
-        (index + 1) +
-        "</span>" +
-        "</p>"
-      );
-    },
-  };
+  const pagination = isMobile
+    ? {
+        clickable: true,
+        renderBullet: (index: number, className: string) => {
+          return `<p class="${className} pagination_text">${"stap "}<span>${
+            index + 1
+          }</span></p>`;
+        },
+      }
+    : {
+        clickable: true,
+        renderBullet: (index: number, className: string) => {
+          return `<p class="${className} pagination_text"><span>${
+            index + 1
+          }</span> ${
+            index === 0
+              ? "Introductie"
+              : index === 1
+              ? "Validiteit"
+              : index === 2
+              ? "Algemene voorwaarden"
+              : "Persoonlijke gegevens"
+          }</p>`;
+        },
+      };
 
   const handleSlideChange = () => {
     if (!sliderRef.current) return;

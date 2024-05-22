@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import NextButton from "./NextButton";
 import Warning from "./RulesWarning";
 import Footer from "./Footer";
@@ -24,7 +23,7 @@ export default function SlideThree(props: any) {
   const isButtonDisabled = !tandcChecked;
   return (
     <>
-      <div className="md:flex mb-12 md:px-5 px-0 lg:gap-10 gap-5 max-w-5xl mx-auto">
+      <div className="md:flex mb-12 md:px-5 px-0 lg:gap-10 gap-5 xl:px-0 lg:justify-between max-w-6xl mx-auto">
         <div className="hidden md:block md:w-5/12 md:max-w-[25rem]">
           <Warning />
         </div>
@@ -58,7 +57,7 @@ export default function SlideThree(props: any) {
           </motion.p>
           <div className="bg-white relative">
             <button
-              className="bg-[#6AACB8] text-white border-2 border-[#6AACB8] hover:bg-white transition-all hover:text-[#6AACB8] px-2 py-2 mt-3 font-bold"
+              className="bg-[#F5F5F5]  w-full text-black  transition-all hover:text-[#6AACB8] px-2 py-2 mt-3 font-bold"
               onClick={(e: any) => {
                 e.preventDefault();
                 props.setOpenModal(true);

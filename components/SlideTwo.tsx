@@ -15,7 +15,7 @@ export default function SlideTwo(props: any) {
 
   return (
     <>
-      <div className="md:flex mb-12 md:px-5 px-0 lg:gap-10 gap-5 max-w-5xl mx-auto">
+      <div className="md:flex mb-12 md:px-5 px-0 xl:px-0 lg:gap-10 gap-5 lg:justify-between  max-w-6xl mx-auto">
         <div className="hidden md:block md:w-5/12 md:max-w-[25rem]">
           <RulesWarning />
         </div>
@@ -26,10 +26,10 @@ export default function SlideTwo(props: any) {
             <li>
               Ik verklaar hierbij dat ik, of het minderjarige bezoekende kind
               voor wie ik deze overeenkomst onderteken, in goede gezondheid
-              verkeer en geen mentale of fysieke beperking,
-              verwonding, ziekte of kwaal heb waardoor ik niet deel kan nemen
-              aan Boulderhalactiviteiten. Ik begrijp dat als mijn, of dat van
-              het minderjarige bezoekende kind, mentale of fysieke toestand
+              verkeer en geen mentale of fysieke beperking, verwonding, ziekte
+              of kwaal heb waardoor ik niet deel kan nemen aan
+              Boulderhalactiviteiten. Ik begrijp dat als mijn, of dat van het
+              minderjarige bezoekende kind, mentale of fysieke toestand
               verandert zodanig dat ik, of het minderjarige bezoekende kind,
               niet meer in staat is deel te nemen aan activiteiten, ik of het
               minderjarige Bezoekende Kind, verplicht ben te stoppen met de
