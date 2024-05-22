@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useState, useTransition } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 
 export default function Header() {
@@ -10,11 +10,15 @@ export default function Header() {
   const router = useRouter();
   const localActive = useLocale();
   const [activeLanguage, setActiveLanguage] = useState(localActive);
+  const pathname = usePathname();
 
   const onSelectLanguage = (language: string) => {
     startTransition(() => {
       setActiveLanguage(language);
-      router.replace(`/${language}`);
+      const segments = pathname.split("/");
+      segments[1] = language;
+      const newPath = segments.join("/");
+      router.replace(newPath);
     });
   };
 
@@ -32,7 +36,9 @@ export default function Header() {
 
         <div className="flex gap-1 h-fit">
           <button
+            type="button"
             defaultValue={localActive}
+            disabled={isPending}
             className={`font-bold ${
               activeLanguage === "nl" ? "font-bold" : "font-normal"
             }`}
@@ -43,6 +49,8 @@ export default function Header() {
           </button>
           <span>|</span>
           <button
+            type="button"
+            disabled={isPending}
             className={`font-bold ${
               activeLanguage === "en" ? "font-bold" : "font-normal"
             }`}

@@ -1,7 +1,7 @@
 export default function Button(props: any) {
   return (
     <div className="relative flex justify-center items-center">
-      <svg width="240.963" height="70.701" viewBox="0 0 243.963 70.701">
+      <svg width="260.963" height="70.701" viewBox="0 0 243.963 70.701">
         <a className="group transition-all" href={props.linkTo}>
           <path
             id="Path_1029"
@@ -13,10 +13,10 @@ export default function Button(props: any) {
           <text
             x="50%"
             y="50%"
-            dominant-baseline="middle"
+            dominantBaseline="middle"
             textAnchor="middle"
-            className={`font-bold ml-5 text-xl transition-all ${props.textColor}`}>
-            START je inschrijving ›&nbsp;&nbsp;&nbsp;
+            className={`font-bold ml-5 text-lg transition-all ${props.textColor}`}>
+            {props.text} ›&nbsp;&nbsp;&nbsp;
           </text>
         </a>
       </svg>

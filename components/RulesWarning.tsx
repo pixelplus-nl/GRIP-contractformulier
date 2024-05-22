@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function RulesWarning() {
+  const t = useTranslations("Warning");
   return (
     <section className="relative md:w-[100%] h-fit overflow-hidden text-white px-5 pt-10 pb-20 w-full">
       <Image
@@ -17,16 +19,8 @@ export default function RulesWarning() {
         alt={""}
       />
 
-      <h2 className="text-4xl font-bold">Ken de regels!</h2>
-      <p className="text-lg mt-5">
-        Voor je eigen veiligheid en de veiligheid van andere klimmers is het
-        belangrijk dat iedereen de regels kent. Accordeer elk onderdeel om aan
-        te geven dat je de tekst hebt gelezen en de regels begrijpt.
-        <br />
-        <br /> Je hoeft je maar één keer te registreren. Ben je eerder komen
-        boulderen bij Grip? Dan hoef je je dus niet opnieuw te registeren. Let
-        op! dit is geen reservering.
-      </p>
+      <h2 className="text-4xl font-bold">{t("title")}</h2>
+      <p className="text-lg mt-5">{t("paragraph")}</p>
       <br />
       <div className="relative text-lg overflow-hidden w-fit">
         <Link
@@ -39,11 +33,11 @@ export default function RulesWarning() {
               width: ["0%", "100%"],
             }}
             className="border-b-2 border-white  absolute bottom-0 inline-block"></motion.span>
-          Reserveren kan via onze website.
+          {t("link")}
         </Link>
       </div>
       <br />
-      <p className="text-lg">Heb je een vraag? Neem contact op</p>
+      <p className="text-lg">{t("contact")}</p>
     </section>
   );
 }

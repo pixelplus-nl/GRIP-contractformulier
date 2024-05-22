@@ -1,6 +1,19 @@
 {
-  "Index": {
+  "Landing": {
     "titleBold": "Welcome at GRIP!",
-    "titleMedium": "START your registration."
+    "titleMedium": "START your registration.",
+    "buttonText": "START your registration",
+    "heroScrollLink": "Why do I need to register?",
+    "subTitle": "What happens to my registration data?",
+    "paragraph": "Your registration data is used for identification at the check-in desk and by our administration, to link products such as memberships, punch cards, and credits, and also to demonstrate that you meet our insurer’s requirements to climb with us. We also use your data to contact you in case of emergencies, care, and in cases of lost valuable items. We respect your privacy and will never distribute, share, or publish your data without your consent. Our database is protected from the outside world and we adhere to a clear GDPR protocol.",
+    "contactCta": "Do you have a question or is it difficult to register?",
+    "contactCtaLink": "Contact us"
+  },
+
+  "Warning": {
+    "title": "Know the rules!",
+    "paragraph": "For your own safety and the safety of other climbers, it is important that everyone knows the rules. Acknowledge each section to indicate that you have read and understood the text and the rules. You only need to register once. If you have been bouldering at Grip before, you do not need to register again. Please note! This is not a reservation.",
+    "link": "Reservations can be made via our website.",
+    "contact": "Do you have a question? Contact us"
   }
 }
