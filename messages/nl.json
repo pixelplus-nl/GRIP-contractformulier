@@ -1,6 +1,23 @@
 {
-  "Index": {
+  "Landing": {
     "titleBold": "Welkom bij GRIP!",
-    "titleMedium": "START je inschrijving."
+    "titleMedium": "START je inschrijving.",
+    "buttonText": "START je inschrijving",
+    "heroScrollLink": "Waarom moet ik me registreren?",
+    "subTitle": "Wat gebeurt er met mijn schrijfgegevens?",
+    "paragraph": "je inschrijfgegevens worden gebruikt ten behoeve van identificatie aan de incheckbalie en door onze administratie, om producten zoals lidmaatschappen, strippenkaarten en tegoeden te kunnen koppelen, maar ook om aan te kunnen tonen dat jij de persoon bent die aan de vereisten van onze verzekeraar voldoet om bij ons te mogen boulderen. We gebruiken je gegevens ook om contact op te kunnen nemen in geval van nood, zorg en bij bijvoorbeeld achtergelaten waardevolle spullen. We respecteren jouw privacy en zullen jouw gegevens nooit ongevraagd verspreiden, delen of publiceren. Onze database is afgeschermd van de buitenwereld en we hanteren een helder AVG-protocol.",
+    "contactCta": "Heb je een vraag of lukt het niet om te registeren?",
+    "contactCtaLink": "Neem contact op"
+  },
+  "Wizard": {
+    "Warning": {
+      "title": "Ken de regels!",
+      "paragraph": "Voor je eigen veiligheid en de veiligheid van andere klimmers is het belangrijk dat iedereen de regels kent. Accordeer elk onderdeel om aan te geven dat je de tekst hebt gelezen en de regels begrijpt. Je hoeft je maar één keer te registreren. Ben je eerder komen boulderen bij Grip? Dan hoef je je dus niet opnieuw te registeren. Let op dit is geen reservering.",
+      "link": "Reserveren kan via onze website.",
+      "contact": "Heb je een vraag? Neem contact op"
+    },
+    "SlideOne": {
+      "title": "Slide een"
+    }
   }
 }
