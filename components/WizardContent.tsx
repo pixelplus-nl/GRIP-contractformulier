@@ -14,7 +14,7 @@ import SlideTwo from "@/components/SlideTwo";
 import SlideFour from "@/components/SlideFour";
 import SlideThree from "@/components/SlideThree";
 
-export default function WizardContent(props: any) {
+export default function WizardContent() {
   const sliderRef = useRef<any | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -80,8 +80,6 @@ export default function WizardContent(props: any) {
 
     setHeightClassName("");
   }, [activeIndex, openModal]);
-
-  console.log(props.t);
 
   return (
     <Swiper

@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
-export default function RulesWarning(props: any) {
+export default function RulesWarning() {
+  const t = useTranslations("Warning");
   return (
     <section className="relative md:w-[100%] h-fit overflow-hidden text-white px-5 pt-10 pb-20 w-full">
       <Image
@@ -17,8 +19,8 @@ export default function RulesWarning(props: any) {
         alt={""}
       />
 
-      <h2 className="text-4xl font-bold"></h2>
-      <p className="text-lg mt-5"></p>
+      <h2 className="text-4xl font-bold">{t("title")}</h2>
+      <p className="text-lg mt-5">{t("paragraph")}</p>
       <br />
       <div className="relative text-lg overflow-hidden w-fit">
         <Link
@@ -31,11 +33,11 @@ export default function RulesWarning(props: any) {
               width: ["0%", "100%"],
             }}
             className="border-b-2 border-white  absolute bottom-0 inline-block"></motion.span>
-          Reserveren kan via onze website.
+          {t("link")}
         </Link>
       </div>
       <br />
-      <p className="text-lg">Heb je een vraag? Neem contact op</p>
+      <p className="text-lg">{t("contact")}</p>
     </section>
   );
 }

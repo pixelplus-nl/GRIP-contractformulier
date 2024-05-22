@@ -10,12 +10,10 @@
     "contactCtaLink": "Contact us"
   },
 
-  "Wizard": {
-    "Warning": {
-      "title": "Know the rules!",
-      "paragraph": "For your own safety and the safety of other climbers, it is important that everyone knows the rules. Acknowledge each section to indicate that you have read and understood the text and the rules. You only need to register once. If you have been bouldering at Grip before, you do not need to register again. Please note! This is not a reservation.",
-      "link": "Reservations can be made via our website.",
-      "contact": "Do you have a question? Contact us"
-    }
+  "Warning": {
+    "title": "Know the rules!",
+    "paragraph": "For your own safety and the safety of other climbers, it is important that everyone knows the rules. Acknowledge each section to indicate that you have read and understood the text and the rules. You only need to register once. If you have been bouldering at Grip before, you do not need to register again. Please note! This is not a reservation.",
+    "link": "Reservations can be made via our website.",
+    "contact": "Do you have a question? Contact us"
   }
 }

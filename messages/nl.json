@@ -9,15 +9,24 @@
     "contactCta": "Heb je een vraag of lukt het niet om te registeren?",
     "contactCtaLink": "Neem contact op"
   },
-  "Wizard": {
-    "Warning": {
-      "title": "Ken de regels!",
-      "paragraph": "Voor je eigen veiligheid en de veiligheid van andere klimmers is het belangrijk dat iedereen de regels kent. Accordeer elk onderdeel om aan te geven dat je de tekst hebt gelezen en de regels begrijpt. Je hoeft je maar één keer te registreren. Ben je eerder komen boulderen bij Grip? Dan hoef je je dus niet opnieuw te registeren. Let op dit is geen reservering.",
-      "link": "Reserveren kan via onze website.",
-      "contact": "Heb je een vraag? Neem contact op"
-    },
-    "SlideOne": {
-      "title": "Slide een"
+  "Warning": {
+    "title": "Ken de regels!",
+    "paragraph": "Voor je eigen veiligheid en de veiligheid van andere klimmers is het belangrijk dat iedereen de regels kent. Accordeer elk onderdeel om aan te geven dat je de tekst hebt gelezen en de regels begrijpt. Je hoeft je maar één keer te registreren. Ben je eerder komen boulderen bij Grip? Dan hoef je je dus niet opnieuw te registeren. Let op dit is geen reservering.",
+    "link": "Reserveren kan via onze website.",
+    "contact": "Heb je een vraag? Neem contact op"
+  },
+  "SlideOne": {
+    "title": "Algemene voorwaarden",
+    "subTitleFirst": "Basisveiligheid en omgangsvormen",
+    "listFirst": {
+      "1": "Zorg voor je eigen veiligheid en veroorzaak geen onveilige situaties voor anderen.",
+      "2": "Draag geen sieraden.",
+      "3": "Verlaat de mat direct na elke klim. De mat markeert de valzone, zorg dat de valzone zoveel mogelijk vrij is.",
+      "4": "Boulder alleen op schone klimschoenen. Boulderen op ander schoeisel, blote voeten of sokken is niet toegestaan.",
+      "5": "Sporten met ontbloot bovenlichaam is niet toegestaan.",
+      "6": "Boulderen onder invloed van alcohol en/of drugs is niet toegestaan.",
+      "7": "Gebruik glaswerk of serviesgoed alleen in het café en op het terras.",
+      "8": "Hulphonden zijn welkom, overige huisdieren niet."
     }
   }
 }

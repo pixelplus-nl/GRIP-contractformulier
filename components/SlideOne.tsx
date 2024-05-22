@@ -3,6 +3,7 @@ import NextButton from "./NextButton";
 import React from "react";
 import Footer from "./Footer";
 import RulesWarning from "./RulesWarning";
+import { useTranslations } from "next-intl";
 
 export default function SlideOne(props: any) {
   const [fallZonesChecked, setFallZonesChecked] = useState(false);
@@ -22,6 +23,10 @@ export default function SlideOne(props: any) {
     !minorChecked ||
     !emergencyChecked;
 
+  const t = useTranslations("SlideOne");
+  console.log(t("listFirst"));
+  
+
   return (
     <>
       <div className="md:flex mb-12 md:w-full md:px-5 gap-5 lg:justify-between lg:gap-10 xl:px-0 max-w-6xl mx-auto">
@@ -37,29 +42,10 @@ export default function SlideOne(props: any) {
               Basisveiligheid en omgangsvormen
             </h2>
             <ul className="list-disc px-5 mt-3">
-              <li>
-                Zorg voor je eigen veiligheid en veroorzaak geen onveilige
-                situaties voor anderen.
-              </li>
-              <li>Draag geen sieraden.</li>
-              <li>
-                Verlaat de mat direct na elke klim. De mat markeert de valzone,
-                zorg dat de valzone zoveel mogelijk vrij is.
-              </li>
-              <li>
-                Boulder alleen op schone klimschoenen. Boulderen op ander
-                schoeisel, blote voeten of sokken is niet toegestaan.
-              </li>
-              <li>Sporten met ontbloot bovenlichaam is niet toegestaan.</li>
-              <li>
-                Boulderen onder invloed van alcohol en/of drugs is niet
-                toegestaan.
-              </li>
-              <li>
-                Gebruik glaswerk of serviesgoed alleen in het café en op het
-                terras.
-              </li>
-              <li>Hulphonden zijn welkom, overige huisdieren niet.</li>
+              {/* {t("listFirst").map((item: any) => {
+                console.log(item);
+                return <></>;
+              })} */}
             </ul>
 
             <div className="mt-3 flex gap-2 items-center">
