@@ -1,13 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 export default function Header() {
-  const [activeButton, setActiveButton] = useState("NL");
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
+  const localActive = useLocale();
+  const [activeLanguage, setActiveLanguage] = useState(localActive);
 
-  const handleClick = (button: any) => {
-    setActiveButton(button);
+  const onSelectLanguage = (language: string) => {
+    startTransition(() => {
+      setActiveLanguage(language);
+      router.replace(`/${language}`);
+    });
   };
 
   return (
@@ -24,18 +32,23 @@ export default function Header() {
 
         <div className="flex gap-1 h-fit">
           <button
+            defaultValue={localActive}
             className={`font-bold ${
-              activeButton === "NL" ? "font-bold" : "font-normal"
+              activeLanguage === "nl" ? "font-bold" : "font-normal"
             }`}
-            onClick={() => handleClick("NL")}>
+            onClick={() => {
+              onSelectLanguage("nl");
+            }}>
             NL
           </button>
           <span>|</span>
           <button
             className={`font-bold ${
-              activeButton === "EN" ? "font-bold" : "font-normal"
+              activeLanguage === "en" ? "font-bold" : "font-normal"
             }`}
-            onClick={() => handleClick("EN")}>
+            onClick={() => {
+              onSelectLanguage("en");
+            }}>
             EN
           </button>
         </div>

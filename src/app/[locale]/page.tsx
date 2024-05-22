@@ -2,8 +2,12 @@ import Button from "@/components/Button";
 import ScrollToLink from "@/components/ScrollToLink";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const landing = useTranslations("Index");
+
+  console.log();
   return (
     <main>
       <div className="relative flex justify-center items-end h-[35rem] md:h-screen">
@@ -28,7 +32,7 @@ export default function Home() {
 
         <div className="relative max-w-xs md:max-w-xl flex mb-32 md:mb-60 flex-col items-center gap-10">
           <h1 className="text-white text-4xl md:text-6xl text-center">
-            <b>Welkom bij GRIP!</b> START je inschrijving.
+            <b>{landing("titleBold")}</b> {landing("titleMedium")}
           </h1>
           <div className="w-48">
             <Button

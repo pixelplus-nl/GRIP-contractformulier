@@ -5,6 +5,7 @@ import Warning from "./RulesWarning";
 import Footer from "./Footer";
 import SendInButton from "./SendInButton";
 import { RxCross1 } from "react-icons/rx";
+import submitForm from "@/lib/submitForm";
 
 const variants = {
   open: {
@@ -30,6 +31,32 @@ export default function SlideFour() {
 
       setUrl(dataUrl);
     }
+  };
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+    const formData: any = new FormData(event.target);
+
+    // Convert the participants file to base64
+    const participants = formData.get("participants");
+
+    if (participants.size > 0) {
+      const reader = new FileReader();
+
+      const base64 = await new Promise((resolve, reject) => {
+        reader.onloadend = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(participants);
+      });
+
+      formData.set("participants", base64);
+    }
+
+    // Convert the signature to base64
+    const signature = sign.getTrimmedCanvas().toDataURL("image/png");
+    formData.set("signature", signature);
+
+    submitForm(formData);
   };
 
   useEffect(() => {
@@ -70,7 +97,7 @@ export default function SlideFour() {
 
         <form
           className="px-5 md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12"
-          onSubmit={(event) => event.preventDefault()}>
+          onSubmit={handleSubmit}>
           <h1 className="text-5xl font-bold">Persoonlijke gegevens</h1>
           <div className="mb-5">
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8">
