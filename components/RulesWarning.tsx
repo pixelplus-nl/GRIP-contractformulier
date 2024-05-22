@@ -6,7 +6,7 @@ export default function RulesWarning() {
   return (
     <section className="relative md:w-[100%] h-fit overflow-hidden text-white px-5 pt-10 pb-20 w-full">
       <Image
-        src="warning.svg"
+        src="/warning.svg"
         fill
         priority
         sizes="100vw"
