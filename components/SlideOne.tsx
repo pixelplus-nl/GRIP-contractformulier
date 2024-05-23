@@ -3,7 +3,7 @@ import NextButton from "./NextButton";
 import React from "react";
 import Footer from "./Footer";
 import RulesWarning from "./RulesWarning";
-import { useTranslations } from "next-intl";
+import { useTranslations, useMessages } from "next-intl";
 
 export default function SlideOne(props: any) {
   const [fallZonesChecked, setFallZonesChecked] = useState(false);
@@ -24,8 +24,9 @@ export default function SlideOne(props: any) {
     !emergencyChecked;
 
   const t = useTranslations("SlideOne");
-  console.log(t("listFirst"));
-  
+
+  const messages = useMessages();
+  const listFirst = messages.SlideOne.listFirst;
 
   return (
     <>
@@ -42,10 +43,9 @@ export default function SlideOne(props: any) {
               Basisveiligheid en omgangsvormen
             </h2>
             <ul className="list-disc px-5 mt-3">
-              {/* {t("listFirst").map((item: any) => {
-                console.log(item);
-                return <></>;
-              })} */}
+              {Object.keys(listFirst).map((key: any) => {
+                return <li key={key}>{listFirst[key]}</li>;
+              })}
             </ul>
 
             <div className="mt-3 flex gap-2 items-center">
