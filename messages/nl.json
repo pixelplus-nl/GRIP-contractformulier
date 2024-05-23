@@ -18,15 +18,15 @@
   "SlideOne": {
     "title": "Algemene voorwaarden",
     "subTitleFirst": "Basisveiligheid en omgangsvormen",
-    "listFirst": {
-      "1": "Zorg voor je eigen veiligheid en veroorzaak geen onveilige situaties voor anderen.",
-      "2": "Draag geen sieraden.",
-      "3": "Verlaat de mat direct na elke klim. De mat markeert de valzone, zorg dat de valzone zoveel mogelijk vrij is.",
-      "4": "Boulder alleen op schone klimschoenen. Boulderen op ander schoeisel, blote voeten of sokken is niet toegestaan.",
-      "5": "Sporten met ontbloot bovenlichaam is niet toegestaan.",
-      "6": "Boulderen onder invloed van alcohol en/of drugs is niet toegestaan.",
-      "7": "Gebruik glaswerk of serviesgoed alleen in het café en op het terras.",
-      "8": "Hulphonden zijn welkom, overige huisdieren niet."
-    }
+    "listFirst": [
+      "Zorg voor je eigen veiligheid en veroorzaak geen onveilige situaties voor anderen.",
+      "Draag geen sieraden.",
+      "Verlaat de mat direct na elke klim. De mat markeert de valzone, zorg dat de valzone zoveel mogelijk vrij is.",
+      "Boulder alleen op schone klimschoenen. Boulderen op ander schoeisel, blote voeten of sokken is niet toegestaan.",
+      "Sporten met ontbloot bovenlichaam is niet toegestaan.",
+      "Boulderen onder invloed van alcohol en/of drugs is niet toegestaan.",
+      "Gebruik glaswerk of serviesgoed alleen in het café en op het terras.",
+      "Hulphonden zijn welkom, overige huisdieren niet."
+    ]
   }
 }

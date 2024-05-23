@@ -43,8 +43,8 @@ export default function SlideOne(props: any) {
               Basisveiligheid en omgangsvormen
             </h2>
             <ul className="list-disc px-5 mt-3">
-              {Object.keys(listFirst).map((key: any) => {
-                return <li key={key}>{listFirst[key]}</li>;
+              {listFirst.map((item: any, key: any) => {
+                return <li key={key}>{item}</li>;
               })}
             </ul>
 
