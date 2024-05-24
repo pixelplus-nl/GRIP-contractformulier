@@ -50,13 +50,16 @@ export default function SlideFour() {
       });
 
       formData.set("participants", base64);
+    } else {
+      formData.delete("participants");
     }
 
     // Convert the signature to base64
     const signature = sign.getTrimmedCanvas().toDataURL("image/png");
     formData.set("signature", signature);
 
-    submitForm(formData);
+    const success = await submitForm(formData);
+    console.log(success);
   };
 
   useEffect(() => {
@@ -349,7 +352,7 @@ export default function SlideFour() {
                       className=""
                       name="participants"
                       type="file"
-                      accept="application/pdf,application/vnd.ms-excel"
+                      accept="application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                     />
                   </div>
                 </motion.div>
