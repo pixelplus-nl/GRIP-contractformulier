@@ -13,10 +13,12 @@ import SlideOne from "@/components/SlideOne";
 import SlideTwo from "@/components/SlideTwo";
 import SlideFour from "@/components/SlideFour";
 import SlideThree from "@/components/SlideThree";
+import ErrorModal from "./ErrorModal";
 
 export default function WizardContent() {
   const sliderRef = useRef<any | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [errorModal, setErrorModal] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [heightClassName, setHeightClassName] = useState("");
   const [isMobile, setIsMobile] = useState(
@@ -82,44 +84,47 @@ export default function WizardContent() {
   }, [activeIndex, openModal]);
 
   return (
-    <Swiper
-      effect={"creative"}
-      creativeEffect={{
-        prev: {
-          shadow: true,
-          translate: ["-20%", 0, -1],
-        },
-        next: {
-          shadow: true,
-          translate: ["100%", 0, 0],
-        },
-      }}
-      grabCursor={true}
-      ref={sliderRef}
-      allowTouchMove={false}
-      autoHeight={true}
-      onSlideChange={handleSlideChange}
-      speed={750}
-      loop={false}
-      pagination={pagination}
-      modules={[EffectCreative, Pagination, Navigation]}
-      className={`mySwiper3 ${heightClassName} `}>
-      <SwiperSlide className="!bg-white">
-        <SlideOne handleNext={handleNext} />
-      </SwiperSlide>
-      <SwiperSlide className="!bg-white">
-        <SlideTwo handleNext={handleNext} />
-      </SwiperSlide>
-      <SwiperSlide className="!bg-white ">
-        <SlideThree
-          openModal={openModal}
-          setOpenModal={setOpenModal}
-          handleNext={handleNext}
-        />
-      </SwiperSlide>
-      <SwiperSlide className="!bg-white">
-        <SlideFour />
-      </SwiperSlide>
-    </Swiper>
+    <>
+      {errorModal && <ErrorModal setErrorModal={setErrorModal} />}
+      <Swiper
+        effect={"creative"}
+        creativeEffect={{
+          prev: {
+            shadow: true,
+            translate: ["-20%", 0, -1],
+          },
+          next: {
+            shadow: true,
+            translate: ["100%", 0, 0],
+          },
+        }}
+        grabCursor={true}
+        ref={sliderRef}
+        allowTouchMove={false}
+        autoHeight={true}
+        onSlideChange={handleSlideChange}
+        speed={750}
+        loop={false}
+        pagination={pagination}
+        modules={[EffectCreative, Pagination, Navigation]}
+        className={`mySwiper3 ${heightClassName} `}>
+        <SwiperSlide className="!bg-white">
+          <SlideOne handleNext={handleNext} />
+        </SwiperSlide>
+        <SwiperSlide className="!bg-white">
+          <SlideTwo handleNext={handleNext} />
+        </SwiperSlide>
+        <SwiperSlide className="!bg-white ">
+          <SlideThree
+            openModal={openModal}
+            setOpenModal={setOpenModal}
+            handleNext={handleNext}
+          />
+        </SwiperSlide>
+        <SwiperSlide className="!bg-white">
+          <SlideFour />
+        </SwiperSlide>
+      </Swiper>
+    </>
   );
 }
