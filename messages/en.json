@@ -81,7 +81,7 @@
     "middleName": "Middle Initial",
     "lastName": "Last Name",
     "dateOfBirth": "Date of Birth",
-    "dateOfBirthPlaceHolder" : "dd-mm-yyyy",
+    "dateOfBirthPlaceHolder": "dd-mm-yyyy",
     "address": "Address",
     "street": "Street",
     "houseNumber": "House Number",
@@ -101,5 +101,8 @@
     "signatureAgreement": "Signature for agreement",
     "erase": "Erase",
     "nextButton": "Submit"
+  },
+  "errorModal": {
+    "title": "Attention!"
   }
 }

@@ -101,5 +101,8 @@
     "signatureAgreement": "Handtekening voor akkoord",
     "erase": "Wissen",
     "nextButton": "Definitief insturen"
+  },
+  "errorModal": {
+    "title": "Let op!"
   }
 }
