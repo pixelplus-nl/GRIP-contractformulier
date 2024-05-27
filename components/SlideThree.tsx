@@ -51,14 +51,17 @@ export default function SlideThree(props: any) {
               }}>
               {t("readMoreButton")} ›
             </button>
-            <div className="mt-5 flex gap-2 items-center">
+            <div className="mt-5 flex hover:opacity-50 w-fit gap-2 items-center">
               <input
                 onChange={(e) => handleCheckboxChange(e, settandChecked)}
                 id="tandcCheck"
                 name="tandcCheck"
                 type="checkbox"
+                className="cursor-pointer"
               />
-              <label htmlFor="tandcCheck" className="font-bold text-lg">
+              <label
+                htmlFor="tandcCheck"
+                className="font-bold cursor-pointer text-lg">
                 Ik ga akkoord
               </label>
             </div>

@@ -303,32 +303,33 @@ export default function SlideFour() {
                   {t("subTitleSecond")}
                 </p>
                 <fieldset className="mt-2 flex gap-5">
-                  <div className="flex gap-2 items-center">
+                  <div className="flex gap-2 hover:opacity-50 w-fit items-center">
                     <input
                       type="radio"
                       name="accompanist"
                       id="no"
-                      className=""
+                      className="cursor-pointer"
                       onClick={() => setOpenModal(false)}
                     />
                     <label
                       htmlFor="no"
-                      className="block text-lg font-medium leading-6 text-gray-900">
+                      className="block text-lg cursor-pointer font-medium leading-6 text-gray-900">
                       {t("no")}
                     </label>
                   </div>
 
                   <div>
-                    <div className="flex gap-2 items-center">
+                    <div className="flex gap-2 hover:opacity-50 w-fit items-center">
                       <input
                         type="radio"
                         name="accompanist"
                         id="yes"
+                        className="cursor-pointer"
                         onClick={() => setOpenModal(true)}
                       />
                       <label
                         htmlFor="yes"
-                        className="block text-lg font-medium leading-6 text-gray-900">
+                        className="block text-lg cursor-pointer font-medium leading-6 text-gray-900">
                         {t("yes")}
                       </label>
                     </div>
