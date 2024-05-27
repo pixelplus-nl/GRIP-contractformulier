@@ -18,15 +18,88 @@
   "SlideOne": {
     "title": "Algemene voorwaarden",
     "subTitleFirst": "Basisveiligheid en omgangsvormen",
-    "listFirst": {
-      "1": "Zorg voor je eigen veiligheid en veroorzaak geen onveilige situaties voor anderen.",
-      "2": "Draag geen sieraden.",
-      "3": "Verlaat de mat direct na elke klim. De mat markeert de valzone, zorg dat de valzone zoveel mogelijk vrij is.",
-      "4": "Boulder alleen op schone klimschoenen. Boulderen op ander schoeisel, blote voeten of sokken is niet toegestaan.",
-      "5": "Sporten met ontbloot bovenlichaam is niet toegestaan.",
-      "6": "Boulderen onder invloed van alcohol en/of drugs is niet toegestaan.",
-      "7": "Gebruik glaswerk of serviesgoed alleen in het café en op het terras.",
-      "8": "Hulphonden zijn welkom, overige huisdieren niet."
-    }
+    "listFirst": [
+      "Zorg voor je eigen veiligheid en veroorzaak geen onveilige situaties voor anderen.",
+      "Draag geen sieraden.",
+      "Verlaat de mat direct na elke klim. De mat markeert de valzone, zorg dat de valzone zoveel mogelijk vrij is.",
+      "Boulder alleen op schone klimschoenen. Boulderen op ander schoeisel, blote voeten of sokken is niet toegestaan.",
+      "Sporten met ontbloot bovenlichaam is niet toegestaan.",
+      "Boulderen onder invloed van alcohol en/of drugs is niet toegestaan.",
+      "Gebruik glaswerk of serviesgoed alleen in het café en op het terras.",
+      "Hulphonden zijn welkom, overige huisdieren niet."
+    ],
+    "subTitleSecond": "Valzones",
+    "listSecond": [
+      "Klim niet onder iemand door. Klim niet boven iemand langs. Als één van beide valt, kunnen jullie allebei letsel oplopen. Hou tijdens het klimmen altijd minimaal 1,50m afstand tot anderen.",
+      "Loop niet door het gebied waar iemand die momenteel klimt zou kunnen vallen. Wacht tot de andere klimmer weer beneden is. Wees je constant bewust van wat er boven je gebeurt terwijl je over de mat loopt.",
+      "Als je iemand iets gevaarlijks ziet doen, attendeer diegene erop."
+    ],
+    "subTitleThird": "Boulder etiquette",
+    "listThird": [
+      "Klim om de beurt op plekken waar ook anderen boulderen. Wie als eerste aan de boulder begint, heeft voorrang in de wand.",
+      "Wees altijd hoffelijk tegenover andere klimmers.",
+      "Oordeel niet te snel over anderen – ga uit van goede intenties.",
+      "Respecteer elkaars grenzen. Vraag bijvoorbeeld toestemming voordat je beta verstrekt.",
+      "GRIP is een speciale plek. Help mee dit zo te houden door nieuwkomers te verwelkomen en aan te moedigen."
+    ],
+    "subTitleFourth": "Als je minderjarig bent of klimt met een minderjarige",
+    "listFourth": [
+      "Zelfstandig boulderen is toegestaan vanaf 12 jaar. Voor elke vorm van zelfstandig boulderen hanteert GRIP competentie- en toelatingseisen, waaronder het volgen van de instructie en ondertekening van deze overeenkomst.",
+      "Kinderen van 11 jaar en jonger moeten worden begeleid door een volwassene. Per twee kinderen is één volwassene nodig.",
+      "Niet rondrennen in de boulderhal.",
+      "Apparatuur in de trainingsruimten is gevaarlijk bij onjuist gebruik. Gebruik het goed of gebruik het niet.",
+      "Onder 18 jaar is toestemming voor gebruik van de trainingsruimte nodig van GRIP."
+    ],
+    "subTitleFifth": "Noodprocedure",
+    "listFifth": [
+      "Als u of iemand anders letsel oploopt, benader dan onmiddellijk een medewerker."
+    ],
+    "checkButton": "Ik ga akkoord",
+    "nextButton": "Volgende stap"
+  },
+  "SlideTwo": {
+    "title": "Vitaliteit",
+    "listFirst": [
+      "Ik verklaar hierbij dat ik, of het minderjarige bezoekende kind voor wie ik deze overeenkomst onderteken, in goede gezondheid verkeer en geen mentale of fysieke beperking, verwonding, ziekte of kwaal heb waardoor ik niet deel kan nemen aan Boulderhalactiviteiten. Ik begrijp dat als mijn, of dat van het minderjarige bezoekende kind, mentale of fysieke toestand verandert zodanig dat ik, of het minderjarige bezoekende kind, niet meer in staat is deel te nemen aan activiteiten, ik of het minderjarige Bezoekende Kind, verplicht ben te stoppen met de activiteiten.",
+      "Aanwijzingen van GRIP medewerkers volg ik te allen tijde op.",
+      "GRIP is niet aansprakelijk wanneer ik of het minderjarige kind niet beschikt over een toereikende conditie of gezondheid of wanneer ik of het minderjarige kind niet de aanwijzingen van GRIP medewerkers opvolg."
+    ],
+    "checkButton": "Ik ga akkoord",
+    "nextButton": "Volgende stap"
+  },
+  "SlideThree": {
+    "title": "Algemene voorwaarden",
+    "paragraph": "Alle bezoekers die gebruik maken van de aangeboden sportfaciliteiten van GRIP Boulderhal met een leeftijd van 16 jaar en ouder zijn verplicht deze algemene voorwaarden te ondertekenen. “Bezoeker“ zoals gebruikt in deze overeenkomst verwijst naar personen die GRIP Boulderhal (“GRIP“) bezoeken, als zelfstandig boulderaar, deelnemer aan klim- of andere activiteiten of als begeleider. Als de Bezoeker minderjarig is (“Minderjarige Bezoeker“), moet ten minste één ouder of wettelijk aangestelde voogd (ouder en voogd worden in dit document “Ouder“ genoemd) ondertekenen, als bewijs van hun instemming met deze algemene voorwaarden, voor zichzelf en, voor zover maximaal toegestaan door de Nederlandse wet, namens de minderjarige bezoeker die zijn of haar kind of voogdijkind is (gezamenlijk “minderjarige bezoeker“). Met het oog op het gebruik van de diensten en faciliteiten van de Boulderhal, erken, begrijp en stem ik, een volwassen bezoeker of ouder van een minderjarig bezoekend kind.",
+    "readMoreButton": "Lees verder",
+    "checkButton": "Ik ga akkoord",
+    "nextButton": "Volgende stap"
+  },
+  "SlideFour": {
+    "title": "Persoonlijke gegevens",
+    "name": "Naam",
+    "firstName": "Voornaam",
+    "middleName": "Tussenv.",
+    "lastName": "Achternaam",
+    "dateOfBirth": "Geboortedatum",
+    "dateOfBirthPlaceHolder": "dd-mm-jjjj",
+    "address": "Adres",
+    "street": "Straat",
+    "houseNumber": "Huisnr.",
+    "zipCode": "Postcode",
+    "residence": "Woonplaats",
+    "country": "Land",
+    "contact": "Contactgegevens",
+    "email": "voorbeeld@email.nl",
+    "phoneNumber": "+31 0 00 00 00 00",
+    "subTitleSecond": "Bent u begeleider van een groep leerlingen of studenten?",
+    "no": "No",
+    "yes": "Yes",
+    "kidsList": "Voeg de namen toe van kinderen die u begeleidt.",
+    "listButton": "Voeg toe",
+    "subTitleThird": "In geval van nood contact opnemen met",
+    "first&lastName": "Voor- en Achternaam",
+    "signatureAgreement": "Handtekening voor akkoord",
+    "erase": "Wissen",
+    "nextButton": "Definitief insturen"
   }
 }

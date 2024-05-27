@@ -15,5 +15,91 @@
     "paragraph": "For your own safety and the safety of other climbers, it is important that everyone knows the rules. Acknowledge each section to indicate that you have read and understood the text and the rules. You only need to register once. If you have been bouldering at Grip before, you do not need to register again. Please note! This is not a reservation.",
     "link": "Reservations can be made via our website.",
     "contact": "Do you have a question? Contact us"
+  },
+  "SlideOne": {
+    "title": "General terms and conditions",
+    "subTitleFirst": "Basic safety and conduct",
+    "listFirst": [
+      "Take care of your own safety and do not create unsafe situations for others.",
+      "Do not wear jewelry.",
+      "Leave the mat immediately after each climb. The mat marks the fall zone, make sure the fall zone is as clear as possible.",
+      "Boulder only in clean climbing shoes. Bouldering in other footwear, bare feet, or socks is not allowed.",
+      "Sporting with a bare upper body is not allowed.",
+      "Bouldering under the influence of alcohol and/or drugs is not allowed.",
+      "Use glassware or tableware only in the café and on the terrace.",
+      "Assistance dogs are welcome, other pets are not."
+    ],
+    "subTitleSecond": "Fall Zones",
+    "listSecond": [
+      "Do not climb underneath someone. Do not climb above someone. If either of you falls, both can get injured. Always maintain at least 1.50m distance from others while climbing.",
+      "Do not walk through the area where someone currently climbing could fall. Wait until the other climber is back down. Always be aware of what is happening above you as you walk on the mat.",
+      "If you see someone doing something dangerous, point it out to them."
+    ],
+    "subTitleThird": "Bouldering Etiquette",
+    "listThird": [
+      "Take turns climbing in areas where others are bouldering. Whoever starts the boulder first has priority on the wall.",
+      "Always be courteous to other climbers.",
+      "Do not judge others too quickly – assume good intentions.",
+      "Respect each other's boundaries. For example, ask for permission before offering beta.",
+      "GRIP is a special place. Help keep it that way by welcoming and encouraging newcomers."
+    ],
+    "subTitleFourth": "If you are a minor or climbing with a minor",
+    "listFourth": [
+      "Independent bouldering is allowed from the age of 12. For any form of independent bouldering, GRIP applies competency and admission requirements, including attending the instruction and signing this agreement.",
+      "Children aged 11 and under must be supervised by an adult. One adult is required for every two children.",
+      "Do not run in the bouldering hall.",
+      "Equipment in the training areas is dangerous if used improperly. Use it correctly or do not use it.",
+      "Under 18 years old requires permission from GRIP to use the training area."
+    ],
+    "subTitleFifth": "Emergency Procedure",
+    "listFifth": [
+      "If you or someone else gets injured, immediately approach a staff member."
+    ],
+    "checkButton": "I agree",
+    "nextButton": "Next step"
+  },
+  "SlideTwo": {
+    "title": "Validity",
+    "listFirst": [
+      "I hereby declare that I, or the minor visiting child for whom I am signing this agreement, am in good health and have no mental or physical limitations, injuries, illnesses, or conditions that would prevent participation in bouldering activities. I understand that if my mental or physical condition, or that of the minor visiting child, changes such that I or the minor visiting child can no longer participate in activities, I or the minor visiting child am obliged to cease participation in the activities.",
+      "I will follow the instructions of GRIP staff at all times.",
+      "GRIP is not liable if I or the minor child do not have adequate fitness or health, or if I or the minor child do not follow the instructions of GRIP staff."
+    ],
+    "nextButton": "Next step"
+  },
+  "SlideThree": {
+    "title": "General terms and conditions",
+    "paragraph": "All visitors aged 16 and older who make use of the sports facilities offered by GRIP Boulderhal are required to sign these general terms and conditions. “Visitor“ as used in this agreement refers to individuals who visit GRIP Boulderhal (“GRIP“), whether as independent boulderers, participants in climbing or other activities, or as chaperones. If the Visitor is a minor (“Minor Visitor“), at least one parent or legally appointed guardian (referred to as “Parent“ in this document) must sign as evidence of their agreement to these general terms and conditions, on behalf of themselves and, to the extent permitted by Dutch law, on behalf of the minor visitor who is their child or ward (collectively “minor visitor). In consideration of the use of the services and facilities of the Boulderhal, I, an adult visitor or parent of a minor visiting child, acknowledge, understand, and agree.",
+    "readMoreButton": "Read more",
+    "checkButton": "I agree",
+    "nextButton": "Next step"
+  },
+  "SlideFour": {
+    "title": "Personal Information",
+    "name": "Name",
+    "firstName": "First Name",
+    "middleName": "Middle Initial",
+    "lastName": "Last Name",
+    "dateOfBirth": "Date of Birth",
+    "dateOfBirthPlaceHolder" : "dd-mm-yyyy",
+    "address": "Address",
+    "street": "Street",
+    "houseNumber": "House Number",
+    "zipCode": "Zip Code",
+    "residence": "Place of Residence",
+    "country": "Country",
+    "contact": "Contact Information",
+    "email": "example@email.com",
+    "phoneNumber": "+31 0 00 00 00 00",
+    "subTitleSecond": "Are you a supervisor of a group of students?",
+    "no": "No",
+    "yes": "Yes",
+    "kidsList": "Add the names of children you are supervising.",
+    "listButton": "Add",
+    "subTitleThird": "In case of emergency, contact",
+    "first&lastName": "First and Last Name",
+    "signatureAgreement": "Signature for agreement",
+    "erase": "Erase",
+    "nextButton": "Submit"
   }
 }

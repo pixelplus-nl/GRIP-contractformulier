@@ -3,6 +3,7 @@ import { useState } from "react";
 import NextButton from "./NextButton";
 import Warning from "./RulesWarning";
 import Footer from "./Footer";
+import { useTranslations } from "next-intl";
 
 const variants = {
   closed: {
@@ -20,6 +21,8 @@ export default function SlideThree(props: any) {
     setCheckedState(event.target.checked);
   };
 
+  const t = useTranslations("SlideThree");
+
   const isButtonDisabled = !tandcChecked;
   return (
     <>
@@ -29,7 +32,7 @@ export default function SlideThree(props: any) {
         </div>
 
         <form className=" px-5 md:px-0 md:mt-0 md:w-7/12 h-full bg-white">
-          <h1 className="text-5xl font-bold">Algemene voorwaarden</h1>
+          <h1 className="text-5xl font-bold">{t("title")}</h1>
 
           <motion.p
             initial={"closed"}
@@ -37,23 +40,7 @@ export default function SlideThree(props: any) {
             animate={props.openModal ? "open" : "closed"}
             transition={{ duration: 1 }}
             className="overflow-hidden mt-3">
-            Alle bezoekers die gebruik maken van de aangeboden sportfaciliteiten
-            van GRIP Boulderhal met een leeftijd van 16 jaar en ouder zijn
-            verplicht deze algemene voorwaarden te ondertekenen.
-            &ldquo;Bezoeker&ldquo; zoals gebruikt in deze overeenkomst verwijst
-            naar personen die GRIP Boulderhal (&ldquo;GRIP&ldquo;) bezoeken, als
-            zelfstandig boulderaar, deelnemer aan klim- of andere activiteiten
-            of als begeleider. Als de Bezoeker minderjarig is
-            (&ldquo;Minderjarige Bezoeker&ldquo;), moet ten minste één ouder of
-            wettelijk aangestelde voogd (ouder en voogd worden in dit document
-            &ldquo;Ouder&ldquo; genoemd) ondertekenen, als bewijs van hun
-            instemming met deze algemene voorwaarden, voor zichzelf en, voor
-            zover maximaal toegestaan door de Nederlandse wet, namens de
-            minderjarige bezoeker die zijn of haar kind of voogdijkind is
-            (gezamenlijk &ldquo;minderjarige bezoeker&ldquo;). Met het oog op
-            het gebruik van de diensten en faciliteiten van de Boulderhal,
-            erken, begrijp en stem ik, een volwassen bezoeker of ouder van een
-            minderjarig bezoekend kind
+            {t("paragraph")}
           </motion.p>
           <div className="bg-white relative">
             <button
@@ -62,7 +49,7 @@ export default function SlideThree(props: any) {
                 e.preventDefault();
                 props.setOpenModal(true);
               }}>
-              Lees verder ›
+              {t("readMoreButton")} ›
             </button>
             <div className="mt-5 flex gap-2 items-center">
               <input
@@ -80,7 +67,7 @@ export default function SlideThree(props: any) {
             <NextButton
               handleNext={props.handleNext}
               isButtonDisabled={isButtonDisabled}
-              buttonText="Volgende stap ›"
+              buttonText={`${t("nextButton")} ›`}
             />
           </div>
         </form>

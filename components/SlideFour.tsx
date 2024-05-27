@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import SendInButton from "./SendInButton";
 import { RxCross1 } from "react-icons/rx";
 import submitForm from "@/lib/submitForm";
+import { useTranslations } from "next-intl";
 
 const variants = {
   open: {
@@ -50,13 +51,16 @@ export default function SlideFour() {
       });
 
       formData.set("participants", base64);
+    } else {
+      formData.delete("participants");
     }
 
     // Convert the signature to base64
     const signature = sign.getTrimmedCanvas().toDataURL("image/png");
     formData.set("signature", signature);
 
-    submitForm(formData);
+    const success = await submitForm(formData);
+    console.log(success);
   };
 
   useEffect(() => {
@@ -88,6 +92,8 @@ export default function SlideFour() {
     }
   };
 
+  const t = useTranslations("SlideFour");
+
   return (
     <>
       <div className="md:flex mb-12 md:w-full md:px-5 gap-5 max-w-6xl lg:justify-between xl:px-0 mx-auto lg:gap-10">
@@ -98,11 +104,11 @@ export default function SlideFour() {
         <form
           className="px-5 md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12"
           onSubmit={handleSubmit}>
-          <h1 className="text-5xl font-bold">Persoonlijke gegevens</h1>
+          <h1 className="text-5xl font-bold">{t("title")}</h1>
           <div className="mb-5">
-            <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8">
+            <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8">
               <div>
-                <p className="text-xl text-black font-semibold">Naam</p>
+                <p className="text-xl text-black font-semibold">{t("name")}</p>
                 <div className="flex gap-1">
                   <div className="sm:w-full">
                     <label
@@ -113,7 +119,7 @@ export default function SlideFour() {
                         type="text"
                         name="first-name"
                         id="first-name"
-                        placeholder="Voornaam"
+                        placeholder={t("firstName")}
                         autoComplete="given-name"
                         className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
@@ -128,7 +134,7 @@ export default function SlideFour() {
                         type="text"
                         name="middle-name"
                         id="middle-name"
-                        placeholder="Tussenv."
+                        placeholder={t("middleName")}
                         autoComplete="middle-name"
                         className="block px-3  w-20 sm:w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
@@ -143,7 +149,7 @@ export default function SlideFour() {
                         type="text"
                         name="last-name"
                         id="last-name"
-                        placeholder="Achternaam"
+                        placeholder={t("lastName")}
                         autoComplete="family-name"
                         className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
@@ -156,14 +162,14 @@ export default function SlideFour() {
                 <label
                   htmlFor="date-of-birth"
                   className="text-xl text-black font-semibold">
-                  Geboortedatum
+                  {t("dateOfBirth")}
                 </label>
                 <div className="mt-2">
                   <input
                     id="date-of-birth"
                     name="date-of-birth"
                     type="date-of-birth"
-                    placeholder="dd-mm-jjjj"
+                    placeholder={t("dateOfBirthPlaceHolder")}
                     autoComplete="date-of-birth"
                     className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                   />
@@ -171,7 +177,9 @@ export default function SlideFour() {
               </div>
 
               <div>
-                <p className="text-xl text-black font-semibold">Adres</p>
+                <p className="text-xl text-black font-semibold">
+                  {t("address")}
+                </p>
                 <div className="flex gap-1">
                   <div className="w-full">
                     <label
@@ -181,7 +189,7 @@ export default function SlideFour() {
                       <input
                         type="text"
                         name="street-address"
-                        placeholder="Straat"
+                        placeholder={t("street")}
                         id="street-address"
                         autoComplete="street-address"
                         className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
@@ -197,7 +205,7 @@ export default function SlideFour() {
                         type="text"
                         name="house-number"
                         id="house-number"
-                        placeholder="Huisnr."
+                        placeholder={t("houseNumber")}
                         autoComplete="house-number"
                         className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
@@ -214,7 +222,7 @@ export default function SlideFour() {
                       <input
                         type="text"
                         name="postal-code"
-                        placeholder="Postcode"
+                        placeholder={t("zipCode")}
                         id="postal-code"
                         autoComplete="postal-code"
                         className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
@@ -230,7 +238,7 @@ export default function SlideFour() {
                         type="text"
                         name="city"
                         id="city"
-                        placeholder="Woonplaats"
+                        placeholder={t("residence")}
                         autoComplete="address-level2"
                         className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
@@ -245,7 +253,7 @@ export default function SlideFour() {
                         type="text"
                         name="country"
                         id="country"
-                        placeholder="Land"
+                        placeholder={t("country")}
                         autoComplete="country"
                         className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
@@ -256,7 +264,7 @@ export default function SlideFour() {
 
               <div>
                 <p className="text-xl text-black font-semibold">
-                  Contactgegevens
+                  {t("contact")}
                 </p>
                 <div>
                   <label
@@ -266,7 +274,7 @@ export default function SlideFour() {
                     <input
                       type="text"
                       name="email"
-                      placeholder="voorbeeld@email.nl"
+                      placeholder={t("email")}
                       id="email"
                       autoComplete="email"
                       className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
@@ -281,7 +289,7 @@ export default function SlideFour() {
                     <input
                       type="text"
                       name="tel"
-                      placeholder="+31 0 00 00 00 00"
+                      placeholder={t("phoneNumber")}
                       id="tel"
                       autoComplete="tel"
                       className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
@@ -292,14 +300,13 @@ export default function SlideFour() {
 
               <div>
                 <p className="text-xl text-black font-semibold">
-                  Bent u begeleider van een groep leerlingen of studenten?
+                  {t("subTitleSecond")}
                 </p>
                 <fieldset className="mt-2 flex gap-5">
                   <div className="flex gap-2 items-center">
                     <input
                       type="radio"
                       name="accompanist"
-                      placeholder="voorbeeld@email.nl"
                       id="no"
                       className=""
                       onClick={() => setOpenModal(false)}
@@ -307,7 +314,7 @@ export default function SlideFour() {
                     <label
                       htmlFor="no"
                       className="block text-lg font-medium leading-6 text-gray-900">
-                      Nee
+                      {t("no")}
                     </label>
                   </div>
 
@@ -316,14 +323,13 @@ export default function SlideFour() {
                       <input
                         type="radio"
                         name="accompanist"
-                        placeholder="+31 0 00 00 00 00"
                         id="yes"
                         onClick={() => setOpenModal(true)}
                       />
                       <label
                         htmlFor="yes"
                         className="block text-lg font-medium leading-6 text-gray-900">
-                        Ja
+                        {t("yes")}
                       </label>
                     </div>
                   </div>
@@ -335,21 +341,19 @@ export default function SlideFour() {
                   animate={openModal ? "open" : "closed"}
                   transition={{ duration: 1 }}
                   className="overflow-hidden">
-                  <p className="pt-5">
-                    Voeg de namen toe van kinderen die u begeleidt.
-                  </p>
+                  <p className="pt-5">{t("kidsList")}</p>
                   <div className="mt-3 flex gap-2 items-center">
                     <label
                       className="bg-[#6AACB8] hover:bg-white hover:text-[#6AACBB] border-2 border-[#6AACBB] cursor-pointer transition-all w-fit px-2 py-1 text-white font-semibold"
                       htmlFor="participants">
-                      Voeg toe
+                      {t("listButton")}
                     </label>
                     <input
                       id="participants"
                       className=""
                       name="participants"
                       type="file"
-                      accept="application/pdf,application/vnd.ms-excel"
+                      accept="application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                     />
                   </div>
                 </motion.div>
@@ -357,7 +361,7 @@ export default function SlideFour() {
 
               <div>
                 <p className="text-xl text-black font-semibold">
-                  In geval van nood contact opnemen met
+                  {t("subTitleThird")}
                 </p>
                 <div>
                   <label
@@ -367,7 +371,7 @@ export default function SlideFour() {
                     <input
                       type="text"
                       name="emergency-name"
-                      placeholder="Voor- en achternaam"
+                      placeholder={t("first&lastName")}
                       id="emergency-name"
                       autoComplete="name"
                       className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
@@ -382,7 +386,7 @@ export default function SlideFour() {
                     <input
                       type="text"
                       name="emergency-tel"
-                      placeholder="+31 0 00 00 00 00"
+                      placeholder={t("phoneNumber")}
                       id="emergency-tel"
                       autoComplete="tel"
                       className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
@@ -395,12 +399,12 @@ export default function SlideFour() {
 
               <div>
                 <div className="flex items-center justify-between">
-                  <p>Handtekening voor akkoord</p>
+                  <p>{t("signatureAgreement")}</p>
                   <button
                     className="text-[#C10000] flex cursor-pointer items-center gap-1 px-3 py-2"
                     onClick={handleClear}>
                     <RxCross1 color="#C10000" />
-                    Wissen
+                    {t("erase")}
                   </button>
                 </div>
                 <div className="w-full rounded-xl h-72 border-2 border-gray-200">
@@ -426,7 +430,7 @@ export default function SlideFour() {
           </div>
           <SendInButton
             handleNext={handleGenerate}
-            buttonText="Definitief insturen ›"
+            buttonText={`${t("nextButton")} ›`}
             isButtonDisabled={isButtonDisabled}
           />
         </form>
