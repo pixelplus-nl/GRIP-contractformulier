@@ -40,14 +40,17 @@ export default function SlideTwo(props: any) {
             })}
           </ul>
 
-          <div className="mt-3 mb-10 flex gap-2 items-center">
+          <div className="mt-3 mb-10 hover:opacity-50 w-fit flex gap-2 items-center">
             <input
               onChange={(e) => handleCheckboxChange(e, setBaseChecked)}
               id="secBaseCheck"
               name="secBaseCheck"
               type="checkbox"
+              className="cursor-pointer"
             />
-            <label htmlFor="secBaseCheck" className="font-bold text-lg">
+            <label
+              htmlFor="secBaseCheck"
+              className="font-bold cursor-pointer text-lg">
               {t("checkButton")}
             </label>
           </div>

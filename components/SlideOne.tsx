@@ -60,14 +60,17 @@ export default function SlideOne(props: any) {
               })}
             </ul>
 
-            <div className="mt-3 flex gap-2 items-center">
+            <div className="mt-3 flex gap-2 hover:opacity-50 w-fit items-center">
               <input
                 onChange={(e) => handleCheckboxChange(e, setBaseChecked)}
                 id="baseCheck"
                 name="baseCheck"
                 type="checkbox"
+                className="cursor-pointer"
               />
-              <label htmlFor="baseCheck" className="font-bold text-lg">
+              <label
+                htmlFor="baseCheck"
+                className="font-bold cursor-pointer text-lg">
                 {t("checkButton")}
               </label>
             </div>
@@ -83,14 +86,17 @@ export default function SlideOne(props: any) {
               })}
             </ul>
 
-            <div className="mt-3 flex gap-2 items-center">
+            <div className="mt-3 flex gap-2 hover:opacity-50 w-fit   items-center">
               <input
                 onChange={(e) => handleCheckboxChange(e, setFallZonesChecked)}
                 id="fallZonesCheck"
                 name="fallZonesCheck"
                 type="checkbox"
+                className="cursor-pointer"
               />
-              <label htmlFor="fallZonesCheck" className="font-bold text-lg">
+              <label
+                htmlFor="fallZonesCheck"
+                className="font-bold cursor-pointer text-lg">
                 {t("checkButton")}
               </label>
             </div>
@@ -106,14 +112,17 @@ export default function SlideOne(props: any) {
               })}
             </ul>
 
-            <div className="mt-3 flex gap-2 items-center">
+            <div className="mt-3 flex gap-2 hover:opacity-50 w-fit items-center">
               <input
                 id="etiquetteCheck"
                 name="etiquetteCheck"
                 type="checkbox"
+                className="cursor-pointer"
                 onChange={(e) => handleCheckboxChange(e, setEtiquetteChecked)}
               />
-              <label htmlFor="etiquetteCheck" className="font-bold text-lg">
+              <label
+                htmlFor="etiquetteCheck"
+                className="font-bold cursor-pointer text-lg">
                 {t("checkButton")}
               </label>
             </div>
@@ -129,14 +138,17 @@ export default function SlideOne(props: any) {
               })}
             </ul>
 
-            <div className="mt-3 flex gap-2 items-center">
+            <div className="mt-3 flex gap-2 hover:opacity-50 w-fit items-center">
               <input
                 id="minorCheck"
                 name="minorCheck"
                 type="checkbox"
+                className="cursor-pointer"
                 onChange={(e) => handleCheckboxChange(e, setMinorChecked)}
               />
-              <label htmlFor="minorCheck" className="font-bold text-lg">
+              <label
+                htmlFor="minorCheck"
+                className="font-bold cursor-pointer text-lg">
                 {t("checkButton")}
               </label>
             </div>
@@ -152,14 +164,17 @@ export default function SlideOne(props: any) {
               })}
             </ul>
 
-            <div className="mt-3 flex gap-2 items-center">
+            <div className="mt-3 flex gap-2 hover:opacity-50 w-fit items-center">
               <input
                 id="emergencyCheck"
                 name="emergencyCheck"
                 type="checkbox"
+                className="cursor-pointer"
                 onChange={(e) => handleCheckboxChange(e, setEmergencyChecked)}
               />
-              <label htmlFor="emergencyCheck" className="font-bold text-lg">
+              <label
+                htmlFor="emergencyCheck"
+                className="font-bold cursor-pointer text-lg">
                 {t("checkButton")}
               </label>
             </div>
