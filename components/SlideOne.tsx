@@ -3,7 +3,17 @@ import NextButton from "./NextButton";
 import React from "react";
 import Footer from "./Footer";
 import RulesWarning from "./RulesWarning";
-import { useTranslations, useMessages } from "next-intl";
+import { useTranslations, useMessages, AbstractIntlMessages } from "next-intl";
+
+type DetailedMessages = {
+  SlideOne: {
+    listFirst: string[];
+    listSecond: string[];
+    listThird: string[];
+    listFourth: string[];
+    listFifth: string[];
+  };
+} & AbstractIntlMessages;
 
 export default function SlideOne(props: any) {
   const [fallZonesChecked, setFallZonesChecked] = useState(false);
@@ -25,8 +35,12 @@ export default function SlideOne(props: any) {
 
   const t = useTranslations("SlideOne");
 
-  const messages = useMessages();
+  const messages = useMessages() as DetailedMessages;
   const listFirst = messages.SlideOne.listFirst;
+  const listSecond = messages.SlideOne.listSecond;
+  const listThird = messages.SlideOne.listThird;
+  const listFourth = messages.SlideOne.listFourth;
+  const listFifth = messages.SlideOne.listFifth;
 
   return (
     <>
@@ -36,12 +50,10 @@ export default function SlideOne(props: any) {
         </div>
 
         <form className="mt-10 px-5 md:px-0 md:w-7/12  md:mt-0 bg-white">
-          <h1 className="text-5xl font-bold">Algemene voorwaarden</h1>
+          <h1 className="text-5xl font-bold">{t("title")}</h1>
 
           <div className="my-5">
-            <h2 className="text-4xl font-semibold">
-              Basisveiligheid en omgangsvormen
-            </h2>
+            <h2 className="text-4xl font-semibold">{t("subTitleFirst")}</h2>
             <ul className="list-disc px-5 mt-3">
               {listFirst.map((item: any, key: any) => {
                 return <li key={key}>{item}</li>;
@@ -56,7 +68,7 @@ export default function SlideOne(props: any) {
                 type="checkbox"
               />
               <label htmlFor="baseCheck" className="font-bold text-lg">
-                Ik ga akkoord
+                {t("checkButton")}
               </label>
             </div>
           </div>
@@ -64,23 +76,11 @@ export default function SlideOne(props: any) {
           <hr className="my-10" />
 
           <div className="my-5">
-            <h2 className="text-4xl font-semibold">Valzones</h2>
+            <h2 className="text-4xl font-semibold">{t("subTitleSecond")}</h2>
             <ul className="list-disc px-5 mt-3">
-              <li>
-                Klim niet onder iemand door. Klim niet boven iemand langs. Als
-                één van beide valt, kunnen jullie allebei letsel oplopen. Hou
-                tijdens het klimmen altijd minimaal 1,50m afstand tot anderen.
-              </li>
-              <li>
-                Loop niet door het gebied waar iemand die momenteel klimt zou
-                kunnen vallen. Wacht tot de andere klimmer weer beneden is. Wees
-                je constant bewust van wat er boven je gebeurt terwijl je over
-                de mat loopt.
-              </li>
-              <li>
-                Als je iemand iets gevaarlijks ziet doen, attendeer diegene
-                erop.
-              </li>
+              {listSecond.map((item: any, key: any) => {
+                return <li key={key}>{item}</li>;
+              })}
             </ul>
 
             <div className="mt-3 flex gap-2 items-center">
@@ -91,7 +91,7 @@ export default function SlideOne(props: any) {
                 type="checkbox"
               />
               <label htmlFor="fallZonesCheck" className="font-bold text-lg">
-                Ik ga akkoord
+                {t("checkButton")}
               </label>
             </div>
           </div>
@@ -99,24 +99,11 @@ export default function SlideOne(props: any) {
           <hr className="my-10" />
 
           <div className="my-5">
-            <h2 className="text-4xl font-semibold">Boulder etiquette</h2>
+            <h2 className="text-4xl font-semibold">{t("subTitleThird")}</h2>
             <ul className="list-disc px-5 mt-3">
-              <li>
-                Klim om de beurt op plekken waar ook anderen boulderen. Wie als
-                eerste aan de boulder begint, heeft voorrang in de wand.
-              </li>
-              <li>Wees altijd hoffelijk tegenover andere klimmers.</li>
-              <li>
-                Oordeel niet te snel over anderen – ga uit van goede intenties.
-              </li>
-              <li>
-                Respecteer elkaars grenzen. Vraag bijvoorbeeld toestemming
-                voordat je beta verstrekt.
-              </li>
-              <li>
-                GRIP is een speciale plek. Help mee dit zo te houden door
-                nieuwkomers te verwelkomen en aan te moedigen.
-              </li>
+              {listThird.map((item: any, key: any) => {
+                return <li key={key}>{item}</li>;
+              })}
             </ul>
 
             <div className="mt-3 flex gap-2 items-center">
@@ -127,7 +114,7 @@ export default function SlideOne(props: any) {
                 onChange={(e) => handleCheckboxChange(e, setEtiquetteChecked)}
               />
               <label htmlFor="etiquetteCheck" className="font-bold text-lg">
-                Ik ga akkoord
+                {t("checkButton")}
               </label>
             </div>
           </div>
@@ -135,29 +122,11 @@ export default function SlideOne(props: any) {
           <hr className="my-10" />
 
           <div className="my-5">
-            <h2 className="text-4xl font-semibold">
-              Als je minderjarig bent of klimt met een minderjarige
-            </h2>
+            <h2 className="text-4xl font-semibold">{t("subTitleFourth")}</h2>
             <ul className="list-disc px-5 mt-3">
-              <li>
-                Zelfstandig boulderen is toegestaan vanaf 12 jaar. Voor elke
-                vorm van zelfstandig boulderen hanteert GRIP competentie- en
-                toelatingseisen, waaronder het volgen van de instructie en
-                ondertekening van deze overeenkomst.
-              </li>
-              <li>
-                Kinderen van 11 jaar en jonger moeten worden begeleid door een
-                volwassene. Per twee kinderen is één volwassene nodig.
-              </li>
-              <li>Niet rondrennen in de boulderhal.</li>
-              <li>
-                Apparatuur in de trainingsruimten is gevaarlijk bij onjuist
-                gebruik. Gebruik het goed of gebruik het niet.
-              </li>
-              <li>
-                Onder 18 jaar is toestemming voor gebruik van de trainingsruimte
-                nodig van GRIP.
-              </li>
+              {listFourth.map((item: any, key: any) => {
+                return <li key={key}>{item}</li>;
+              })}
             </ul>
 
             <div className="mt-3 flex gap-2 items-center">
@@ -168,7 +137,7 @@ export default function SlideOne(props: any) {
                 onChange={(e) => handleCheckboxChange(e, setMinorChecked)}
               />
               <label htmlFor="minorCheck" className="font-bold text-lg">
-                Ik ga akkoord
+                {t("checkButton")}
               </label>
             </div>
           </div>
@@ -176,12 +145,11 @@ export default function SlideOne(props: any) {
           <hr className="my-10" />
 
           <div className="my-5">
-            <h2 className="text-4xl font-semibold">Noodprocedure</h2>
+            <h2 className="text-4xl font-semibold">{t("subTitleFifth")}</h2>
             <ul className="list-disc px-5 mt-3">
-              <li>
-                Als u of iemand anders letsel oploopt, benader dan onmiddellijk
-                een medewerker
-              </li>
+              {listFifth.map((item: any, key: any) => {
+                return <li key={key}>{item}</li>;
+              })}
             </ul>
 
             <div className="mt-3 flex gap-2 items-center">
@@ -192,7 +160,7 @@ export default function SlideOne(props: any) {
                 onChange={(e) => handleCheckboxChange(e, setEmergencyChecked)}
               />
               <label htmlFor="emergencyCheck" className="font-bold text-lg">
-                Ik ga akkoord
+                {t("checkButton")}
               </label>
             </div>
           </div>
@@ -201,7 +169,7 @@ export default function SlideOne(props: any) {
           <NextButton
             handleNext={props.handleNext}
             isButtonDisabled={isButtonDisabled}
-            buttonText="Volgende stap ›"
+            buttonText={`${t("nextButton")} ›`}
           />
         </form>
       </div>

@@ -31,6 +31,10 @@
   flex-direction: column-reverse !important;
 }
 
+.swiper-wrapper {
+  cursor: auto !important;
+}
+
 .swiper-pagination {
   position: relative !important;
   padding: 5rem 0 3rem 0;
