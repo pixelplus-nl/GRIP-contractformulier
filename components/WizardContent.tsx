@@ -72,21 +72,20 @@ export default function WizardContent() {
   useEffect(() => {
     let timerId: NodeJS.Timeout;
 
-    const hideOverflow = () => {
-      document.body.style.overflow = "hidden";
-    };
+    // const hideOverflow = () => {
+    //   document.body.style.overflow = "hidden";
+    // };
 
-    const showOverflow = () => {
-      document.body.style.overflow = "";
-    };
+    // const showOverflow = () => {
+    //   document.body.style.overflow = "";
+    // };
 
     if (activeIndex === 2 && openModal) {
-      hideOverflow();
-      setHeightClassName("!overflow-auto");
+      // hideOverflow();
 
       timerId = setTimeout(() => {
         setHeightClassName("[&>div]:h-auto");
-        showOverflow();
+        // showOverflow();
       }, 2000);
 
       return () => clearTimeout(timerId);
@@ -97,7 +96,9 @@ export default function WizardContent() {
 
   return (
     <>
-      {errorModal && <ErrorModal errorModal={errorModal} setErrorModal={setErrorModal} />}
+      {errorModal && (
+        <ErrorModal errorModal={errorModal} setErrorModal={setErrorModal} />
+      )}
       <Swiper
         effect={"creative"}
         creativeEffect={{
