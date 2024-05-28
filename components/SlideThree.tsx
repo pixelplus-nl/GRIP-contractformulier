@@ -64,7 +64,7 @@ export default function SlideThree(props: any) {
               <label
                 htmlFor="tandcCheck"
                 className="font-bold cursor-pointer text-lg">
-                Ik ga akkoord
+                {t("checkButton")}
               </label>
             </div>
 
