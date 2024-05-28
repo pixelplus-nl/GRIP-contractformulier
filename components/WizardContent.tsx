@@ -116,7 +116,7 @@ export default function WizardContent() {
         <SwiperSlide className="!bg-white">
           <SlideTwo handleNext={handleNext} />
         </SwiperSlide>
-        <SwiperSlide className="!bg-white ">
+        <SwiperSlide className="!bg-white min-h-screen">
           <SlideThree
             openModal={openModal}
             setOpenModal={setOpenModal}
