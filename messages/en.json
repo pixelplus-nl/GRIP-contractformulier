@@ -67,6 +67,7 @@
       "I will follow the instructions of GRIP staff at all times.",
       "GRIP is not liable if I or the minor child do not have adequate fitness or health, or if I or the minor child do not follow the instructions of GRIP staff."
     ],
+    "checkButton": "I agree",
     "nextButton": "Next step"
   },
   "SlideThree": {
@@ -121,5 +122,12 @@
     "invalidParticipantsData": "The file containing the names of the participants is invalid.",
     "invalidSignature": "The signature is invalid.",
     "memberAlreadyRegistered": "You are already registered as a member at Grip."
+  },
+  "Pag": {
+    "introduction": "Introduction",
+    "validity": "Validity",
+    "tAndC": "Terms and Conditions",
+    "personalInformation": "Personal information",
+    "step": "Step"
   }
 }

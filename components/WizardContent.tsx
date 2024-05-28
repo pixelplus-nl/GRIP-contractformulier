@@ -14,6 +14,7 @@ import SlideTwo from "@/components/SlideTwo";
 import SlideFour from "@/components/SlideFour";
 import SlideThree from "@/components/SlideThree";
 import ErrorModal from "./ErrorModal";
+import { useTranslations } from "next-intl";
 
 export default function WizardContent() {
   const sliderRef = useRef<any | null>(null);
@@ -37,11 +38,13 @@ export default function WizardContent() {
     sliderRef.current.swiper.slideNext();
   }, []);
 
+  const t = useTranslations("Pag");
+
   const pagination = isMobile
     ? {
         clickable: true,
         renderBullet: (index: number, className: string) => {
-          return `<p class="${className} pagination_text">${"stap "}<span>${
+          return `<p class="${className} pagination_text">${t("step")}<span>${
             index + 1
           }</span></p>`;
         },
@@ -53,12 +56,12 @@ export default function WizardContent() {
             index + 1
           }</span> ${
             index === 0
-              ? "Introductie"
+              ? t("introduction")
               : index === 1
-              ? "Validiteit"
+              ? t("validity")
               : index === 2
-              ? "Algemene voorwaarden"
-              : "Persoonlijke gegevens"
+              ? t("tAndC")
+              : t("personalInformation")
           }</p>`;
         },
       };
@@ -72,22 +75,10 @@ export default function WizardContent() {
   useEffect(() => {
     let timerId: NodeJS.Timeout;
 
-    const hideOverflow = () => {
-      document.body.style.overflow = "hidden";
-    };
-
-    const showOverflow = () => {
-      document.body.style.overflow = "";
-    };
-
     if (activeIndex === 2 && openModal) {
-      hideOverflow();
-      setHeightClassName("!overflow-auto");
-
       timerId = setTimeout(() => {
         setHeightClassName("[&>div]:h-auto");
-        showOverflow();
-      }, 2000);
+      }, 1000);
 
       return () => clearTimeout(timerId);
     }
@@ -97,7 +88,9 @@ export default function WizardContent() {
 
   return (
     <>
-      {errorModal && <ErrorModal errorModal={errorModal} setErrorModal={setErrorModal} />}
+      {errorModal && (
+        <ErrorModal errorModal={errorModal} setErrorModal={setErrorModal} />
+      )}
       <Swiper
         effect={"creative"}
         creativeEffect={{
@@ -119,14 +112,14 @@ export default function WizardContent() {
         loop={false}
         pagination={pagination}
         modules={[EffectCreative, Pagination, Navigation]}
-        className={`mySwiper3 justify-end !min-h-screen !bg-white ${heightClassName} `}>
+        className={`mySwiper3 ${heightClassName} `}>
         <SwiperSlide className="!bg-white">
           <SlideOne handleNext={handleNext} />
         </SwiperSlide>
         <SwiperSlide className="!bg-white">
           <SlideTwo handleNext={handleNext} />
         </SwiperSlide>
-        <SwiperSlide className="!bg-white ">
+        <SwiperSlide className="!bg-white min-h-screen">
           <SlideThree
             openModal={openModal}
             setOpenModal={setOpenModal}
