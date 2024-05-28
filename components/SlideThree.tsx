@@ -39,7 +39,7 @@ export default function SlideThree(props: any) {
             variants={variants}
             dangerouslySetInnerHTML={{ __html: t.raw("paragraph") }}
             animate={props.openModal ? "open" : "closed"}
-            transition={{ duration: 3 }}
+            transition={{ duration: 1. ease: "easeIn" }}
             className="overflow-hidden mt-3"></motion.div>
           <div className="bg-white relative">
             <button
