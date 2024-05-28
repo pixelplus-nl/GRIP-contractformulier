@@ -43,7 +43,9 @@ export default function SlideThree(props: any) {
             className="overflow-hidden mt-3"></motion.div>
           <div className="bg-white relative">
             <button
-              className="bg-[#F5F5F5]  w-full text-black  transition-all hover:text-[#6AACB8] px-2 py-2 mt-3 font-bold"
+              className={`bg-[#F5F5F5]  w-full text-black  transition-all hover:text-[#6AACB8] px-2 py-2 mt-3 font-bold ${
+                props.openModal ? "hidden" : ""
+              }`}
               onClick={(e: any) => {
                 e.preventDefault();
                 props.setOpenModal(true);
