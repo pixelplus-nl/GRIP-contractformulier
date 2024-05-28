@@ -59,6 +59,7 @@
 .swiper-pagination-bullet span {
   color: #8cbe44;
   font-weight: 700;
+  margin-left: .2rem;
 }
 
 .swiper-pagination-bullet-active {

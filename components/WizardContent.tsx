@@ -44,7 +44,7 @@ export default function WizardContent() {
     ? {
         clickable: true,
         renderBullet: (index: number, className: string) => {
-          return `<p class="${className} pagination_text">${"stap "}<span>${
+          return `<p class="${className} pagination_text">${t("step")}<span>${
             index + 1
           }</span></p>`;
         },
