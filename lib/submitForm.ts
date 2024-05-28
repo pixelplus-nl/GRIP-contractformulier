@@ -12,7 +12,7 @@ export default async function submitForm(formData: FormData) {
     });
 
     // Send a request to the registration endpoint
-    const response = await fetch(`${apiUrl}/register`, {
+    const response = await fetch(`${apiUrl?.replace(/\/$/, '')}/register`, {
         method: 'POST',
         body: JSON.stringify(payload),
         headers: {
@@ -20,6 +20,9 @@ export default async function submitForm(formData: FormData) {
             'Authorization': `Bearer ${apiKey}`
         }
     });
+
+    if (!response.ok)
+        throw new Error('Failed to submit form');
 
     return await response.json();
 };
