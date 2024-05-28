@@ -121,5 +121,11 @@
     "invalidParticipantsData": "The file containing the names of the participants is invalid.",
     "invalidSignature": "The signature is invalid.",
     "memberAlreadyRegistered": "You are already registered as a member at Grip."
+  },
+  "Pag": {
+    "introduction": "Introduction",
+    "validity": "Validity",
+    "tAndC": "Terms and Conditions",
+    "personalInformation": "Personal information"
   }
 }

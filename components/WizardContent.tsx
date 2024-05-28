@@ -14,6 +14,7 @@ import SlideTwo from "@/components/SlideTwo";
 import SlideFour from "@/components/SlideFour";
 import SlideThree from "@/components/SlideThree";
 import ErrorModal from "./ErrorModal";
+import { useTranslations } from "next-intl";
 
 export default function WizardContent() {
   const sliderRef = useRef<any | null>(null);
@@ -37,6 +38,8 @@ export default function WizardContent() {
     sliderRef.current.swiper.slideNext();
   }, []);
 
+  const t = useTranslations("Pag");
+
   const pagination = isMobile
     ? {
         clickable: true,
@@ -53,12 +56,12 @@ export default function WizardContent() {
             index + 1
           }</span> ${
             index === 0
-              ? "Introductie"
+              ? t("introduction")
               : index === 1
-              ? "Validiteit"
+              ? t("validity")
               : index === 2
-              ? "Algemene voorwaarden"
-              : "Persoonlijke gegevens"
+              ? t("tAndC")
+              : t("personalInformation")
           }</p>`;
         },
       };

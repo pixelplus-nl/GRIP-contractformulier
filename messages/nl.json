@@ -121,5 +121,11 @@
     "invalidParticipantsData": "Het bestand met de namen van de deelnemers is ongeldig.",
     "invalidSignature": "De handtekening is ongeldig.",
     "memberAlreadyRegistered": "Je bent al geregistreerd als lid bij Grip."
+  },
+  "Pag" : {
+    "introduction" : "Introductie",
+    "validity" : "Validiteit",
+    "tAndC" : "Algemene voorwaarden",
+    "personalInformation": "Persoonlijke gegevens"
   }
 }
