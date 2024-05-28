@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import SendInButton from "./SendInButton";
 import { RxCross1 } from "react-icons/rx";
 import submitForm from "@/lib/submitForm";
-import { useTranslations } from "next-intl";
+import { useMessages, useTranslations } from "next-intl";
 
 const variants = {
   open: {
@@ -19,11 +19,14 @@ const variants = {
 
 type SignatureCanvasInstance = any;
 
-export default function SlideFour() {
+export default function SlideFour(props: any) {
   const [openModal, setOpenModal] = useState(false);
   const [sign, setSign] = useState<SignatureCanvasInstance | null>(null);
   const [url, setUrl] = useState<string>("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+  const errorModal = useTranslations("errorModal");
+  const errorMessages = useTranslations("errorMessages");
 
   const handleGenerate = (event: any) => {
     if (sign) {
@@ -59,8 +62,27 @@ export default function SlideFour() {
     const signature = sign.getTrimmedCanvas().toDataURL("image/png");
     formData.set("signature", signature);
 
-    const success = await submitForm(formData);
-    console.log(success);
+    const response = await submitForm(formData);
+
+    if (!response.success) {
+      try {
+        props.setErrorModal({
+          title: errorModal('titleError'),
+          body: errorMessages(response.code),
+        });
+      // Fall back to the default error message
+      } catch (e: any) {
+        props.setErrorModal({
+          title: errorModal('titleError'),
+          body: errorMessages('__default'),
+        });
+      }
+    } else {
+      props.setErrorModal({
+        title: errorModal('titleSuccess'),
+        body: errorModal('bodySuccess'),
+      });
+    }
   };
 
   useEffect(() => {
