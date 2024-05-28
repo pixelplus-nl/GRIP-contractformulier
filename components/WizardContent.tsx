@@ -75,7 +75,7 @@ export default function WizardContent() {
     if (activeIndex === 2 && openModal) {
       timerId = setTimeout(() => {
         setHeightClassName("[&>div]:h-auto");
-      }, 1000);
+      }, 3000);
 
       return () => clearTimeout(timerId);
     }
