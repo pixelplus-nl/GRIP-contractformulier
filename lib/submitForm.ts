@@ -12,7 +12,7 @@ export default async function submitForm(formData: FormData) {
     });
 
     // Send a request to the registration endpoint
-    const response = await fetch(`${apiUrl?.replace(/\/$/, '')}/register`, {
+    const response = await fetch(`${apiUrl?.replace(/\/$/, '')}/register.php`, {
         method: 'POST',
         body: JSON.stringify(payload),
         headers: {
