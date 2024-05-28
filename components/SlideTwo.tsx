@@ -33,7 +33,7 @@ export default function SlideTwo(props: any) {
         </div>
 
         <form className="mb-10 px-5 md:px-0 md:mt-0 md:w-7/12 relative bg-white">
-          <h1 className="text-5xl font-bold">{t("title")}</h1>
+          <h1 className="text-4xl font-bold">{t("title")}</h1>
           <ul className="list-disc px-5 mt-3">
             {listFirst.map((item: any, key: any) => {
               return <li key={key}>{item}</li>;
@@ -61,7 +61,7 @@ export default function SlideTwo(props: any) {
           />
         </form>
       </div>
-      <Footer />
+   
     </>
   );
 }

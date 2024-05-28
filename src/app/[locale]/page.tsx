@@ -28,9 +28,9 @@ export default function Home() {
           />
         </div>
         <ScrollToLink text={landing("heroScrollLink")} />
-        <div className="w-full absolute bottom-0 right-0 h-full bg-gradient-to-r md:from-[#8CBE44] md:via-[#8CBE44]/80 md:to-[#8CBE44]/40 from-[#8CBE44]  via-[#8CBE44]/90 to-[#8CBE44]/60"></div>
+        <div className="w-full absolute bottom-0 right-0 h-full bg-gradient-to-r md:from-[#8CBE44] md:via-[#8CBE44]/90 md:to-[#8CBE44]/40 from-[#8CBE44]  via-[#8CBE44]/90 to-[#8CBE44]/60"></div>
 
-        <div className="relative max-w-xs md:max-w-2xl flex mb-32 md:mb-60 flex-col items-center gap-10">
+        <div className="relative max-w-[23rem] md:max-w-[38rem] flex mb-40 md:mb-80 flex-col items-center gap-10">
           <h1 className="text-white text-4xl md:text-6xl text-center">
             <b>{landing("titleBold")}</b> {landing("titleMedium")}
           </h1>
@@ -63,7 +63,7 @@ export default function Home() {
             />
           </div>
           <div className="max-w-xl">
-            <h2 className="text-4xl font-semibold">{landing("subTitle")}</h2>
+            <h2 className="text-3xl font-semibold">{landing("subTitle")}</h2>
             <p className="mt-3">{landing("paragraph")}</p>
 
             <div className="w-48 my-5">
@@ -76,8 +76,12 @@ export default function Home() {
             </div>
 
             <p>{landing("contactCta")}</p>
-            <Link className="cursor-pointer" href="#">
-              {landing("contactCtaLink")} ›
+            <Link
+              className="cursor-pointer group transition"
+              href="https://gripnijmegen.nl/boulderhal/contact/">
+              <span className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-black/80 to-black/80 bg-[length:100%_2px] bg-no-repeat group-hover:bg-[length:0%_2px] transition-all duration-500 ease-out cursor-pointer font-semibold  ">
+                {landing("contactCtaLink")} ›
+              </span>
             </Link>
           </div>
         </div>

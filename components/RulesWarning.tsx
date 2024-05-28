@@ -18,26 +18,32 @@ export default function RulesWarning() {
         }}
         alt={""}
       />
-
-      <h2 className="text-4xl font-bold">{t("title")}</h2>
-      <p className="text-lg mt-5">{t("paragraph")}</p>
+      <h2 className="text-3xl font-bold">{t("title")}</h2>
+      <p className="text-lg mt-5">
+        {t.rich("paragraph", {
+          br: (chunks) => <br />,
+        })}
+      </p>
       <br />
-      <div className="relative text-lg overflow-hidden w-fit">
+      <p>{t("noteReservation")}</p>
+      <div className="relative overflow-hidden w-fit">
         <Link
-          className="relative hover:opacity-70 transition-all"
+          className="cursor-pointer group transition"
           href="https://gripnijmegen.dewi-online.nl/iframe/club/156/reservations/activities">
-          <motion.span
-            transition={{ duration: 1, delay: 2 }}
-            initial="hidden"
-            animate={{
-              width: ["0%", "100%"],
-            }}
-            className="border-b-2 border-white  absolute bottom-0 inline-block"></motion.span>
-          {t("link")}
+          <span className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-white/80 to-white/80 bg-[length:100%_2px] bg-no-repeat group-hover:bg-[length:0%_2px] transition-all duration-500 ease-out cursor-pointer font-semibold  ">
+            {t("link")}
+          </span>
         </Link>
       </div>
       <br />
-      <p className="text-lg">{t("contact")}</p>
+      <p>{t("question")}</p>
+      <Link
+        className="cursor-pointer group transition"
+        href="https://gripnijmegen.nl/boulderhal/contact/">
+        <span className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-white/80 to-white/80 bg-[length:100%_2px] bg-no-repeat group-hover:bg-[length:0%_2px] transition-all duration-500 ease-out cursor-pointer font-semibold  ">
+          {t("contact")} ›
+        </span>
+      </Link>
     </section>
   );
 }
