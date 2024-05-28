@@ -50,10 +50,10 @@ export default function SlideOne(props: any) {
         </div>
 
         <form className="mt-10 px-5 md:px-0 md:w-7/12  md:mt-0 bg-white">
-          <h1 className="text-5xl font-bold">{t("title")}</h1>
+          <h1 className="text-4xl font-bold">{t("title")}</h1>
 
           <div className="my-5">
-            <h2 className="text-4xl font-semibold">{t("subTitleFirst")}</h2>
+            <h2 className="text-3xl font-semibold">{t("subTitleFirst")}</h2>
             <ul className="list-disc px-5 mt-3">
               {listFirst.map((item: any, key: any) => {
                 return <li key={key}>{item}</li>;
@@ -79,7 +79,7 @@ export default function SlideOne(props: any) {
           <hr className="my-10" />
 
           <div className="my-5">
-            <h2 className="text-4xl font-semibold">{t("subTitleSecond")}</h2>
+            <h2 className="text-3xl font-semibold">{t("subTitleSecond")}</h2>
             <ul className="list-disc px-5 mt-3">
               {listSecond.map((item: any, key: any) => {
                 return <li key={key}>{item}</li>;
@@ -105,7 +105,7 @@ export default function SlideOne(props: any) {
           <hr className="my-10" />
 
           <div className="my-5">
-            <h2 className="text-4xl font-semibold">{t("subTitleThird")}</h2>
+            <h2 className="text-3xl font-semibold">{t("subTitleThird")}</h2>
             <ul className="list-disc px-5 mt-3">
               {listThird.map((item: any, key: any) => {
                 return <li key={key}>{item}</li>;
@@ -131,7 +131,7 @@ export default function SlideOne(props: any) {
           <hr className="my-10" />
 
           <div className="my-5">
-            <h2 className="text-4xl font-semibold">{t("subTitleFourth")}</h2>
+            <h2 className="text-3xl font-semibold">{t("subTitleFourth")}</h2>
             <ul className="list-disc px-5 mt-3">
               {listFourth.map((item: any, key: any) => {
                 return <li key={key}>{item}</li>;
@@ -157,7 +157,7 @@ export default function SlideOne(props: any) {
           <hr className="my-10" />
 
           <div className="my-5">
-            <h2 className="text-4xl font-semibold">{t("subTitleFifth")}</h2>
+            <h2 className="text-3xl font-semibold">{t("subTitleFifth")}</h2>
             <ul className="list-disc px-5 mt-3">
               {listFifth.map((item: any, key: any) => {
                 return <li key={key}>{item}</li>;
@@ -188,7 +188,6 @@ export default function SlideOne(props: any) {
           />
         </form>
       </div>
-      <Footer />
     </>
   );
 }

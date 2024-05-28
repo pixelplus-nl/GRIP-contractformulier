@@ -104,11 +104,13 @@ export default function SlideFour() {
         <form
           className="px-5 md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12"
           onSubmit={handleSubmit}>
-          <h1 className="text-5xl font-bold">{t("title")}</h1>
+          <h1 className="text-4xl font-bold">{t("title")}</h1>
           <div className="mb-5">
             <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8">
               <div>
-                <p className="text-xl text-black font-semibold">{t("name")}</p>
+                <h3 className="text-xl text-black font-semibold">
+                  {t("name")}
+                </h3>
                 <div className="flex gap-1">
                   <div className="sm:w-full">
                     <label
@@ -159,11 +161,10 @@ export default function SlideFour() {
               </div>
 
               <div>
-                <label
-                  htmlFor="date-of-birth"
-                  className="text-xl text-black font-semibold">
+                <h3 className="text-xl text-black font-semibold">
                   {t("dateOfBirth")}
-                </label>
+                </h3>
+                <label htmlFor="date-of-birth"></label>
                 <div className="mt-2">
                   <input
                     id="date-of-birth"
@@ -177,11 +178,11 @@ export default function SlideFour() {
               </div>
 
               <div>
-                <p className="text-xl text-black font-semibold">
+                <h3 className="text-xl text-black font-semibold">
                   {t("address")}
-                </p>
+                </h3>
                 <div className="flex gap-1">
-                  <div className="w-full">
+                  <div className="w-[67%]">
                     <label
                       htmlFor="street-address"
                       className="block text-sm font-medium leading-6 text-gray-900"></label>
@@ -192,7 +193,7 @@ export default function SlideFour() {
                         placeholder={t("street")}
                         id="street-address"
                         autoComplete="street-address"
-                        className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className="block px-3 w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
                     </div>
                   </div>
@@ -263,9 +264,9 @@ export default function SlideFour() {
               </div>
 
               <div>
-                <p className="text-xl text-black font-semibold">
+                <h3 className="text-xl text-black font-semibold">
                   {t("contact")}
-                </p>
+                </h3>
                 <div>
                   <label
                     htmlFor="email"
@@ -299,25 +300,10 @@ export default function SlideFour() {
               </div>
 
               <div>
-                <p className="text-xl text-black font-semibold">
+                <h3 className="text-xl text-black font-semibold">
                   {t("subTitleSecond")}
-                </p>
+                </h3>
                 <fieldset className="mt-2 flex gap-5">
-                  <div className="flex gap-2 hover:opacity-50 w-fit items-center">
-                    <input
-                      type="radio"
-                      name="accompanist"
-                      id="no"
-                      className="cursor-pointer"
-                      onClick={() => setOpenModal(false)}
-                    />
-                    <label
-                      htmlFor="no"
-                      className="block text-lg cursor-pointer font-medium leading-6 text-gray-900">
-                      {t("no")}
-                    </label>
-                  </div>
-
                   <div>
                     <div className="flex gap-2 hover:opacity-50 w-fit items-center">
                       <input
@@ -333,6 +319,21 @@ export default function SlideFour() {
                         {t("yes")}
                       </label>
                     </div>
+                  </div>
+
+                  <div className="flex gap-2 hover:opacity-50 w-fit items-center">
+                    <input
+                      type="radio"
+                      name="accompanist"
+                      id="no"
+                      className="cursor-pointer"
+                      onClick={() => setOpenModal(false)}
+                    />
+                    <label
+                      htmlFor="no"
+                      className="block text-lg cursor-pointer font-medium leading-6 text-gray-900">
+                      {t("no")}
+                    </label>
                   </div>
                 </fieldset>
 
@@ -361,9 +362,9 @@ export default function SlideFour() {
               </div>
 
               <div>
-                <p className="text-xl text-black font-semibold">
+                <h3 className="text-xl text-black font-semibold">
                   {t("subTitleThird")}
-                </p>
+                </h3>
                 <div>
                   <label
                     htmlFor="emergency-name"
@@ -399,8 +400,13 @@ export default function SlideFour() {
               <hr />
 
               <div>
-                <div className="flex items-center justify-between">
-                  <p>{t("signatureAgreement")}</p>
+                <div className="flex items-start justify-between">
+                  <div className="mb-3">
+                    <h3 className="text-xl text-black font-semibold">
+                      {t("signatureAgreement")}
+                    </h3>
+                    <p>{t("signatureExplanation")}</p>
+                  </div>
                   <button
                     className="text-[#C10000] flex cursor-pointer items-center gap-1 px-3 py-2"
                     onClick={handleClear}>
@@ -436,7 +442,6 @@ export default function SlideFour() {
           />
         </form>
       </div>
-      <Footer />
     </>
   );
 }

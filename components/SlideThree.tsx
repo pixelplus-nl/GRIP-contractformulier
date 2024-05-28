@@ -32,16 +32,15 @@ export default function SlideThree(props: any) {
         </div>
 
         <form className=" px-5 md:px-0 md:mt-0 md:w-7/12 h-full bg-white">
-          <h1 className="text-5xl font-bold">{t("title")}</h1>
+          <h1 className="text-4xl font-bold">{t("title")}</h1>
 
-          <motion.p
+          <motion.div
             initial={"closed"}
             variants={variants}
+            dangerouslySetInnerHTML={{ __html: t.raw("paragraph") }}
             animate={props.openModal ? "open" : "closed"}
-            transition={{ duration: 1 }}
-            className="overflow-hidden mt-3">
-            {t("paragraph")}
-          </motion.p>
+            transition={{ duration: 5 }}
+            className="overflow-hidden mt-3"></motion.div>
           <div className="bg-white relative">
             <button
               className="bg-[#F5F5F5]  w-full text-black  transition-all hover:text-[#6AACB8] px-2 py-2 mt-3 font-bold"
@@ -51,6 +50,7 @@ export default function SlideThree(props: any) {
               }}>
               {t("readMoreButton")} ›
             </button>
+            <p className="mt-5">{t("acceptText")}</p>
             <div className="mt-5 flex hover:opacity-50 w-fit gap-2 items-center">
               <input
                 onChange={(e) => handleCheckboxChange(e, settandChecked)}
@@ -75,7 +75,6 @@ export default function SlideThree(props: any) {
           </div>
         </form>
       </div>
-      <Footer />
     </>
   );
 }

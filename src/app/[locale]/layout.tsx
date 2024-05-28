@@ -8,7 +8,7 @@ import { getMessages } from "next-intl/server";
 const assistant = Assistant({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Contractformulier - GRIP",
+  title: "Bezoekers-inschrijfsysteem - GRIP Boulderhal",
   description: "",
 };
 
