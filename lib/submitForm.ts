@@ -21,6 +21,5 @@ export default async function submitForm(formData: FormData) {
         }
     });
 
-    const data = await response.json();
-    return data.success;
+    return await response.json();
 };
