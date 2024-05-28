@@ -33,7 +33,6 @@
 
 .swiper-wrapper {
   cursor: auto !important;
-  min-height: 100vh !important;
 }
 
 .swiper-pagination {

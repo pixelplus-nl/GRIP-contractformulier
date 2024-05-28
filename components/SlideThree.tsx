@@ -26,7 +26,7 @@ export default function SlideThree(props: any) {
   const isButtonDisabled = !tandcChecked;
   return (
     <>
-      <div className="md:flex min-h-screen mb-12 md:px-5 px-0 lg:gap-10 gap-5 xl:px-0 lg:justify-between max-w-6xl mx-auto">
+      <div className="md:flex  mb-12 md:px-5 px-0 lg:gap-10 gap-5 xl:px-0 lg:justify-between max-w-6xl mx-auto">
         <div className="hidden md:block md:w-5/12 md:max-w-[25rem]">
           <Warning />
         </div>
@@ -39,7 +39,7 @@ export default function SlideThree(props: any) {
             variants={variants}
             dangerouslySetInnerHTML={{ __html: t.raw("paragraph") }}
             animate={props.openModal ? "open" : "closed"}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 5 }}
             className="overflow-hidden mt-3"></motion.div>
           <div className="bg-white relative">
             <button
