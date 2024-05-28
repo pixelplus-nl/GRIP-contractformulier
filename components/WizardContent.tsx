@@ -18,7 +18,7 @@ import ErrorModal from "./ErrorModal";
 export default function WizardContent() {
   const sliderRef = useRef<any | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [errorModal, setErrorModal] = useState(false);
+  const [errorModal, setErrorModal] = useState(null);
   const [openModal, setOpenModal] = useState(false);
   const [heightClassName, setHeightClassName] = useState("");
   const [isMobile, setIsMobile] = useState(
@@ -97,7 +97,7 @@ export default function WizardContent() {
 
   return (
     <>
-      {errorModal && <ErrorModal setErrorModal={setErrorModal} />}
+      {errorModal && <ErrorModal errorModal={errorModal} setErrorModal={setErrorModal} />}
       <Swiper
         effect={"creative"}
         creativeEffect={{
@@ -134,7 +134,7 @@ export default function WizardContent() {
           />
         </SwiperSlide>
         <SwiperSlide className="!bg-white">
-          <SlideFour />
+          <SlideFour setErrorModal={setErrorModal} />
         </SwiperSlide>
       </Swiper>
     </>
