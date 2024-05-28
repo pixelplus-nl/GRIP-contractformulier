@@ -107,6 +107,19 @@
     "nextButton": "Submit"
   },
   "errorModal": {
-    "title": "Attention!"
+    "titleError": "Attention!",
+    "titleSuccess": "Thank you!",
+    "bodySuccess": "Your registration has been successfully completed. You will receive a confirmation email shortly."
+  },
+  "errorMessages": {
+    "__default": "Something went wrong. Please try again later.",
+    "missingFields": "One or more required fields are missing.",
+    "invalidEmail": "The email address is invalid.",
+    "invalidPhone": "The phone number is invalid.",
+    "invalidParticipantsMeta": "The file containing the names of the participants is invalid.",
+    "invalidParticipantsMime": "The file containing the names of the participants is invalid.",
+    "invalidParticipantsData": "The file containing the names of the participants is invalid.",
+    "invalidSignature": "The signature is invalid.",
+    "memberAlreadyRegistered": "You are already registered as a member at Grip."
   }
 }
