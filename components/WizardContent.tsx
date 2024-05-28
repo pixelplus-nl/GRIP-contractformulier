@@ -72,10 +72,22 @@ export default function WizardContent() {
   useEffect(() => {
     let timerId: NodeJS.Timeout;
 
+    const hideOverflow = () => {
+      document.body.style.overflow = "hidden";
+    };
+
+    const showOverflow = () => {
+      document.body.style.overflow = "";
+    };
+
     if (activeIndex === 2 && openModal) {
+      hideOverflow();
+      setHeightClassName("!overflow-auto");
+
       timerId = setTimeout(() => {
         setHeightClassName("[&>div]:h-auto");
-      }, 500);
+        showOverflow();
+      }, 2000);
 
       return () => clearTimeout(timerId);
     }
@@ -107,7 +119,7 @@ export default function WizardContent() {
         loop={false}
         pagination={pagination}
         modules={[EffectCreative, Pagination, Navigation]}
-        className={`mySwiper3 ${heightClassName} `}>
+        className={`mySwiper3 justify-end !min-h-screen !bg-white ${heightClassName} `}>
         <SwiperSlide className="!bg-white">
           <SlideOne handleNext={handleNext} />
         </SwiperSlide>

@@ -24,7 +24,7 @@ export default async function RootLayout({
   const messages = await getMessages();
   return (
     <html lang={locale}>
-      <body className={assistant.className}>
+      <body className={`${assistant.className} min-h-screen`}>
         <Header />
         <NextIntlClientProvider messages={messages}>
           {children}
