@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="relative flex justify-center items-end h-[35rem] md:h-screen">
+      <div className="relative flex justify-center items-center h-[35rem] md:h-screen">
         <div className=" absolute right-0 w-full h-full">
           <Image
             src="/impression_img01.png"
@@ -30,7 +30,7 @@ export default function Home() {
         <ScrollToLink text={landing("heroScrollLink")} />
         <div className="w-full absolute bottom-0 right-0 h-full bg-gradient-to-r md:from-[#8CBE44] md:via-[#8CBE44]/90 md:to-[#8CBE44]/40 from-[#8CBE44]  via-[#8CBE44]/90 to-[#8CBE44]/60"></div>
 
-        <div className="relative max-w-[23rem] md:max-w-[38rem] flex mb-40 md:mb-80 flex-col items-center gap-10">
+        <div className="relative max-w-[23rem] md:max-w-[38rem] mt-10 flex md:mt-5 lg:mt-0 flex-col items-center gap-10">
           <h1 className="text-white text-4xl md:text-6xl text-center">
             <b>{landing("titleBold")}</b> {landing("titleMedium")}
           </h1>

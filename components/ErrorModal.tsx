@@ -17,15 +17,34 @@ export default function ErrorModal(props: any) {
         transition={{ delay: 0.5 }}
         className="relative z-50 bg-white p-10 rounded-2xl">
         <h1 className="text-4xl font-bold mb-5">
-          {props.errorModal.title}
+          {props.errorModal.title || props.title}
         </h1>
-        <ul className="list-disc ml-5 max-w-2xl">
-          {props.errorModal.body}
+        <ul className={`list-disc ${props.ulMargin} max-w-2xl`}>
+          {props.errorModal.body || props.body}
         </ul>
+
+        <div className={`flex gap-3 mt-5 ${props.languageButtons}`}>
+          <button
+            onClick={() => props.setErrorModal(false)}
+            className="bg-[#6AACB8] border-[#6AACB8] border-2 transition-all hover:bg-white hover:text-black px-2 py-1 w-full text-white">
+            Annuleer
+          </button>
+          <button
+            onClick={() => {
+              const currentPathSegment = props.pathname.split("/")[1];
+              currentPathSegment === "nl"
+                ? props.changeLanguage("en")
+                : props.changeLanguage("nl");
+            }}
+            className="bg-[#8CBE44] hover:text-black w-full
+           text-white px-2 py-1 border-2 hover:bg-white border-[#8CBE44] transition-all">
+            Doorgaan
+          </button>
+        </div>
 
         <TfiClose
           onClick={() => props.setErrorModal(null)}
-          className="absolute top-10 right-10 hover:opacity-30 cursor-pointer transition-all"
+          className={`absolute ${props.crossButton} top-10 right-10 hover:opacity-30 cursor-pointer transition-all`}
           size={30}
           color="#C10000"
         />

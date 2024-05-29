@@ -89,7 +89,12 @@ export default function WizardContent() {
   return (
     <>
       {errorModal && (
-        <ErrorModal errorModal={errorModal} setErrorModal={setErrorModal} />
+        <ErrorModal
+          errorModal={errorModal}
+          ulMargin="ml-5"
+          languageButtons="hidden"
+          setErrorModal={setErrorModal}
+        />
       )}
       <Swiper
         effect={"creative"}
