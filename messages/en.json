@@ -129,5 +129,11 @@
     "tAndC": "Terms and Conditions",
     "personalInformation": "Personal information",
     "step": "Step"
+  },
+  "LanguageModal": {
+    "title": "Note!",
+    "body": "If you change the language, the page will be refreshed and your data will be lost.",
+    "proceed": "Proceed",
+    "cancel": "Cancel"
   }
 }

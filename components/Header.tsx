@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useState, useTransition } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import ErrorModal from "./ErrorModal";
 
 export default function Header() {
@@ -23,6 +23,8 @@ export default function Header() {
       router.replace(newPath);
     });
   };
+
+  const t = useTranslations("LanguageModal");
 
   return (
     <>
@@ -74,10 +76,12 @@ export default function Header() {
           pathname={pathname}
           changeLanguage={onSelectLanguage}
           errorModal={errorModal}
-          title="Let op!"
+          title={t("title")}
           crossButton="hidden"
-          body="Als u van taal wisselt, wordt de pagina vernieuwd en gaan uw gegevens verloren."
+          body={t("body")}
           setErrorModal={setErrorModal}
+          proceed={t("proceed")}
+          cancel={t("cancel")}
         />
       )}
     </>

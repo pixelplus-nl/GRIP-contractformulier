@@ -27,7 +27,7 @@ export default function ErrorModal(props: any) {
           <button
             onClick={() => props.setErrorModal(false)}
             className="bg-[#6AACB8] border-[#6AACB8] border-2 transition-all hover:bg-white hover:text-black px-2 py-1 w-full text-white">
-            Annuleer
+            {props.cancel}
           </button>
           <button
             onClick={() => {
@@ -38,7 +38,7 @@ export default function ErrorModal(props: any) {
             }}
             className="bg-[#8CBE44] hover:text-black w-full
            text-white px-2 py-1 border-2 hover:bg-white border-[#8CBE44] transition-all">
-            Doorgaan
+            {props.proceed}
           </button>
         </div>
 

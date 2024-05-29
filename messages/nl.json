@@ -101,7 +101,7 @@
     "listButton": "Selecteer bestand",
     "subTitleThird": "In geval van nood contact opnemen met",
     "first&lastName": "Voor- en Achternaam",
-    "signatureExplanation" : "Teken in het onderstaande kader uw handtekening",
+    "signatureExplanation": "Teken in het onderstaande kader uw handtekening",
     "signatureAgreement": "Handtekening voor akkoord",
     "erase": "Wissen",
     "nextButton": "Definitief insturen"
@@ -122,11 +122,17 @@
     "invalidSignature": "De handtekening is ongeldig.",
     "memberAlreadyRegistered": "Je bent al geregistreerd als lid bij Grip."
   },
-  "Pag" : {
-    "introduction" : "Introductie",
-    "validity" : "Validiteit",
-    "tAndC" : "Algemene voorwaarden",
+  "Pag": {
+    "introduction": "Introductie",
+    "validity": "Validiteit",
+    "tAndC": "Algemene voorwaarden",
     "personalInformation": "Persoonlijke gegevens",
-    "step" : "Stap"
+    "step": "Stap"
+  },
+  "LanguageModal": {
+    "title": "Let op!",
+    "body": "Als u van taal wisselt, wordt de pagina vernieuwd en gaan uw gegevens verloren.",
+    "proceed": "Doorgaan",
+    "cancel": "Annuleer"
   }
 }

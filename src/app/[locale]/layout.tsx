@@ -25,8 +25,8 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={`${assistant.className} min-h-screen`}>
-        <Header />
         <NextIntlClientProvider messages={messages}>
+          <Header />
           {children}
         </NextIntlClientProvider>
       </body>
