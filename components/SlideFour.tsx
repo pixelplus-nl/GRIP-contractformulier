@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import SendInButton from "./SendInButton";
 import { RxCross1 } from "react-icons/rx";
 import submitForm from "@/lib/submitForm";
-import { useMessages, useTranslations } from "next-intl";
+import { useLocale, useMessages, useTranslations } from "next-intl";
 
 const variants = {
   open: {
@@ -28,6 +28,8 @@ export default function SlideFour(props: any) {
   const errorModal = useTranslations("errorModal");
   const errorMessages = useTranslations("errorMessages");
 
+  const locale = useLocale();
+
   const handleGenerate = (event: any) => {
     if (sign) {
       event.preventDefault();
@@ -40,6 +42,9 @@ export default function SlideFour(props: any) {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
     const formData: any = new FormData(event.target);
+
+    // Send the locale to the API
+    formData.set("locale", locale);
 
     // Convert the participants file to base64
     const participants = formData.get("participants");
