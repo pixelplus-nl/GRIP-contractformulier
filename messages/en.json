@@ -131,9 +131,9 @@
     "step": "Step"
   },
   "LanguageModal": {
-    "title": "Note!",
+    "title": "Caution!",
     "body": "If you change the language, the page will be refreshed and your data will be lost.",
-    "proceed": "Proceed",
+    "proceed": "Confirm",
     "cancel": "Cancel"
   }
 }
