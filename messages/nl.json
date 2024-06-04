@@ -131,8 +131,8 @@
   },
   "LanguageModal": {
     "title": "Let op!",
-    "body": "Als u van taal wisselt, wordt de pagina vernieuwd en gaan uw gegevens verloren.",
-    "proceed": "Doorgaan",
+    "body": "Als u van taal wisselt wordt de pagina vernieuwd en gaan uw gegevens verloren.",
+    "proceed": "Bevestig",
     "cancel": "Annuleer"
   }
 }
