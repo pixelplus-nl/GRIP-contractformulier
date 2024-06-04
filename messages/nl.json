@@ -108,8 +108,8 @@
   },
   "errorModal": {
     "titleError": "Let op!",
-    "titleSuccess": "Bedankt!",
-    "bodySuccess": "Je inschrijving is succesvol verstuurd. Je ontvangt binnenkort een bevestiging per e-mail."
+    "titleSuccess": "Bedankt voor je inschrijving.",
+    "bodySuccess": "Veel plezier met boulderen!"
   },
   "errorMessages": {
     "__default": "Er is iets misgegaan. Probeer het opnieuw.",
