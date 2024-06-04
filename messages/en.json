@@ -109,8 +109,8 @@
   },
   "errorModal": {
     "titleError": "Attention!",
-    "titleSuccess": "Thank you!",
-    "bodySuccess": "Your registration has been successfully completed. You will receive a confirmation email shortly."
+    "titleSuccess": "Thank you for your registration.",
+    "bodySuccess": "Have fun bouldering!"
   },
   "errorMessages": {
     "__default": "Something went wrong. Please try again later.",
