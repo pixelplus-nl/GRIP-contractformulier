@@ -77,6 +77,8 @@ export default function Header() {
           changeLanguage={onSelectLanguage}
           errorModal={errorModal}
           title={t("title")}
+          isList="hidden"
+          isText=""
           crossButton="hidden"
           body={t("body")}
           setErrorModal={setErrorModal}

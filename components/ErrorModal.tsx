@@ -16,12 +16,15 @@ export default function ErrorModal(props: any) {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
         className="relative z-50 bg-white p-10 rounded-2xl">
-        <h1 className="text-4xl font-bold mb-5">
+        <h1 className="text-4xl font-bold mb-5 pr-10">
           {props.errorModal.title || props.title}
         </h1>
-        <ul className={`list-disc ${props.ulMargin} max-w-2xl`}>
+        <ul className={`list-disc ${props.isList} max-w-2xl`}>
           {props.errorModal.body || props.body}
         </ul>
+        <p className={`list-disc ${props.isText} max-w-2xl`}>
+          {props.errorModal.body || props.body}
+        </p>
 
         <div className={`flex gap-3 mt-5 ${props.languageButtons}`}>
           <button

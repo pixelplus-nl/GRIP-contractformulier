@@ -23,7 +23,6 @@ export default function SlideFour(props: any) {
   const [sign, setSign] = useState<SignatureCanvasInstance | null>(null);
   const [url, setUrl] = useState<string>("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-  const [fileUpload, setFileUpload] = useState(false);
 
   const errorModal = useTranslations("errorModal");
   const errorMessages = useTranslations("errorMessages");
@@ -83,7 +82,7 @@ export default function SlideFour(props: any) {
         });
       }
     } else {
-      props.setErrorModal({
+      props.setSuccesModal({
         title: errorModal("titleSuccess"),
         body: errorModal("bodySuccess"),
       });
@@ -129,7 +128,7 @@ export default function SlideFour(props: any) {
         </div>
 
         <form
-          className="px-5 md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12"
+          className="px-5 h-full overflow-scroll md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12"
           onSubmit={handleSubmit}>
           <h1 className="text-4xl font-bold">{t("title")}</h1>
           <div className="mb-5">
@@ -369,7 +368,7 @@ export default function SlideFour(props: any) {
                         name="accompanist"
                         id="yes"
                         className="cursor-pointer"
-                        onClick={() => setFileUpload(true)}
+                        onClick={() => props.setOpenList(true)}
                       />
                       <label
                         htmlFor="yes"
@@ -385,7 +384,7 @@ export default function SlideFour(props: any) {
                       name="accompanist"
                       id="no"
                       className="cursor-pointer"
-                      onClick={() => setFileUpload(false)}
+                      onClick={() => props.setOpenList(false)}
                     />
                     <label
                       htmlFor="no"
@@ -395,7 +394,7 @@ export default function SlideFour(props: any) {
                   </div>
                 </fieldset>
 
-                {fileUpload && (
+                {props.openList && (
                   <div>
                     <p className="pt-5">{t("kidsList")}</p>
                     <div className="mt-3 flex gap-2 items-center">

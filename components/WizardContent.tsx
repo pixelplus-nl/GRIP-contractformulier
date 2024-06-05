@@ -20,7 +20,9 @@ export default function WizardContent() {
   const sliderRef = useRef<any | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [errorModal, setErrorModal] = useState(null);
+  const [succesModal, setSuccesModal] = useState(null);
   const [openModal, setOpenModal] = useState(false);
+  const [openList, setOpenList] = useState(false);
   const [heightClassName, setHeightClassName] = useState("");
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth <= 640 : false
@@ -42,7 +44,7 @@ export default function WizardContent() {
 
   const pagination = isMobile
     ? {
-        clickable: process.env.NODE_ENV === 'development',
+        clickable: process.env.NODE_ENV === "development",
         renderBullet: (index: number, className: string) => {
           return `<p class="${className} pagination_text">${t("step")}<span>${
             index + 1
@@ -50,7 +52,7 @@ export default function WizardContent() {
         },
       }
     : {
-        clickable: process.env.NODE_ENV === 'development',
+        clickable: process.env.NODE_ENV === "development",
         renderBullet: (index: number, className: string) => {
           return `<p class="${className} pagination_text"><span>${
             index + 1
@@ -75,6 +77,14 @@ export default function WizardContent() {
   useEffect(() => {
     let timerId: NodeJS.Timeout;
 
+    if (activeIndex === 3 && openList) {
+      timerId = setTimeout(() => {
+        setHeightClassName("[&>div]:h-auto");
+      }, 10);
+
+      return () => clearTimeout(timerId);
+    }
+
     if (activeIndex === 2 && openModal) {
       timerId = setTimeout(() => {
         setHeightClassName("[&>div]:h-auto");
@@ -91,7 +101,15 @@ export default function WizardContent() {
       {errorModal && (
         <ErrorModal
           errorModal={errorModal}
-          ulMargin="ml-5"
+          isText="hidden"
+          languageButtons="hidden"
+          setErrorModal={setErrorModal}
+        />
+      )}
+      {succesModal && (
+        <ErrorModal
+          errorModal={errorModal}
+          isList="hidden"
           languageButtons="hidden"
           setErrorModal={setErrorModal}
         />
@@ -132,7 +150,12 @@ export default function WizardContent() {
           />
         </SwiperSlide>
         <SwiperSlide className="!bg-white">
-          <SlideFour setErrorModal={setErrorModal} />
+          <SlideFour
+            setOpenList={setOpenList}
+            openList={openList}
+            setSuccesModal={setSuccesModal}
+            setErrorModal={setErrorModal}
+          />
         </SwiperSlide>
       </Swiper>
     </>
