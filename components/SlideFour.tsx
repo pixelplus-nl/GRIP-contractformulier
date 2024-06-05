@@ -20,10 +20,10 @@ const variants = {
 type SignatureCanvasInstance = any;
 
 export default function SlideFour(props: any) {
-  const [openModal, setOpenModal] = useState(false);
   const [sign, setSign] = useState<SignatureCanvasInstance | null>(null);
   const [url, setUrl] = useState<string>("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [fileUpload, setFileUpload] = useState(false);
 
   const errorModal = useTranslations("errorModal");
   const errorMessages = useTranslations("errorMessages");
@@ -338,7 +338,7 @@ export default function SlideFour(props: any) {
                         name="accompanist"
                         id="yes"
                         className="cursor-pointer"
-                        onClick={() => setOpenModal(true)}
+                        onClick={() => setFileUpload(true)}
                       />
                       <label
                         htmlFor="yes"
@@ -354,7 +354,7 @@ export default function SlideFour(props: any) {
                       name="accompanist"
                       id="no"
                       className="cursor-pointer"
-                      onClick={() => setOpenModal(false)}
+                      onClick={() => setFileUpload(false)}
                     />
                     <label
                       htmlFor="no"
@@ -364,28 +364,25 @@ export default function SlideFour(props: any) {
                   </div>
                 </fieldset>
 
-                <motion.div
-                  initial={"closed"}
-                  variants={variants}
-                  animate={openModal ? "open" : "closed"}
-                  transition={{ duration: 1 }}
-                  className="overflow-hidden">
-                  <p className="pt-5">{t("kidsList")}</p>
-                  <div className="mt-3 flex gap-2 items-center">
-                    <label
-                      className="bg-[#6AACB8] hover:bg-white hover:text-[#6AACBB] border-2 border-[#6AACBB] cursor-pointer transition-all w-fit px-2 py-1 text-white font-semibold"
-                      htmlFor="participants">
-                      {t("listButton")}
-                    </label>
-                    <input
-                      id="participants"
-                      className=""
-                      name="participants"
-                      type="file"
-                      accept="application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                    />
+                {fileUpload && (
+                  <div>
+                    <p className="pt-5">{t("kidsList")}</p>
+                    <div className="mt-3 flex gap-2 items-center">
+                      <label
+                        className="bg-[#6AACB8] hover:bg-white hover:text-[#6AACBB] border-2 border-[#6AACBB] cursor-pointer transition-all w-fit px-2 py-1 text-white font-semibold"
+                        htmlFor="participants">
+                        {t("listButton")}
+                      </label>
+                      <input
+                        id="participants"
+                        className=""
+                        name="participants"
+                        type="file"
+                        accept="application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                      />
+                    </div>
                   </div>
-                </motion.div>
+                )}
               </div>
 
               <div>
