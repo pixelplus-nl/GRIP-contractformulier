@@ -98,15 +98,14 @@ export default function WizardContent() {
     }
 
     setHeightClassName("");
-  }, [activeIndex, openModal]);
+  }, [activeIndex, openModal, openList]);
 
   return (
     <>
       {errorModal && (
         <ErrorModal
-          title={errorModal?.title}
-          body={errorModal?.body}
           languageButtons="hidden"
+          errorModal={errorModal}
           setErrorModal={setErrorModal}
         />
       )}
