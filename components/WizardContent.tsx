@@ -16,10 +16,15 @@ import SlideThree from "@/components/SlideThree";
 import ErrorModal from "./ErrorModal";
 import { useTranslations } from "next-intl";
 
+interface ErrorModalContent {
+  title?: string;
+  body?: string;
+}
+
 export default function WizardContent() {
   const sliderRef = useRef<any | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [errorModal, setErrorModal] = useState(null);
+  const [errorModal, setErrorModal] = useState<ErrorModalContent | null>(null);
   const [openModal, setOpenModal] = useState(false);
   const [openList, setOpenList] = useState(false);
   const [heightClassName, setHeightClassName] = useState("");
