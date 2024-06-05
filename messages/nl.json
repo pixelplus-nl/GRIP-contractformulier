@@ -114,6 +114,7 @@
   "errorMessages": {
     "__default": "Er is iets misgegaan. Probeer het opnieuw.",
     "missingFields": "Er ontbreken één of meerdere verplichte velden.",
+    "invalidDateOfBirth": "De geboortedatum is ongeldig.",
     "invalidEmail": "Het e-mailadres is ongeldig.",
     "invalidPhone": "Het telefoonnummer is ongeldig.",
     "invalidParticipantsMeta": "Het bestand met de namen van de deelnemers is ongeldig.",
