@@ -49,7 +49,7 @@ export default function SlideFour(props: any) {
     // Convert the participants file to base64
     const participants = formData.get("participants");
 
-    if (participants.size > 0) {
+    if (participants && participants.size > 0) {
       const reader = new FileReader();
 
       const base64 = await new Promise((resolve, reject) => {
