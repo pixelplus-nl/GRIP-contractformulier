@@ -42,6 +42,7 @@ export default function WizardContent() {
 
   const pagination = isMobile
     ? {
+        clickable: process.env.NODE_ENV === 'development',
         renderBullet: (index: number, className: string) => {
           return `<p class="${className} pagination_text">${t("step")}<span>${
             index + 1
@@ -49,6 +50,7 @@ export default function WizardContent() {
         },
       }
     : {
+        clickable: process.env.NODE_ENV === 'development',
         renderBullet: (index: number, className: string) => {
           return `<p class="${className} pagination_text"><span>${
             index + 1
