@@ -211,8 +211,6 @@ export default function SlideFour(props: any) {
                         "7",
                         "8",
                         "9",
-                        "/",
-                        "-",
                         "Backspace",
                         "ArrowLeft",
                         "ArrowRight",
@@ -224,11 +222,19 @@ export default function SlideFour(props: any) {
                     }}
                     onInput={(e) => {
                       const input = e.target as HTMLInputElement;
-                      const value = input.value;
-                      const validValue = value.replace(/[^0-9\/-]/g, "");
-                      if (value !== validValue) {
-                        input.value = validValue;
+                      let value = input.value.replace(/\D/g, ""); // Remove non-digit characters
+                      if (value.length > 8) value = value.substring(0, 8); // Limit to 8 digits
+
+                      if (value.length > 4) {
+                        value = `${value.slice(0, 2)}-${value.slice(
+                          2,
+                          4
+                        )}-${value.slice(4)}`;
+                      } else if (value.length > 2) {
+                        value = `${value.slice(0, 2)}-${value.slice(2)}`;
                       }
+
+                      input.value = value;
                     }}
                   />
                 </div>
