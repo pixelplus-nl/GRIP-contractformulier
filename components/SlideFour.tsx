@@ -72,20 +72,20 @@ export default function SlideFour(props: any) {
     if (!response.success) {
       try {
         props.setErrorModal({
-          title: errorModal('titleError'),
+          title: errorModal("titleError"),
           body: errorMessages(response.code),
         });
-      // Fall back to the default error message
+        // Fall back to the default error message
       } catch (e: any) {
         props.setErrorModal({
-          title: errorModal('titleError'),
-          body: errorMessages('__default'),
+          title: errorModal("titleError"),
+          body: errorMessages("__default"),
         });
       }
     } else {
       props.setErrorModal({
-        title: errorModal('titleSuccess'),
-        body: errorModal('bodySuccess'),
+        title: errorModal("titleSuccess"),
+        body: errorModal("bodySuccess"),
       });
     }
   };
@@ -196,10 +196,41 @@ export default function SlideFour(props: any) {
                   <input
                     id="date-of-birth"
                     name="date-of-birth"
-                    type="date-of-birth"
+                    type="text"
                     placeholder={t("dateOfBirthPlaceHolder")}
                     autoComplete="date-of-birth"
-                    className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                    className="block px-3 w-full outline-none border-0 py-1.5 text-gray-900 ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                    onKeyDown={(e) => {
+                      const validKeys = [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "/",
+                        "-",
+                        "Backspace",
+                        "ArrowLeft",
+                        "ArrowRight",
+                        "Tab",
+                      ];
+                      if (!validKeys.includes(e.key)) {
+                        e.preventDefault();
+                      }
+                    }}
+                    onInput={(e) => {
+                      const input = e.target as HTMLInputElement;
+                      const value = input.value;
+                      const validValue = value.replace(/[^0-9\/-]/g, "");
+                      if (value !== validValue) {
+                        input.value = validValue;
+                      }
+                    }}
                   />
                 </div>
               </div>
