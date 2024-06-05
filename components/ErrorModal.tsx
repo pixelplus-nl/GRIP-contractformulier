@@ -20,9 +20,9 @@ export default function ErrorModal(props: any) {
           {props.title}
         </h1>
 
-        {Array.isArray(props.body)
-          ? (<ul className={'list-disc max-w-2xl'}>{props.body}</ul>)
-          : (<p className={'list-dsc max-w-2xl'}>{props.body}</p>)}
+        {Array.isArray(props.errorModal.body)
+          ? (<ul className={'list-disc max-w-2xl'}>{props.errorModal.body}</ul>)
+          : (<p className={'list-dsc max-w-2xl'}>{props.errorModal.body}</p>)}
 
         <div className={`flex gap-3 mt-5 ${props.languageButtons}`}>
           <button
