@@ -20,7 +20,6 @@ const variants = {
 type SignatureCanvasInstance = any;
 
 export default function SlideFour(props: any) {
-  const [openModal, setOpenModal] = useState(false);
   const [sign, setSign] = useState<SignatureCanvasInstance | null>(null);
   const [url, setUrl] = useState<string>("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
@@ -49,7 +48,7 @@ export default function SlideFour(props: any) {
     // Convert the participants file to base64
     const participants = formData.get("participants");
 
-    if (participants.size > 0) {
+    if (participants && participants.size > 0) {
       const reader = new FileReader();
 
       const base64 = await new Promise((resolve, reject) => {
@@ -72,20 +71,20 @@ export default function SlideFour(props: any) {
     if (!response.success) {
       try {
         props.setErrorModal({
-          title: errorModal('titleError'),
+          title: errorModal("titleError"),
           body: errorMessages(response.code),
         });
-      // Fall back to the default error message
+        // Fall back to the default error message
       } catch (e: any) {
         props.setErrorModal({
-          title: errorModal('titleError'),
-          body: errorMessages('__default'),
+          title: errorModal("titleError"),
+          body: errorMessages("__default"),
         });
       }
     } else {
-      props.setErrorModal({
-        title: errorModal('titleSuccess'),
-        body: errorModal('bodySuccess'),
+      props.setErrorModel({
+        title: errorModal("titleSuccess"),
+        body: errorModal("bodySuccess"),
       });
     }
   };
@@ -129,7 +128,7 @@ export default function SlideFour(props: any) {
         </div>
 
         <form
-          className="px-5 md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12"
+          className="px-5 h-full overflow-scroll md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12"
           onSubmit={handleSubmit}>
           <h1 className="text-4xl font-bold">{t("title")}</h1>
           <div className="mb-5">
@@ -196,10 +195,47 @@ export default function SlideFour(props: any) {
                   <input
                     id="date-of-birth"
                     name="date-of-birth"
-                    type="date-of-birth"
+                    type="text"
                     placeholder={t("dateOfBirthPlaceHolder")}
                     autoComplete="date-of-birth"
-                    className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                    className="block px-3 w-full outline-none border-0 py-1.5 text-gray-900 ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                    onKeyDown={(e) => {
+                      const validKeys = [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "Backspace",
+                        "ArrowLeft",
+                        "ArrowRight",
+                        "Tab",
+                      ];
+                      if (!validKeys.includes(e.key)) {
+                        e.preventDefault();
+                      }
+                    }}
+                    onInput={(e) => {
+                      const input = e.target as HTMLInputElement;
+                      let value = input.value.replace(/\D/g, ""); // Remove non-digit characters
+                      if (value.length > 8) value = value.substring(0, 8); // Limit to 8 digits
+
+                      if (value.length > 4) {
+                        value = `${value.slice(0, 2)}-${value.slice(
+                          2,
+                          4
+                        )}-${value.slice(4)}`;
+                      } else if (value.length > 2) {
+                        value = `${value.slice(0, 2)}-${value.slice(2)}`;
+                      }
+
+                      input.value = value;
+                    }}
                   />
                 </div>
               </div>
@@ -338,7 +374,7 @@ export default function SlideFour(props: any) {
                         name="accompanist"
                         id="yes"
                         className="cursor-pointer"
-                        onClick={() => setOpenModal(true)}
+                        onClick={() => props.setOpenList(true)}
                       />
                       <label
                         htmlFor="yes"
@@ -354,7 +390,7 @@ export default function SlideFour(props: any) {
                       name="accompanist"
                       id="no"
                       className="cursor-pointer"
-                      onClick={() => setOpenModal(false)}
+                      onClick={() => props.setOpenList(false)}
                     />
                     <label
                       htmlFor="no"
@@ -364,28 +400,25 @@ export default function SlideFour(props: any) {
                   </div>
                 </fieldset>
 
-                <motion.div
-                  initial={"closed"}
-                  variants={variants}
-                  animate={openModal ? "open" : "closed"}
-                  transition={{ duration: 1 }}
-                  className="overflow-hidden">
-                  <p className="pt-5">{t("kidsList")}</p>
-                  <div className="mt-3 flex gap-2 items-center">
-                    <label
-                      className="bg-[#6AACB8] hover:bg-white hover:text-[#6AACBB] border-2 border-[#6AACBB] cursor-pointer transition-all w-fit px-2 py-1 text-white font-semibold"
-                      htmlFor="participants">
-                      {t("listButton")}
-                    </label>
-                    <input
-                      id="participants"
-                      className=""
-                      name="participants"
-                      type="file"
-                      accept="application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                    />
+                {props.openList && (
+                  <div>
+                    <p className="pt-5">{t("kidsList")}</p>
+                    <div className="mt-3 flex gap-2 items-center">
+                      <label
+                        className="bg-[#6AACB8] hover:bg-white hover:text-[#6AACBB] border-2 border-[#6AACBB] cursor-pointer transition-all w-fit px-2 py-1 text-white font-semibold"
+                        htmlFor="participants">
+                        {t("listButton")}
+                      </label>
+                      <input
+                        id="participants"
+                        className=""
+                        name="participants"
+                        type="file"
+                        accept="application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                      />
+                    </div>
                   </div>
-                </motion.div>
+                )}
               </div>
 
               <div>
