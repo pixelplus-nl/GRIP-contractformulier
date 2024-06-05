@@ -20,7 +20,6 @@ export default function WizardContent() {
   const sliderRef = useRef<any | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [errorModal, setErrorModal] = useState(null);
-  const [succesModal, setSuccesModal] = useState(null);
   const [openModal, setOpenModal] = useState(false);
   const [openList, setOpenList] = useState(false);
   const [heightClassName, setHeightClassName] = useState("");
@@ -100,16 +99,8 @@ export default function WizardContent() {
     <>
       {errorModal && (
         <ErrorModal
-          errorModal={errorModal}
-          isText="hidden"
-          languageButtons="hidden"
-          setErrorModal={setErrorModal}
-        />
-      )}
-      {succesModal && (
-        <ErrorModal
-          errorModal={errorModal}
-          isList="hidden"
+          title={errorModal?.title}
+          body={errorModal?.body}
           languageButtons="hidden"
           setErrorModal={setErrorModal}
         />
@@ -153,7 +144,6 @@ export default function WizardContent() {
           <SlideFour
             setOpenList={setOpenList}
             openList={openList}
-            setSuccesModal={setSuccesModal}
             setErrorModal={setErrorModal}
           />
         </SwiperSlide>

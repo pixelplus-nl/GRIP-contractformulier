@@ -82,7 +82,7 @@ export default function SlideFour(props: any) {
         });
       }
     } else {
-      props.setSuccesModal({
+      props.setErrorModel({
         title: errorModal("titleSuccess"),
         body: errorModal("bodySuccess"),
       });
