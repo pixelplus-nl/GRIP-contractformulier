@@ -26,7 +26,7 @@ export default function ErrorModal(props: any) {
 
         <div className={`flex gap-3 mt-5 ${props.languageButtons}`}>
           <button
-            onClick={() => props.setErrorModal(false)}
+            onClick={() => props.setErrorModal(null)}
             className="bg-[#6AACB8] border-[#6AACB8] border-2 transition-all hover:bg-white hover:text-black px-2 py-1 w-full text-white">
             {props.cancel}
           </button>

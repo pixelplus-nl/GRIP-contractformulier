@@ -6,12 +6,17 @@ import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import ErrorModal from "./ErrorModal";
 
+interface ErrorModalContent {
+  title?: string;
+  body?: string;
+}
+
 export default function Header() {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const localActive = useLocale();
   const [activeLanguage, setActiveLanguage] = useState(localActive);
-  const [errorModal, setErrorModal] = useState(false);
+  const [errorModal, setErrorModal] = useState<ErrorModalContent | null>(null);
   const pathname = usePathname();
 
   const onSelectLanguage = (language: string) => {
@@ -50,7 +55,10 @@ export default function Header() {
               onClick={() => {
                 pathname.split("/").length === 2
                   ? onSelectLanguage("nl")
-                  : setErrorModal(true);
+                  : setErrorModal({
+                    title: t("title"),
+                    body: t("body"),
+                  });
               }}>
               NL
             </button>
@@ -64,7 +72,10 @@ export default function Header() {
               onClick={() => {
                 pathname.split("/").length === 2
                   ? onSelectLanguage("en")
-                  : setErrorModal(true);
+                  : setErrorModal({
+                    title: t("title"),
+                    body: t("body"),
+                  });
               }}>
               EN
             </button>
@@ -76,11 +87,7 @@ export default function Header() {
           pathname={pathname}
           changeLanguage={onSelectLanguage}
           errorModal={errorModal}
-          title={t("title")}
-          isList="hidden"
-          isText=""
           crossButton="hidden"
-          body={t("body")}
           setErrorModal={setErrorModal}
           proceed={t("proceed")}
           cancel={t("cancel")}
