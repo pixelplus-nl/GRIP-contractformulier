@@ -51,6 +51,10 @@ export default function SlideOne(props: any) {
 
         <form className="mt-10 px-5 md:px-0 md:w-7/12  md:mt-0 bg-white">
           <h1 className="text-4xl font-bold">{t("title")}</h1>
+          <div className="mt-3">
+            <p>{t("explanation")}</p>
+            <p>{t("agreement")}</p>
+          </div>
 
           <div className="my-5">
             <h2 className="text-3xl font-semibold">{t("subTitleFirst")}</h2>

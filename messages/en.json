@@ -19,7 +19,9 @@
     "contact": "Do you have a question? Contact us"
   },
   "SlideOne": {
-    "title": "General terms and conditions",
+    "title": "Bouldering introduction",
+    "explanation": "This introduction is important for your safety and the safety of other climbers.",
+    "agreement": "AGREE with each subsection to indicate that you understand each of the following rules.",
     "subTitleFirst": "Basic safety and conduct",
     "listFirst": [
       "Take care of your own safety and do not create unsafe situations for others.",
@@ -85,7 +87,7 @@
     "middleName": "Middle Initial",
     "lastName": "Last Name",
     "dateOfBirth": "Date of Birth",
-    "dateOfBirthPlaceHolder": "dd-mm-yyyy",
+    "dateOfBirthPlaceHolder": "DD-MM-YYYY",
     "address": "Address",
     "street": "Street",
     "houseNumber": "House Number",
