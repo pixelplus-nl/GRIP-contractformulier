@@ -1,21 +1,14 @@
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import Warning from "./RulesWarning";
-import Footer from "./Footer";
 import SendInButton from "./SendInButton";
 import { RxCross1 } from "react-icons/rx";
 import submitForm from "@/lib/submitForm";
-import { useLocale, useMessages, useTranslations } from "next-intl";
-
-const variants = {
-  open: {
-    height: "auto",
-  },
-  closed: {
-    height: "0",
-  },
-};
+import { useLocale, useTranslations } from "next-intl";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DateField } from "@mui/x-date-pickers/DateField";
+import "dayjs/locale/nl-be";
 
 type SignatureCanvasInstance = any;
 
@@ -85,6 +78,10 @@ export default function SlideFour(props: any) {
       props.setErrorModal({
         title: errorModal("titleSuccess"),
         body: errorModal("bodySuccess"),
+        onClose: () => {
+          // TODO: Redirect to some other page (e.g. a success page)
+          //router.push("/success");
+        },
       });
     }
   };
@@ -128,7 +125,7 @@ export default function SlideFour(props: any) {
         </div>
 
         <form
-          className="px-5 h-full overflow-scroll md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12"
+          className="px-5 h-full  md:px-0 md:mt-0 max-w-3xl bg-white md:w-7/12"
           onSubmit={handleSubmit}>
           <h1 className="text-4xl font-bold">{t("title")}</h1>
           <div className="mb-5">
@@ -192,51 +189,21 @@ export default function SlideFour(props: any) {
                 </h3>
                 <label htmlFor="date-of-birth"></label>
                 <div className="mt-2">
-                  <input
-                    id="date-of-birth"
-                    name="date-of-birth"
-                    type="text"
-                    placeholder={t("dateOfBirthPlaceHolder")}
-                    autoComplete="date-of-birth"
-                    className="block px-3 w-full outline-none border-0 py-1.5 text-gray-900 ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
-                    onKeyDown={(e) => {
-                      const validKeys = [
-                        "0",
-                        "1",
-                        "2",
-                        "3",
-                        "4",
-                        "5",
-                        "6",
-                        "7",
-                        "8",
-                        "9",
-                        "Backspace",
-                        "ArrowLeft",
-                        "ArrowRight",
-                        "Tab",
-                      ];
-                      if (!validKeys.includes(e.key)) {
-                        e.preventDefault();
-                      }
-                    }}
-                    onInput={(e) => {
-                      const input = e.target as HTMLInputElement;
-                      let value = input.value.replace(/\D/g, ""); // Remove non-digit characters
-                      if (value.length > 8) value = value.substring(0, 8); // Limit to 8 digits
-
-                      if (value.length > 4) {
-                        value = `${value.slice(0, 2)}-${value.slice(
-                          2,
-                          4
-                        )}-${value.slice(4)}`;
-                      } else if (value.length > 2) {
-                        value = `${value.slice(0, 2)}-${value.slice(2)}`;
-                      }
-
-                      input.value = value;
-                    }}
-                  />
+                  <LocalizationProvider
+                    dateAdapter={AdapterDayjs}
+                    adapterLocale="nl-be">
+                    <DateField
+                      id="date-of-birth"
+                      //01 meenemen in validatie formulier https://mui.com/x/react-date-pickers/date-field/
+                      InputLabelProps={{
+                        style: { color: "#9ca3af", fontSize: "0.875rem" },
+                      }}
+                      inputProps={{ style: { fontSize: "0.875rem" } }}
+                      className="w-full !outline-none !ring-0 !border-0"
+                      size="small"
+                      label={t("dateOfBirthPlaceHolder")}
+                    />
+                  </LocalizationProvider>
                 </div>
               </div>
 

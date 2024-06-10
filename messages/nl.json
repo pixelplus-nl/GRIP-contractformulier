@@ -18,7 +18,9 @@
     "contact": "Neem contact op"
   },
   "SlideOne": {
-    "title": "Algemene voorwaarden",
+    "title": "Boulder introductie",
+    "explanation": "Deze introductie is belangrijk voor jouw veiligheid en de veiligheid van andere klimmers.",
+    "agreement": "GA AKKOORD met elke deelparagraaf om aan te geven dat je elk van de onderstaande regels begrijpt.",
     "subTitleFirst": "Basisveiligheid en omgangsvormen",
     "listFirst": [
       "Zorg voor je eigen veiligheid en veroorzaak geen onveilige situaties voor anderen.",
@@ -84,7 +86,7 @@
     "middleName": "Tussenvoegsels",
     "lastName": "Achternaam",
     "dateOfBirth": "Geboortedatum",
-    "dateOfBirthPlaceHolder": "dd-mm-jjjj",
+    "dateOfBirthPlaceHolder": "DD-MM-JJJJ",
     "address": "Adres",
     "street": "Straat",
     "houseNumber": "Huisnr.",

@@ -44,7 +44,10 @@ export default function ErrorModal(props: any) {
         </div>
 
         <TfiClose
-          onClick={() => props.setErrorModal(null)}
+          onClick={() => {
+            props.onClose?.(); // Call onClose if it exists
+            props.setErrorModal(null)
+          }}
           className={`absolute ${props.crossButton} top-10 right-10 hover:opacity-30 cursor-pointer transition-all`}
           size={30}
           color="#C10000"
