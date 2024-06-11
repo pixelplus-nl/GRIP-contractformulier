@@ -8,7 +8,7 @@ export default function ErrorModal(props: any) {
     <div className="fixed z-40 px-3 flex w-screen h-screen justify-center items-center">
       <motion.div
         initial={{ opacity: 0, y: "100vh" }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="w-screen h-screen flex fixed top-0 left-0 bg-black/50 backdrop-blur"></motion.div>
       <motion.div
@@ -16,10 +16,14 @@ export default function ErrorModal(props: any) {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
         className="relative z-50 bg-white p-10 rounded-2xl">
-        <h1 className="text-4xl font-bold mb-5 pr-10">{props.errorModal.title}</h1>
+        <h1 className="text-4xl font-bold mb-5 pr-10">
+          {props.errorModal.title}
+        </h1>
 
         {Array.isArray(props.errorModal.body) ? (
-          <ul className={"list-disc ml-5 max-w-2xl"}>{props.errorModal.body}</ul>
+          <ul className={"list-disc ml-5 max-w-2xl"}>
+            {props.errorModal.body}
+          </ul>
         ) : (
           <p className={"max-w-2xl"}>{props.errorModal.body}</p>
         )}
@@ -46,7 +50,7 @@ export default function ErrorModal(props: any) {
         <TfiClose
           onClick={() => {
             props.onClose?.(); // Call onClose if it exists
-            props.setErrorModal(null)
+            props.setErrorModal(null);
           }}
           className={`absolute ${props.crossButton} top-10 right-10 hover:opacity-30 cursor-pointer transition-all`}
           size={30}
