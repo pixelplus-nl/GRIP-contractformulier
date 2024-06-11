@@ -17,6 +17,7 @@ export default function SlideFour(props: any) {
   const [url, setUrl] = useState<string>("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
+
   const errorModal = useTranslations("errorModal");
   const errorMessages = useTranslations("errorMessages");
 
@@ -378,7 +379,7 @@ export default function SlideFour(props: any) {
                       </label>
                       <input
                         id="participants"
-                        className=""
+                        className="hidden"
                         name="participants"
                         type="file"
                         accept="application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"

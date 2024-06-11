@@ -40,6 +40,11 @@ export default function WizardContent() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handlePrev = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slidePrev();
+  }, []);
+
   const handleNext = useCallback(() => {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slideNext();
@@ -50,6 +55,7 @@ export default function WizardContent() {
   const pagination = isMobile
     ? {
         clickable: process.env.NODE_ENV === "development",
+        el: ".swiper-pagination",
         renderBullet: (index: number, className: string) => {
           return `<p class="${className} pagination_text">${t("step")}<span>${
             index + 1
@@ -58,6 +64,7 @@ export default function WizardContent() {
       }
     : {
         clickable: process.env.NODE_ENV === "development",
+        el: ".swiper-pagination",
         renderBullet: (index: number, className: string) => {
           return `<p class="${className} pagination_text"><span>${
             index + 1
@@ -90,6 +97,8 @@ export default function WizardContent() {
       return () => clearTimeout(timerId);
     }
 
+   
+
     if (activeIndex === 2 && openModal) {
       timerId = setTimeout(() => {
         setHeightClassName("[&>div]:h-auto");
@@ -110,6 +119,21 @@ export default function WizardContent() {
           setErrorModal={setErrorModal}
         />
       )}
+      <div className="pt-24 pb-12 gap-3 flex justify-center">
+        {/* {activeIndex > 0 ? (
+          <div className=" h-[26px] group relative">
+            <button className="gap-1 flex" onClick={handlePrev}>
+              <span>‹</span>
+              {t("prev")}
+            </button>
+            <span className="absolute bottom-0 right-0 w-0 duration-500 transition-all h-0.5 bg-[#6aacb8] group-hover:w-full"></span>
+          </div>
+        ) : (
+          ""
+        )} */}
+
+        <div className="swiper-pagination !w-fit"></div>
+      </div>
       <Swiper
         effect={"creative"}
         creativeEffect={{
