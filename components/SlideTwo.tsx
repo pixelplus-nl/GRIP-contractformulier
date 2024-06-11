@@ -26,22 +26,6 @@ export default function SlideTwo(props: any) {
   const messages = useMessages() as DetailedMessages;
   const listFirst = messages.SlideTwo.listFirst;
 
-  useEffect(() => {
-    const toggleBodyClass = () => {
-      if (props.activeIndex === 1) {
-        document.body.classList.add("overflow-hidden");
-      } else {
-        document.body.classList.remove("overflow-hidden");
-      }
-    };
-
-    toggleBodyClass();
-
-    return () => {
-      document.body.classList.remove("overflow-hidden");
-    };
-  }, [props.activeIndex]);
-
   return (
     <>
       <div className="md:flex min-h-screen mb-12 md:px-5 px-0 xl:px-0 lg:gap-10 gap-5 lg:justify-between  max-w-6xl mx-auto">

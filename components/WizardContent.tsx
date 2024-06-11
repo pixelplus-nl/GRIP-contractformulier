@@ -108,6 +108,22 @@ export default function WizardContent() {
     setHeightClassName("");
   }, [activeIndex, openModal, openList]);
 
+  useEffect(() => {
+    const toggleBodyClass = () => {
+      if ((activeIndex === 2 && !openModal) || activeIndex === 1) {
+        document.body.classList.add("overflow-hidden");
+      } else {
+        document.body.classList.remove("overflow-hidden");
+      }
+    };
+
+    toggleBodyClass();
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [openModal, activeIndex]);
+
   return (
     <>
       {errorModal && (
