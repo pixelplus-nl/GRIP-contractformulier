@@ -97,8 +97,6 @@ export default function WizardContent() {
       return () => clearTimeout(timerId);
     }
 
-   
-
     if (activeIndex === 2 && openModal) {
       timerId = setTimeout(() => {
         setHeightClassName("[&>div]:h-auto");
@@ -120,7 +118,7 @@ export default function WizardContent() {
         />
       )}
       <div className="pt-24 pb-12 gap-3 flex justify-center">
-        {/* {activeIndex > 0 ? (
+        {activeIndex > 0 && (
           <div className=" h-[26px] group relative">
             <button className="gap-1 flex" onClick={handlePrev}>
               <span>‹</span>
@@ -128,10 +126,7 @@ export default function WizardContent() {
             </button>
             <span className="absolute bottom-0 right-0 w-0 duration-500 transition-all h-0.5 bg-[#6aacb8] group-hover:w-full"></span>
           </div>
-        ) : (
-          ""
-        )} */}
-
+        )}
         <div className="swiper-pagination !w-fit"></div>
       </div>
       <Swiper
