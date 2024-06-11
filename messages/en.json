@@ -131,7 +131,8 @@
     "validity": "Validity",
     "tAndC": "Terms and Conditions",
     "personalInformation": "Personal information",
-    "step": "Step"
+    "step": "Step",
+    "prev": "previous slide"
   },
   "LanguageModal": {
     "title": "Caution!",

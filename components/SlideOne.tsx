@@ -64,7 +64,7 @@ export default function SlideOne(props: any) {
               })}
             </ul>
 
-            <div className="mt-3 flex gap-2 hover:opacity-50 w-fit items-center">
+            <div className="mt-3 flex gap-2 hover:opacity-50 transition-all w-fit items-center">
               <input
                 onChange={(e) => handleCheckboxChange(e, setBaseChecked)}
                 id="baseCheck"
@@ -90,7 +90,7 @@ export default function SlideOne(props: any) {
               })}
             </ul>
 
-            <div className="mt-3 flex gap-2 hover:opacity-50 w-fit   items-center">
+            <div className="mt-3 flex gap-2 hover:opacity-50 w-fit transition-all  items-center">
               <input
                 onChange={(e) => handleCheckboxChange(e, setFallZonesChecked)}
                 id="fallZonesCheck"
@@ -116,7 +116,7 @@ export default function SlideOne(props: any) {
               })}
             </ul>
 
-            <div className="mt-3 flex gap-2 hover:opacity-50 w-fit items-center">
+            <div className="mt-3 flex gap-2 hover:opacity-50 w-fit transition-all items-center">
               <input
                 id="etiquetteCheck"
                 name="etiquetteCheck"
@@ -142,7 +142,7 @@ export default function SlideOne(props: any) {
               })}
             </ul>
 
-            <div className="mt-3 flex gap-2 hover:opacity-50 w-fit items-center">
+            <div className="mt-3 flex gap-2 hover:opacity-50 w-fit transition-all items-center">
               <input
                 id="minorCheck"
                 name="minorCheck"
@@ -168,7 +168,7 @@ export default function SlideOne(props: any) {
               })}
             </ul>
 
-            <div className="mt-3 flex gap-2 hover:opacity-50 w-fit items-center">
+            <div className="mt-3 flex gap-2 hover:opacity-50 transition-all w-fit items-center">
               <input
                 id="emergencyCheck"
                 name="emergencyCheck"

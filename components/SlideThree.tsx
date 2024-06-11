@@ -53,7 +53,7 @@ export default function SlideThree(props: any) {
               {t("readMoreButton")} ›
             </button>
             <p className="mt-5">{t("acceptText")}</p>
-            <div className="mt-5 flex hover:opacity-50 w-fit gap-2 items-center">
+            <div className="mt-5 flex hover:opacity-50 transition-all w-fit gap-2 items-center">
               <input
                 onChange={(e) => handleCheckboxChange(e, settandChecked)}
                 id="tandcCheck"

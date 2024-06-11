@@ -130,7 +130,8 @@
     "validity": "Validiteit",
     "tAndC": "Algemene voorwaarden",
     "personalInformation": "Persoonlijke gegevens",
-    "step": "Stap"
+    "step": "Stap",
+    "prev": "vorige slide"
   },
   "LanguageModal": {
     "title": "Let op!",

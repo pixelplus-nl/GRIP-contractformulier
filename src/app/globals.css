@@ -37,7 +37,6 @@
 
 .swiper-pagination {
   position: relative !important;
-  padding: 5rem 0 3rem 0;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets,
@@ -63,7 +62,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  border-bottom: 3px solid #6aacb8;
+  border-bottom: 2px solid #6aacb8;
   font-weight: 700;
 }
 
