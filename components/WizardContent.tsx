@@ -110,7 +110,10 @@ export default function WizardContent() {
 
   useEffect(() => {
     const toggleBodyClass = () => {
-      if ((activeIndex === 2 && !openModal) || activeIndex === 1) {
+      if (
+        (activeIndex === 2 && !openModal) ||
+        (!isMobile && activeIndex === 1)
+      ) {
         document.body.classList.add("overflow-hidden");
       } else {
         document.body.classList.remove("overflow-hidden");
