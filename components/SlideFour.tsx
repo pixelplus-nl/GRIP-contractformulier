@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import Warning from "./RulesWarning";
 import SendInButton from "./SendInButton";
@@ -9,6 +9,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateField } from "@mui/x-date-pickers/DateField";
 import "dayjs/locale/nl-be";
+import { MdOutlineDelete } from "react-icons/md";
 
 type SignatureCanvasInstance = any;
 
@@ -16,6 +17,9 @@ export default function SlideFour(props: any) {
   const [sign, setSign] = useState<SignatureCanvasInstance | null>(null);
   const [url, setUrl] = useState<string>("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [fileName, setFileName] = useState<string>("");
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const errorModal = useTranslations("errorModal");
   const errorMessages = useTranslations("errorMessages");
@@ -28,6 +32,13 @@ export default function SlideFour(props: any) {
       const dataUrl = sign.getTrimmedCanvas().toDataURL("image/png");
 
       setUrl(dataUrl);
+    }
+  };
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setFileName(file.name);
     }
   };
 
@@ -112,6 +123,13 @@ export default function SlideFour(props: any) {
     if (sign) {
       event.preventDefault();
       sign.clear();
+    }
+  };
+
+  const handleDeleteFile = () => {
+    setFileName("");
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
     }
   };
 
@@ -370,19 +388,32 @@ export default function SlideFour(props: any) {
                 {props.openList && (
                   <div>
                     <p className="pt-5">{t("kidsList")}</p>
-                    <div className="mt-3 flex gap-2 items-center">
+                    <div className="mt-3 flex gap-2 flex-col justify-center">
                       <label
                         className="bg-[#6AACB8] hover:bg-white hover:text-[#6AACBB] border-2 border-[#6AACBB] cursor-pointer transition-all w-fit px-2 py-1 text-white font-semibold"
                         htmlFor="participants">
                         {t("listButton")}
                       </label>
                       <input
+                        ref={fileInputRef}
                         id="participants"
                         className="hidden"
                         name="participants"
+                        onChange={handleFileChange}
                         type="file"
                         accept="application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                       />
+                      {fileName && (
+                        <p className="flex items-center gap-3">
+                          {fileName}
+                          <MdOutlineDelete
+                            className="hover:opacity-50 transition-all"
+                            color="#c10000"
+                            size="1.3rem"
+                            onClick={handleDeleteFile}
+                          />
+                        </p>
+                      )}
                     </div>
                   </div>
                 )}
