@@ -24,21 +24,7 @@ export default function SlideThree(props: any) {
 
   const t = useTranslations("SlideThree");
 
-  useEffect(() => {
-    const toggleBodyClass = () => {
-      if (props.activeIndex === 2 && !props.openModal) {
-        document.body.classList.add("overflow-hidden");
-      } else {
-        document.body.classList.remove("overflow-hidden");
-      }
-    };
-
-    toggleBodyClass();
-
-    return () => {
-      document.body.classList.remove("overflow-hidden");
-    };
-  }, [props.openModal, props.activeIndex]);
+  
 
   const isButtonDisabled = !tandcChecked;
   return (
