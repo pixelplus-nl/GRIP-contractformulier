@@ -212,7 +212,8 @@ export default function SlideFour(props: any) {
                     adapterLocale="nl-be">
                     <DateField
                       id="date-of-birth"
-                      //01 meenemen in validatie formulier https://mui.com/x/react-date-pickers/date-field/
+                      name="date-of-birth"
+                      format="DD-MM-YYYY"
                       InputLabelProps={{
                         style: { color: "#9ca3af", fontSize: "0.875rem" },
                       }}
