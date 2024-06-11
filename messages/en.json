@@ -70,7 +70,9 @@
       "GRIP is not liable if I or the minor child do not have adequate fitness or health, or if I or the minor child do not follow the instructions of GRIP staff."
     ],
     "checkButton": "I agree",
-    "nextButton": "Next step"
+
+    "nextButton": "Next step",
+    "prevButton": "Previous step"
   },
   "SlideThree": {
     "title": "General terms and conditions",
@@ -78,7 +80,8 @@
     "acceptText": "I have carefully read this agreement and fully understand its contents and implications. I agree to the above terms and conditions.",
     "readMoreButton": "Read more",
     "checkButton": "I agree",
-    "nextButton": "Next step"
+    "nextButton": "Next step",
+    "prevButton": "Previous step"
   },
   "SlideFour": {
     "title": "Personal Information",
@@ -107,7 +110,8 @@
     "signatureExplanation": "Sign your signature in the box below",
     "signatureAgreement": "Signature for agreement",
     "erase": "Erase",
-    "nextButton": "Submit"
+    "nextButton": "Submit",
+    "prevButton": "Previous step"
   },
   "errorModal": {
     "titleError": "Attention!",

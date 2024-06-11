@@ -69,7 +69,8 @@
       "GRIP is niet aansprakelijk wanneer ik of het minderjarige kind niet beschikt over een toereikende conditie of gezondheid of wanneer ik of het minderjarige kind niet de aanwijzingen van GRIP medewerkers opvolg."
     ],
     "checkButton": "Ik ga akkoord",
-    "nextButton": "Volgende stap"
+    "nextButton": "Volgende stap",
+    "prevButton": "Vorige stap"
   },
   "SlideThree": {
     "title": "Algemene voorwaarden",
@@ -77,7 +78,8 @@
     "acceptText": "Ik heb deze overeenkomst zorgvuldig gelezen en begrijp de inhoud en implicaties volledig. Ik ga akkoord met de bovenstaande voorwaarden.",
     "readMoreButton": "Lees verder",
     "checkButton": "Ik ga akkoord",
-    "nextButton": "Volgende stap"
+    "nextButton": "Volgende stap",
+    "prevButton": "Vorige stap"
   },
   "SlideFour": {
     "title": "Persoonlijke gegevens",
@@ -106,7 +108,8 @@
     "signatureExplanation": "Teken in het onderstaande kader uw handtekening",
     "signatureAgreement": "Handtekening voor akkoord",
     "erase": "Wissen",
-    "nextButton": "Definitief insturen"
+    "nextButton": "Definitief insturen",
+    "prevButton": "Vorige stap"
   },
   "errorModal": {
     "titleError": "Let op!",

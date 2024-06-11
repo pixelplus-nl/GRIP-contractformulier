@@ -10,6 +10,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateField } from "@mui/x-date-pickers/DateField";
 import "dayjs/locale/nl-be";
 import { MdOutlineDelete } from "react-icons/md";
+import PrevButton from "./PrevButton";
 
 type SignatureCanvasInstance = any;
 
@@ -103,6 +104,10 @@ export default function SlideFour(props: any) {
         return false;
       }
 
+      if (props.openList === true && fileName === "") {
+        return false;
+      }
+
       const inputs = document.querySelectorAll("input");
       let allFilled = true;
       inputs.forEach((input) => {
@@ -117,7 +122,7 @@ export default function SlideFour(props: any) {
     };
 
     setIsButtonDisabled(!validateForm());
-  }, [url]);
+  }, [url, props.openList, fileName]);
 
   const handleClear = (event: any) => {
     if (sign) {
@@ -494,11 +499,17 @@ export default function SlideFour(props: any) {
               </div>
             </div>
           </div>
-          <SendInButton
-            handleNext={handleGenerate}
-            buttonText={`${t("nextButton")} ›`}
-            isButtonDisabled={isButtonDisabled}
-          />
+          <div className="flex">
+            <PrevButton
+              handlePrev={props.handlePrev}
+              buttonText={`${t("prevButton")} ›`}
+            />
+            <SendInButton
+              handleNext={handleGenerate}
+              buttonText={`${t("nextButton")} ›`}
+              isButtonDisabled={isButtonDisabled}
+            />
+          </div>
         </form>
       </div>
     </>

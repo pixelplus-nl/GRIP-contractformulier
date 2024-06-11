@@ -4,6 +4,7 @@ import NextButton from "./NextButton";
 import Warning from "./RulesWarning";
 import Footer from "./Footer";
 import { useTranslations } from "next-intl";
+import PrevButton from "./PrevButton";
 
 const variants = {
   closed: {
@@ -69,11 +70,17 @@ export default function SlideThree(props: any) {
             </div>
 
             <hr className="my-10" />
-            <NextButton
-              handleNext={props.handleNext}
-              isButtonDisabled={isButtonDisabled}
-              buttonText={`${t("nextButton")} ›`}
-            />
+            <div className="flex">
+              <PrevButton
+                handlePrev={props.handlePrev}
+                buttonText={`${t("prevButton")} ›`}
+              />
+              <NextButton
+                handleNext={props.handleNext}
+                isButtonDisabled={isButtonDisabled}
+                buttonText={`${t("nextButton")} ›`}
+              />
+            </div>
           </div>
         </form>
       </div>

@@ -118,15 +118,6 @@ export default function WizardContent() {
         />
       )}
       <div className="pt-24 pb-12 gap-3 flex justify-center">
-        {activeIndex > 0 && (
-          <div className=" h-[26px] group relative">
-            <button className="gap-1 flex" onClick={handlePrev}>
-              <span>‹</span>
-              {t("prev")}
-            </button>
-            <span className="absolute bottom-0 right-0 w-0 duration-500 transition-all h-0.5 bg-[#6aacb8] group-hover:w-full"></span>
-          </div>
-        )}
         <div className="swiper-pagination !w-fit"></div>
       </div>
       <Swiper
@@ -152,16 +143,17 @@ export default function WizardContent() {
         modules={[EffectCreative, Pagination, Navigation]}
         className={`mySwiper3 ${heightClassName} `}>
         <SwiperSlide className="!bg-white">
-          <SlideOne handleNext={handleNext} />
+          <SlideOne handleNext={handleNext} handlePrev={handlePrev} />
         </SwiperSlide>
         <SwiperSlide className="!bg-white">
-          <SlideTwo handleNext={handleNext} />
+          <SlideTwo handleNext={handleNext} handlePrev={handlePrev} />
         </SwiperSlide>
         <SwiperSlide className="!bg-white min-h-screen">
           <SlideThree
             openModal={openModal}
             setOpenModal={setOpenModal}
             handleNext={handleNext}
+            handlePrev={handlePrev}
           />
         </SwiperSlide>
         <SwiperSlide className="!bg-white">
@@ -169,6 +161,7 @@ export default function WizardContent() {
             setOpenList={setOpenList}
             openList={openList}
             setErrorModal={setErrorModal}
+            handlePrev={handlePrev}
           />
         </SwiperSlide>
       </Swiper>
