@@ -7,7 +7,11 @@ export default function SendInButton(props: any) {
         className={`relative flex justify-center items-center ${
           props.isButtonDisabled ? "opacity-30" : ""
         }`}>
-        <svg width="240.963" height="70.701" viewBox="0 0 243.963 70.701">
+        <svg
+          className="w-[12rem] md:w-auto h-full"
+          width="240.963"
+          height="70.701"
+          viewBox="0 0 243.963 70.701">
           <a className="group transition-all">
             <path
               id="Path_1029"

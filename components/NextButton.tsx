@@ -10,11 +10,11 @@ export default function NextButton(props: any) {
       <button
         disabled={props.isButtonDisabled === true}
         onClick={handleNextClick}
-        className={`relative flex justify-center items-center ${
+        className={`relative flex justify-center items-end ${
           props.isButtonDisabled ? "opacity-30" : ""
         }`}>
         <svg
-          className="w-[12rem] md:w-full h-fit"
+          className="w-[12rem] md:w-auto h-full"
           width="240.963"
           height="70.701"
           viewBox="0 0 243.963 70.701">
