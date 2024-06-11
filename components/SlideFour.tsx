@@ -17,7 +17,6 @@ export default function SlideFour(props: any) {
   const [url, setUrl] = useState<string>("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
-
   const errorModal = useTranslations("errorModal");
   const errorMessages = useTranslations("errorMessages");
 
@@ -304,7 +303,7 @@ export default function SlideFour(props: any) {
                     className="block text-sm font-medium leading-6 text-gray-900"></label>
                   <div className="mt-2">
                     <input
-                      type="text"
+                      type="email"
                       name="email"
                       placeholder={t("email")}
                       id="email"
@@ -319,7 +318,7 @@ export default function SlideFour(props: any) {
                     className="block text-sm font-medium leading-6 text-gray-900"></label>
                   <div className="mt-2">
                     <input
-                      type="text"
+                      type="tel"
                       name="tel"
                       placeholder={t("phoneNumber")}
                       id="tel"
