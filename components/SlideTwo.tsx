@@ -4,7 +4,7 @@ import { useState } from "react";
 import Footer from "./Footer";
 import RulesWarning from "./RulesWarning";
 import { useTranslations, useMessages, AbstractIntlMessages } from "next-intl";
-import PrevButton from "./PrevButton";
+import PrevButton, { PrevButtonMob } from "./PrevButton";
 
 type DetailedMessages = {
   SlideTwo: {
@@ -56,6 +56,10 @@ export default function SlideTwo(props: any) {
             </label>
           </div>
           <div className="flex">
+            <PrevButtonMob
+              handlePrev={props.handlePrev}
+              buttonText={`${t("prevButton")} ›`}
+            />
             <PrevButton
               handlePrev={props.handlePrev}
               buttonText={`${t("prevButton")} ›`}

@@ -10,7 +10,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateField } from "@mui/x-date-pickers/DateField";
 import "dayjs/locale/nl-be";
 import { MdOutlineDelete } from "react-icons/md";
-import PrevButton from "./PrevButton";
+import PrevButton, { PrevButtonMob } from "./PrevButton";
 
 type SignatureCanvasInstance = any;
 
@@ -500,6 +500,10 @@ export default function SlideFour(props: any) {
             </div>
           </div>
           <div className="flex">
+            <PrevButtonMob
+              handlePrev={props.handlePrev}
+              buttonText={`${t("prevButton")} ›`}
+            />
             <PrevButton
               handlePrev={props.handlePrev}
               buttonText={`${t("prevButton")} ›`}
