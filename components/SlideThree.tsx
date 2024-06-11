@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NextButton from "./NextButton";
 import Warning from "./RulesWarning";
 import Footer from "./Footer";
@@ -23,6 +23,22 @@ export default function SlideThree(props: any) {
   };
 
   const t = useTranslations("SlideThree");
+
+  useEffect(() => {
+    const toggleBodyClass = () => {
+      if (props.activeIndex === 2 && !props.openModal) {
+        document.body.classList.add("overflow-hidden");
+      } else {
+        document.body.classList.remove("overflow-hidden");
+      }
+    };
+
+    toggleBodyClass();
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [props.openModal, props.activeIndex]);
 
   const isButtonDisabled = !tandcChecked;
   return (

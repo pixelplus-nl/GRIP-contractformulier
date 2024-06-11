@@ -146,10 +146,15 @@ export default function WizardContent() {
           <SlideOne handleNext={handleNext} handlePrev={handlePrev} />
         </SwiperSlide>
         <SwiperSlide className="!bg-white">
-          <SlideTwo handleNext={handleNext} handlePrev={handlePrev} />
+          <SlideTwo
+            activeIndex={activeIndex}
+            handleNext={handleNext}
+            handlePrev={handlePrev}
+          />
         </SwiperSlide>
         <SwiperSlide className="!bg-white min-h-screen">
           <SlideThree
+            activeIndex={activeIndex}
             openModal={openModal}
             setOpenModal={setOpenModal}
             handleNext={handleNext}

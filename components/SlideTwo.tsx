@@ -1,6 +1,6 @@
 import NextButton from "./NextButton";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "./Footer";
 import RulesWarning from "./RulesWarning";
 import { useTranslations, useMessages, AbstractIntlMessages } from "next-intl";
@@ -25,6 +25,22 @@ export default function SlideTwo(props: any) {
 
   const messages = useMessages() as DetailedMessages;
   const listFirst = messages.SlideTwo.listFirst;
+
+  useEffect(() => {
+    const toggleBodyClass = () => {
+      if (props.activeIndex === 1) {
+        document.body.classList.add("overflow-hidden");
+      } else {
+        document.body.classList.remove("overflow-hidden");
+      }
+    };
+
+    toggleBodyClass();
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [props.activeIndex]);
 
   return (
     <>
