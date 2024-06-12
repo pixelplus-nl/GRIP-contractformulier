@@ -18,8 +18,9 @@ export default function SlideFour(props: any) {
   const [sign, setSign] = useState<SignatureCanvasInstance | null>(null);
   const [url, setUrl] = useState<string>("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-
   const [allFilled, setAllfilled] = useState(false);
+  const [emailNotValid, setEmailNotValid] = useState(false);
+  const [phoneNotValid, setPhoneNotValid] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -146,6 +147,26 @@ export default function SlideFour(props: any) {
 
   const t = useTranslations("SlideFour");
 
+  const validateEmail = (email: string) => {
+    const regex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i;
+    if (!regex.test(email)) {
+      setEmailNotValid(true);
+    } else {
+      setEmailNotValid(false);
+    }
+  };
+
+  const validatePhoneNumber = (phoneNumber: string) => {
+    const pattern =
+      /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+
+    if (!pattern.test(phoneNumber)) {
+      setPhoneNotValid(true);
+    } else {
+      setPhoneNotValid(false);
+    }
+  };
+
   return (
     <>
       <div className="md:flex mb-12 md:w-full md:px-5 gap-5 max-w-6xl lg:justify-between xl:px-0 mx-auto lg:gap-10">
@@ -165,48 +186,52 @@ export default function SlideFour(props: any) {
                 </h3>
                 <div className="flex gap-1">
                   <div className="sm:w-full">
-                    <label
-                      htmlFor="first-name"
-                      className="block text-sm font-medium leading-6 text-gray-900"></label>
-                    <div className="mt-2">
+                    <div className="mt-2 relative">
                       <input
                         type="text"
                         name="first-name"
                         id="first-name"
-                        placeholder={t("firstName")}
+                        placeholder=" "
                         autoComplete="given-name"
-                        className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
+                      <label
+                        htmlFor="first-name"
+                        className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        {t("firstName")}
+                      </label>
                     </div>
                   </div>
-                  <div className="sm:w-full">
+                  <div className="sm:w-full mt-2 relative">
+                    <input
+                      type="text"
+                      name="middle-name"
+                      id="middle-name"
+                      placeholder=" "
+                      autoComplete="additional-name"
+                      className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                    />
                     <label
                       htmlFor="middle-name"
-                      className="block text-sm font-medium leading-6 text-gray-900"></label>
-                    <div className="mt-2">
-                      <input
-                        type="text"
-                        name="middle-name"
-                        id="middle-name"
-                        placeholder={t("middleName")}
-                        autoComplete="middle-name"
-                        className="block px-3  w-20 sm:w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
-                      />
-                    </div>
+                      className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                      {t("middleName")}
+                    </label>
                   </div>
                   <div className="sm:w-full">
-                    <label
-                      htmlFor="last-name"
-                      className="block text-sm font-medium leading-6 text-gray-900"></label>
-                    <div className="mt-2">
+                    <div className="mt-2 relative">
                       <input
                         type="text"
                         name="last-name"
                         id="last-name"
-                        placeholder={t("lastName")}
+                        placeholder=" "
                         autoComplete="family-name"
-                        className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
+                      <label
+                        htmlFor="last-name"
+                        className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        {t("lastName")}
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -229,7 +254,7 @@ export default function SlideFour(props: any) {
                         style: { color: "#9ca3af", fontSize: "0.875rem" },
                       }}
                       inputProps={{ style: { fontSize: "0.875rem" } }}
-                      className="w-full !outline-none !ring-0 !border-0"
+                      className="w-full !outline-none !duration-300 !ring-0 !border-0"
                       size="small"
                       label={t("dateOfBirthPlaceHolder")}
                     />
@@ -243,66 +268,74 @@ export default function SlideFour(props: any) {
                 </h3>
                 <div className="flex gap-1">
                   <div className="w-[67%]">
-                    <label
-                      htmlFor="street-address"
-                      className="block text-sm font-medium leading-6 text-gray-900"></label>
-                    <div className="mt-2">
+                    <div className="mt-2 relative">
                       <input
                         type="text"
                         name="street-address"
-                        placeholder={t("street")}
+                        placeholder=" "
                         id="street-address"
                         autoComplete="street-address"
-                        className="block px-3 w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
+                      <label
+                        htmlFor="street-address"
+                        className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        {t("street")}
+                      </label>
                     </div>
                   </div>
                   <div className="w-1/3">
-                    <label
-                      htmlFor="house-number"
-                      className="block text-sm font-medium leading-6 text-gray-900"></label>
-                    <div className="mt-2">
+                    <div className="mt-2 relative">
                       <input
                         type="text"
                         name="house-number"
                         id="house-number"
-                        placeholder={t("houseNumber")}
+                        placeholder=" "
                         autoComplete="house-number"
-                        className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
+                      <label
+                        htmlFor="house-number"
+                        className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        {t("houseNumber")}
+                      </label>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex gap-1">
                   <div className="w-full">
-                    <label
-                      htmlFor="postal-code"
-                      className="block text-sm font-medium leading-6 text-gray-900"></label>
-                    <div className="mt-2">
+                    <div className="mt-2 relative">
                       <input
                         type="text"
                         name="postal-code"
-                        placeholder={t("zipCode")}
+                        placeholder=" "
                         id="postal-code"
                         autoComplete="postal-code"
-                        className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
+                      <label
+                        htmlFor="postal-code"
+                        className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        {t("zipCode")}
+                      </label>
                     </div>
                   </div>
                   <div className="w-full">
-                    <label
-                      htmlFor="city"
-                      className="block text-sm font-medium leading-6 text-gray-900"></label>
-                    <div className="mt-2">
+                    <div className="mt-2 relative">
                       <input
                         type="text"
                         name="city"
                         id="city"
-                        placeholder={t("residence")}
+                        placeholder=" "
                         autoComplete="address-level2"
-                        className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
+                      <label
+                        htmlFor="city"
+                        className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        {t("residence")}
+                      </label>
                     </div>
                   </div>
                   <div className="w-full">
@@ -328,34 +361,54 @@ export default function SlideFour(props: any) {
                   {t("contact")}
                 </h3>
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium leading-6 text-gray-900"></label>
-                  <div className="mt-2">
+                  <div className="mt-2 relative">
                     <input
                       type="email"
                       name="email"
-                      placeholder={t("email")}
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                      placeholder=" "
                       id="email"
                       autoComplete="email"
-                      className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                      onBlur={(e) => validateEmail(e.target.value)}
+                      className={`bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44] ${
+                        emailNotValid ? "!ring-[#c10000] ring-2" : ""
+                      }`}
                     />
+                    <label
+                      htmlFor="email"
+                      className="absolute text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                      {t("email")}
+                    </label>
                   </div>
+                  {emailNotValid && (
+                    <p className="text-[#c10000]">
+                      Email is not filled in correctly
+                    </p>
+                  )}
                 </div>
                 <div>
-                  <label
-                    htmlFor="tel"
-                    className="block text-sm font-medium leading-6 text-gray-900"></label>
-                  <div className="mt-2">
+                  <div className="mt-2 relative">
                     <input
                       type="tel"
                       name="tel"
-                      placeholder={t("phoneNumber")}
+                      placeholder=" "
+                      onBlur={(e) => validatePhoneNumber(e.target.value)}
                       id="tel"
                       autoComplete="tel"
-                      className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                      pattern="^\d[\d()-+. ]+$"
+                      className={`bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]] ${
+                        phoneNotValid ? "ring-2 !ring-[#c10000]" : ""
+                      }`}
                     />
+                    <label
+                      htmlFor="tel"
+                      className="absolute text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                      {t("phoneNumber")}
+                    </label>
                   </div>
+                  {phoneNotValid && (
+                    <p className="text-[#c10000]">Phonenumber is not valid</p>
+                  )}
                 </div>
               </div>
 
@@ -436,33 +489,37 @@ export default function SlideFour(props: any) {
                   {t("subTitleThird")}
                 </h3>
                 <div>
-                  <label
-                    htmlFor="emergency-name"
-                    className="block text-sm font-medium leading-6 text-gray-900"></label>
-                  <div className="mt-2">
+                  <div className="mt-2 relative">
                     <input
                       type="text"
                       name="emergency-name"
-                      placeholder={t("first&lastName")}
+                      placeholder=" "
                       id="emergency-name"
                       autoComplete="name"
-                      className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                      className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                     />
+                    <label
+                      htmlFor="emergency-name"
+                      className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                      {t("first&lastName")}
+                    </label>
                   </div>
                 </div>
                 <div>
-                  <label
-                    htmlFor="emergency-tel"
-                    className="block text-sm font-medium leading-6 text-gray-900"></label>
-                  <div className="mt-2">
+                  <div className="mt-2 relative">
                     <input
                       type="text"
                       name="emergency-tel"
-                      placeholder={t("phoneNumber")}
+                      placeholder=" "
                       id="emergency-tel"
                       autoComplete="tel"
-                      className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                      className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                     />
+                    <label
+                      htmlFor="emergency-tel"
+                      className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                      {t("phoneNumber")}
+                    </label>
                   </div>
                 </div>
               </div>
