@@ -198,7 +198,7 @@ export default function SlideFour(props: any) {
                         id="first-name"
                         placeholder=" "
                         autoComplete="given-name"
-                        className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className="bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
                       <label
                         htmlFor="first-name"
@@ -214,11 +214,11 @@ export default function SlideFour(props: any) {
                       id="middle-name"
                       placeholder=" "
                       autoComplete="additional-name"
-                      className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                      className="bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                     />
                     <label
                       htmlFor="middle-name"
-                      className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  pl-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                      className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
                       {t("middleName")}
                     </label>
                   </div>
@@ -230,7 +230,7 @@ export default function SlideFour(props: any) {
                         id="last-name"
                         placeholder=" "
                         autoComplete="family-name"
-                        className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className="bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
                       <label
                         htmlFor="last-name"
@@ -247,7 +247,7 @@ export default function SlideFour(props: any) {
                   {t("dateOfBirth")}
                 </h3>
                 <label htmlFor="date-of-birth"></label>
-                <div className="mt-2">
+                <div className="mt-2 overflow">
                   <LocalizationProvider
                     dateAdapter={AdapterDayjs}
                     adapterLocale="nl-be">
@@ -259,7 +259,7 @@ export default function SlideFour(props: any) {
                         style: { color: "#9ca3af", fontSize: "0.875rem" },
                       }}
                       inputProps={{ style: { fontSize: "0.875rem" } }}
-                      className="w-full !outline-none !duration-300 !ring-0 !border-0"
+                      className="w-full  !outline-none !duration-300 !ring-0 !border-0"
                       size="small"
                       label={t("dateOfBirthPlaceHolder")}
                     />
@@ -280,7 +280,7 @@ export default function SlideFour(props: any) {
                         placeholder=" "
                         id="street-address"
                         autoComplete="street-address"
-                        className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className="bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
                       <label
                         htmlFor="street-address"
@@ -297,7 +297,7 @@ export default function SlideFour(props: any) {
                         id="house-number"
                         placeholder=" "
                         autoComplete="house-number"
-                        className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className="bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
                       <label
                         htmlFor="house-number"
@@ -317,7 +317,7 @@ export default function SlideFour(props: any) {
                         placeholder=" "
                         id="postal-code"
                         autoComplete="postal-code"
-                        className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className="bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
                       <label
                         htmlFor="postal-code"
@@ -334,7 +334,7 @@ export default function SlideFour(props: any) {
                         id="city"
                         placeholder=" "
                         autoComplete="address-level2"
-                        className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className="bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                       />
                       <label
                         htmlFor="city"
@@ -343,12 +343,12 @@ export default function SlideFour(props: any) {
                       </label>
                     </div>
                   </div>
-                  <div className="w-full">
+                  <div className="w-full hidden md:block">
                     <div className="mt-4 relative flex cursor-pointer items-center  px-3 group  outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]">
                       <select
                         name="country"
                         id="country"
-                        className="w-full bg-transparent z-20 relative outline-none cursor-pointer">
+                        className="w-full bg-transparent rounded-none z-20 relative outline-none cursor-pointer">
                         {Object.keys(countries).map((code: any) => (
                           <option key={code} value={code}>
                             {countries[code][locale]}
@@ -363,6 +363,27 @@ export default function SlideFour(props: any) {
                         />
                       </label>
                     </div>
+                  </div>
+                </div>
+                <div className="w-full md:hidden">
+                  <div className="mt-4 relative flex cursor-pointer items-center  px-3 group  outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]">
+                    <select
+                      name="country"
+                      id="country"
+                      className="w-full bg-transparent rounded-none z-20 relative outline-none cursor-pointer">
+                      {Object.keys(countries).map((code: any) => (
+                        <option key={code} value={code}>
+                          {countries[code]}
+                        </option>
+                      ))}
+                    </select>
+                    <label htmlFor="counrty">
+                      <MdOutlineKeyboardArrowDown
+                        size="1.5rem"
+                        color="#000"
+                        className=" absolute top-1.5 right-3 rotate-180 transition-all group-hover:rotate-0"
+                      />
+                    </label>
                   </div>
                 </div>
               </div>
@@ -381,7 +402,7 @@ export default function SlideFour(props: any) {
                       id="email"
                       autoComplete="email"
                       onBlur={(e) => validateEmail(e.target.value)}
-                      className={`bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44] ${
+                      className={`bg-transparent border-1 rounded-none border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44] ${
                         emailNotValid ? "!ring-[#c10000] ring-2" : ""
                       }`}
                     />
@@ -407,7 +428,7 @@ export default function SlideFour(props: any) {
                       id="tel"
                       autoComplete="tel"
                       pattern="^\d[\d()-+. ]+$"
-                      className={`bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]] ${
+                      className={`bg-transparent  rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]] ${
                         phoneNotValid ? "ring-2 !ring-[#c10000]" : ""
                       }`}
                     />

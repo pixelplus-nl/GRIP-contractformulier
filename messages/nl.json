@@ -85,7 +85,7 @@
     "title": "Persoonlijke gegevens",
     "name": "Naam",
     "firstName": "Voornaam",
-    "middleName": "Tussenvoegsels",
+    "middleName": "Tussenv.",
     "lastName": "Achternaam",
     "dateOfBirth": "Geboortedatum",
     "dateOfBirthPlaceHolder": "DD-MM-JJJJ",
