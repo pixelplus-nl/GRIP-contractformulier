@@ -92,6 +92,8 @@ export default function SlideFour(props: any) {
         });
       }
     } else {
+      // Set email address to local storage
+      localStorage.setItem("email", formData.get("email"));
       // Redirect to success page (probably not the best way to do it in Next.js, but it works)
       window.location.href = `/${locale}/success`;
     }
