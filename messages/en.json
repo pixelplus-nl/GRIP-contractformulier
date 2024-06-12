@@ -148,6 +148,11 @@
   },
   "Success": {
     "title": "Thank you!",
-    "body": "You have successfully registered. Have fun bouldering!"
+    "body": "Your registration has been successfully processed.<br /> A confirmation email has been sent to the following email address:",
+    "noteReservation": "Please note: This is not a reservation.",
+    "link": "Reservations can be made via our website.",
+    "question": "Do you have a question?",
+    "contact": "Do you have a question? Contact us",
+    "addInfo": "If you want more information, please visit <a href='https://gripnijmegen.nl/boulderhal/'>gripnijmegen.nl/boulderhal/</a><br /> Have fun bouldering!"
   }
 }
