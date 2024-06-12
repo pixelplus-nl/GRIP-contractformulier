@@ -18,7 +18,7 @@
     "contact": "Neem contact op"
   },
   "SlideOne": {
-    "title": "Boulder introductie",
+    "title": "Boulderintroductie",
     "explanation": "Deze introductie is belangrijk voor jouw veiligheid en de veiligheid van andere klimmers.",
     "agreement": "GA AKKOORD met elke deelparagraaf om aan te geven dat je elk van de onderstaande regels begrijpt.",
     "subTitleFirst": "Basisveiligheid en omgangsvormen",
@@ -98,10 +98,10 @@
     "contact": "Contactgegevens",
     "email": "voorbeeld@email.nl",
     "phoneNumber": "+31 0 00 00 00 00",
-    "subTitleSecond": "Bent u begeleider van een groep leerlingen of studenten?",
+    "subTitleSecond": "Ben je begeleider van een groep leerlingen of studenten?",
     "no": "Nee",
     "yes": "Ja",
-    "kidsList": "Voeg een overzicht toe met de namen van alle kinderen die u vandaag begeleidt (als Word-, Excel-, PDF- of JPG-bijlage).",
+    "kidsList": "Voeg een overzicht toe met de namen van alle kinderen die je vandaag begeleidt (als Word-, Excel-, PDF- of JPG-bijlage).",
     "listButton": "Selecteer bestand",
     "subTitleThird": "In geval van nood contact opnemen met",
     "first&lastName": "Voor- en Achternaam",

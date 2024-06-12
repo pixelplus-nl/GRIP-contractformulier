@@ -218,7 +218,7 @@ export default function SlideFour(props: any) {
                     />
                     <label
                       htmlFor="middle-name"
-                      className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                      className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  pl-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
                       {t("middleName")}
                     </label>
                   </div>
@@ -344,25 +344,24 @@ export default function SlideFour(props: any) {
                     </div>
                   </div>
                   <div className="w-full">
-                    <label
-                      htmlFor="counrty"
-                      className="block text-sm font-medium leading-6"></label>
-                    <div className="mt-4 flex items-center  px-3 group  outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]">
+                    <div className="mt-4 relative flex cursor-pointer items-center  px-3 group  outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]">
                       <select
                         name="country"
                         id="country"
-                        className="w-full outline-none">
+                        className="w-full bg-transparent z-20 relative outline-none cursor-pointer">
                         {Object.keys(countries).map((code: any) => (
                           <option key={code} value={code}>
                             {countries[code][locale]}
                           </option>
                         ))}
                       </select>
-                      <MdOutlineKeyboardArrowDown
-                        size="1.5rem"
-                        color="#000"
-                        className="rotate-180 transition-all group-hover:rotate-0"
-                      />
+                      <label htmlFor="counrty">
+                        <MdOutlineKeyboardArrowDown
+                          size="1.5rem"
+                          color="#000"
+                          className=" absolute top-1.5 right-3 rotate-180 transition-all group-hover:rotate-0"
+                        />
+                      </label>
                     </div>
                   </div>
                 </div>

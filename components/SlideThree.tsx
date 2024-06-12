@@ -24,8 +24,6 @@ export default function SlideThree(props: any) {
 
   const t = useTranslations("SlideThree");
 
-  
-
   const isButtonDisabled = !tandcChecked;
   return (
     <>
@@ -75,11 +73,11 @@ export default function SlideThree(props: any) {
             <div className="flex">
               <PrevButtonMob
                 handlePrev={props.handlePrev}
-                buttonText={`‹ ${t("prevButton")} ›`}
+                buttonText={`‹ ${t("prevButton")}`}
               />
               <PrevButton
                 handlePrev={props.handlePrev}
-                buttonText={`‹ ${t("prevButton")} ›`}
+                buttonText={`‹ ${t("prevButton")}`}
               />
               <NextButton
                 handleNext={props.handleNext}

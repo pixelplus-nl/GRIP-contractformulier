@@ -1,6 +1,6 @@
-
 const countries: any = {
     'NL': {'nl': 'Nederland', 'en': 'Netherlands'},
+    'DE': {'nl': 'Duitsland', 'en': 'Germany'},
     'BE': {'nl': 'België', 'en': 'Belgium'},
     'AF': {'nl': 'Afghanistan', 'en': 'Afghanistan'},
     'AL': {'nl': 'Albanië', 'en': 'Albania'},
@@ -78,7 +78,6 @@ const countries: any = {
     'GA': {'nl': 'Gabon', 'en': 'Gabon'},
     'GM': {'nl': 'Gambia', 'en': 'Gambia'},
     'GE': {'nl': 'Georgië', 'en': 'Georgia'},
-    'DE': {'nl': 'Duitsland', 'en': 'Germany'},
     'GH': {'nl': 'Ghana', 'en': 'Ghana'},
     'GI': {'nl': 'Gibraltar', 'en': 'Gibraltar'},
     'GR': {'nl': 'Griekenland', 'en': 'Greece'},

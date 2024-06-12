@@ -13,12 +13,13 @@ export default function Home() {
       <div className="relative flex justify-center items-center h-[35rem] md:h-screen">
         <div className=" absolute right-0 w-full h-full">
           <Image
-            src="/impression_img01.png"
+            src="/impression_img01.jpg"
             fill
             placeholder="blur"
             blurDataURL="data:..."
             priority
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, 33vw)"
+            quality={80}
             style={{
               objectFit: "cover",
               zIndex: -1,
