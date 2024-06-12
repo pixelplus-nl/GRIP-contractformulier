@@ -1,7 +1,5 @@
 import { useState } from "react";
-import NextButton from "./NextButton";
 import React from "react";
-import Footer from "./Footer";
 import { useTranslations, useMessages, AbstractIntlMessages } from "next-intl";
 
 export default function Page(props: any) {
