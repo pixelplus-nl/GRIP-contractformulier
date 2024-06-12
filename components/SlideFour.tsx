@@ -12,6 +12,8 @@ import "dayjs/locale/nl-be";
 import { MdOutlineDelete } from "react-icons/md";
 import PrevButton, { PrevButtonMob } from "./PrevButton";
 
+import countries from "@/lib/countries";
+
 type SignatureCanvasInstance = any;
 
 export default function SlideFour(props: any) {
@@ -310,14 +312,17 @@ export default function SlideFour(props: any) {
                       htmlFor="counrty"
                       className="block text-sm font-medium leading-6 text-gray-900"></label>
                     <div className="mt-2">
-                      <input
-                        type="text"
+
+                      <select
                         name="country"
                         id="country"
-                        placeholder={t("country")}
-                        autoComplete="country"
-                        className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
-                      />
+                        className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]">
+                        {Object.keys(countries).map((code: any) => (
+                          <option key={code} value={countries[code]}>
+                            {countries[code]}
+                          </option>
+                        ))}
+                      </select>
                     </div>
                   </div>
                 </div>
