@@ -120,11 +120,13 @@
     "__default": "Er is iets misgegaan. Probeer het opnieuw.",
     "missingFields": "Er ontbreken één of meerdere verplichte velden.",
     "invalidDateOfBirth": "De geboortedatum is ongeldig.",
+    "invalidCountry": "De landcode is ongeldig.",
     "invalidEmail": "Het e-mailadres is ongeldig.",
     "invalidPhone": "Het telefoonnummer is ongeldig.",
     "invalidParticipantsMeta": "Het bestand met de namen van de deelnemers is ongeldig.",
     "invalidParticipantsMime": "Het bestand met de namen van de deelnemers is ongeldig.",
     "invalidParticipantsData": "Het bestand met de namen van de deelnemers is ongeldig.",
+    "invalidEmergencyPhone": "Het telefoonnummer van de contactpersoon in geval van nood is ongeldig.",
     "invalidSignature": "De handtekening is ongeldig.",
     "memberAlreadyRegistered": "Je bent al geregistreerd als lid bij Grip."
   },
@@ -141,5 +143,9 @@
     "body": "Als u van taal wisselt wordt de pagina vernieuwd en gaan uw gegevens verloren.",
     "proceed": "Bevestig",
     "cancel": "Annuleer"
+  },
+  "Success": {
+    "title": "Bedankt!",
+    "body": "Je inschrijving is succesvol verwerkt. Veel plezier met boulderen!"
   }
 }

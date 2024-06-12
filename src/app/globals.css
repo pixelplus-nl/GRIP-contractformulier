@@ -117,3 +117,13 @@ input[type="checkbox"] {
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: #8cbe44 !important;
 }
+
+label > input[placeholder=" "]:not(:focus):placeholder-shown + span {
+  transform: translateY(1em) scale(1.25);
+}
+
+select {
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+}

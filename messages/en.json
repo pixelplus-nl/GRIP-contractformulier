@@ -122,11 +122,13 @@
     "__default": "Something went wrong. Please try again later.",
     "missingFields": "One or more required fields are missing.",
     "invalidDateOfBirth": "The date of birth is invalid.",
+    "invalidCountry": "The country is invalid.",
     "invalidEmail": "The email address is invalid.",
     "invalidPhone": "The phone number is invalid.",
     "invalidParticipantsMeta": "The file containing the names of the participants is invalid.",
     "invalidParticipantsMime": "The file containing the names of the participants is invalid.",
     "invalidParticipantsData": "The file containing the names of the participants is invalid.",
+    "invalidEmergencyPhone": "The emergency phone number is invalid.",
     "invalidSignature": "The signature is invalid.",
     "memberAlreadyRegistered": "You are already registered as a member at Grip."
   },
@@ -143,5 +145,9 @@
     "body": "If you change the language, the page will be refreshed and your data will be lost.",
     "proceed": "Confirm",
     "cancel": "Cancel"
+  },
+  "Success": {
+    "title": "Thank you!",
+    "body": "You have successfully registered. Have fun bouldering!"
   }
 }
