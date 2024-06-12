@@ -28,6 +28,7 @@ export default function RulesWarning() {
       <p>{t("noteReservation")}</p>
       <div className="relative overflow-hidden w-fit">
         <Link
+          target="_blank"
           className="cursor-pointer group transition"
           href="https://gripnijmegen.dewi-online.nl/iframe/club/156/reservations/activities">
           <span className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-white/80 to-white/80 bg-[length:100%_2px] bg-no-repeat group-hover:bg-[length:0%_2px] transition-all duration-500 ease-out cursor-pointer font-semibold  ">
@@ -38,6 +39,7 @@ export default function RulesWarning() {
       <br />
       <p>{t("question")}</p>
       <Link
+        target="_blank"
         className="cursor-pointer group transition"
         href="https://gripnijmegen.nl/boulderhal/contact/">
         <span className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-white/80 to-white/80 bg-[length:100%_2px] bg-no-repeat group-hover:bg-[length:0%_2px] transition-all duration-500 ease-out cursor-pointer font-semibold  ">

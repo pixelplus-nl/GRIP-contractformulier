@@ -28,6 +28,7 @@ export default function WizardContent() {
   const [openModal, setOpenModal] = useState(false);
   const [openList, setOpenList] = useState(false);
   const [heightClassName, setHeightClassName] = useState("");
+  const [fileName, setFileName] = useState<string>("");
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth <= 640 : false
   );
@@ -159,7 +160,7 @@ export default function WizardContent() {
         loop={false}
         pagination={pagination}
         modules={[EffectCreative, Pagination, Navigation]}
-        className={`mySwiper3 ${heightClassName} `}>
+        className={`mySwiper3 ${heightClassName} bg-white`}>
         <SwiperSlide className="!bg-white">
           <SlideOne handleNext={handleNext} handlePrev={handlePrev} />
         </SwiperSlide>
@@ -179,8 +180,10 @@ export default function WizardContent() {
             handlePrev={handlePrev}
           />
         </SwiperSlide>
-        <SwiperSlide className="!bg-white">
+        <SwiperSlide className="!bg-white ">
           <SlideFour
+            fileName={fileName}
+            setFileName={setFileName}
             setOpenList={setOpenList}
             openList={openList}
             setErrorModal={setErrorModal}

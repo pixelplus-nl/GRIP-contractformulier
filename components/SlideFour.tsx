@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import Warning from "./RulesWarning";
 import SendInButton from "./SendInButton";
@@ -18,7 +18,8 @@ export default function SlideFour(props: any) {
   const [sign, setSign] = useState<SignatureCanvasInstance | null>(null);
   const [url, setUrl] = useState<string>("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-  const [fileName, setFileName] = useState<string>("");
+
+  const [allFilled, setAllfilled] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -39,7 +40,7 @@ export default function SlideFour(props: any) {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      setFileName(file.name);
+      props.setFileName(file.name);
     }
   };
 
@@ -93,40 +94,51 @@ export default function SlideFour(props: any) {
   };
 
   useEffect(() => {
-    const validateForm = () => {
-      if (url === "") {
-        return false;
-      }
+    const checkFields = () => {
+      const requiredFields = document.querySelectorAll("input");
+      let allFilledTemp = true;
 
-      if (props.openList === true && fileName === "") {
-        return false;
-      }
-
-      const inputs = document.querySelectorAll("input");
-      let allFilled = true;
-      inputs.forEach((input) => {
+      requiredFields.forEach((input) => {
         if (input.name !== "middle-name" && input.name !== "participants") {
           if (!input.value) {
-            allFilled = false;
+            allFilledTemp = false;
           }
         }
       });
 
-      return allFilled;
+      setAllfilled(allFilledTemp);
     };
 
-    setIsButtonDisabled(!validateForm());
-  }, [url, props.openList, fileName]);
+    checkFields();
+    const intervalId = setInterval(checkFields, 100);
+
+    return () => clearInterval(intervalId); // Cleanup interval on unmount
+  }, []);
+
+  useEffect(() => {
+    const forgotFileUpload = props.openList === true && props.fileName === "";
+
+    if (url && allFilled) {
+      if (forgotFileUpload) {
+        setIsButtonDisabled(true);
+      } else {
+        setIsButtonDisabled(false);
+      }
+    } else {
+      setIsButtonDisabled(true);
+    }
+  }, [url, allFilled, props.openList, props.fileName]);
 
   const handleClear = (event: any) => {
     if (sign) {
       event.preventDefault();
       sign.clear();
     }
+    setUrl("");
   };
 
   const handleDeleteFile = () => {
-    setFileName("");
+    props.setFileName("");
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
@@ -403,11 +415,11 @@ export default function SlideFour(props: any) {
                         type="file"
                         accept="application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                       />
-                      {fileName && (
-                        <p className="flex items-center gap-3">
-                          {fileName}
+                      {props.fileName && (
+                        <p className="flex items-center gap-2">
+                          {props.fileName}
                           <MdOutlineDelete
-                            className="hover:opacity-50 transition-all"
+                            className="hover:opacity-50 w-14 lg:w-6 h-full transition-all"
                             color="#c10000"
                             size="1.3rem"
                             onClick={handleDeleteFile}
@@ -481,13 +493,7 @@ export default function SlideFour(props: any) {
                     onEnd={handleGenerate}
                   />
                 </div>
-                <div className="flex mt-3 justify-between">
-                  {/* <button
-                    className="bg-[#8CBE44] text-white px-3 py-2"
-                    onClick={handleGenerate}>
-                    Uploaden
-                  </button> */}
-                </div>
+                <div className="flex mt-3 justify-between"></div>
 
                 {/* {url && <img src={url} />} */}
               </div>
@@ -496,11 +502,11 @@ export default function SlideFour(props: any) {
           <div className="flex">
             <PrevButtonMob
               handlePrev={props.handlePrev}
-              buttonText={`${t("prevButton")} ›`}
+              buttonText={`‹ ${t("prevButton")}`}
             />
             <PrevButton
               handlePrev={props.handlePrev}
-              buttonText={`${t("prevButton")} ›`}
+              buttonText={`‹ ${t("prevButton")}`}
             />
             <SendInButton
               handleNext={handleGenerate}
