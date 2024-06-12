@@ -90,10 +90,6 @@ export default function SlideFour(props: any) {
       props.setErrorModal({
         title: errorModal("titleSuccess"),
         body: errorModal("bodySuccess"),
-        onClose: () => {
-          // TODO: Redirect to some other page (e.g. a success page)
-          //router.push("/success");
-        },
       });
     }
   };

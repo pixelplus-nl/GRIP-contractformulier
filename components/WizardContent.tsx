@@ -19,7 +19,6 @@ import { useTranslations } from "next-intl";
 interface ErrorModalContent {
   title?: string;
   body?: string;
-  onClose?: () => void;
 }
 
 export default function WizardContent() {
