@@ -344,25 +344,24 @@ export default function SlideFour(props: any) {
                     </div>
                   </div>
                   <div className="w-full">
-                    <label
-                      htmlFor="counrty"
-                      className="block text-sm font-medium leading-6"></label>
-                    <div className="mt-4 flex items-center  px-3 group  outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]">
+                    <div className="mt-4 relative flex cursor-pointer items-center  px-3 group  outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]">
                       <select
                         name="country"
                         id="country"
-                        className="w-full outline-none">
+                        className="w-full bg-transparent z-20 relative outline-none cursor-pointer">
                         {Object.keys(countries).map((code: any) => (
                           <option key={code} value={code}>
                             {countries[code]}
                           </option>
                         ))}
                       </select>
-                      <MdOutlineKeyboardArrowDown
-                        size="1.5rem"
-                        color="#000"
-                        className="rotate-180 transition-all group-hover:rotate-0"
-                      />
+                      <label htmlFor="counrty">
+                        <MdOutlineKeyboardArrowDown
+                          size="1.5rem"
+                          color="#000"
+                          className=" absolute top-1.5 right-3 rotate-180 transition-all group-hover:rotate-0"
+                        />
+                      </label>
                     </div>
                   </div>
                 </div>
