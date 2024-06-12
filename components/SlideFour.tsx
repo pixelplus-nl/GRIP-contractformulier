@@ -308,7 +308,7 @@ export default function SlideFour(props: any) {
 
                 <div className="flex gap-1">
                   <div className="w-full">
-                    <div className="mt-2 relative">
+                    <div className="mt-4 relative">
                       <input
                         type="text"
                         name="postal-code"
@@ -325,7 +325,7 @@ export default function SlideFour(props: any) {
                     </div>
                   </div>
                   <div className="w-full">
-                    <div className="mt-2 relative">
+                    <div className="mt-4 relative">
                       <input
                         type="text"
                         name="city"
@@ -345,7 +345,7 @@ export default function SlideFour(props: any) {
                     <label
                       htmlFor="counrty"
                       className="block text-sm font-medium leading-6"></label>
-                    <div className="mt-2 flex items-center  px-3 group  outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]">
+                    <div className="mt-4 flex items-center  px-3 group  outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]">
                       <select
                         name="country"
                         id="country"
@@ -397,7 +397,7 @@ export default function SlideFour(props: any) {
                   )}
                 </div>
                 <div>
-                  <div className="mt-2 relative">
+                  <div className="mt-4 relative">
                     <input
                       type="tel"
                       name="tel"
@@ -516,7 +516,7 @@ export default function SlideFour(props: any) {
                   </div>
                 </div>
                 <div>
-                  <div className="mt-2 relative">
+                  <div className="mt-4 relative">
                     <input
                       type="text"
                       name="emergency-tel"
