@@ -318,7 +318,7 @@ export default function SlideFour(props: any) {
                         id="country"
                         className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]">
                         {Object.keys(countries).map((code: any) => (
-                          <option key={code} value={countries[code]}>
+                          <option key={code} value={code}>
                             {countries[code]}
                           </option>
                         ))}
