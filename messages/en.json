@@ -143,5 +143,9 @@
     "body": "If you change the language, the page will be refreshed and your data will be lost.",
     "proceed": "Confirm",
     "cancel": "Cancel"
+  },
+  "Success": {
+    "title": "Thank you!",
+    "body": "You have successfully registered. Have fun bouldering!"
   }
 }

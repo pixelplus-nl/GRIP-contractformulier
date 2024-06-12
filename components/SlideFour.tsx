@@ -87,10 +87,8 @@ export default function SlideFour(props: any) {
         });
       }
     } else {
-      props.setErrorModal({
-        title: errorModal("titleSuccess"),
-        body: errorModal("bodySuccess"),
-      });
+      // Redirect to success page (probably not the best way to do it in Next.js, but it works)
+      window.location.href = `/${locale}/success`;
     }
   };
 
