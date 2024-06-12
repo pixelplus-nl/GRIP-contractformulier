@@ -1,11 +1,21 @@
-import { useState } from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 import React from "react";
 import { useTranslations, useMessages, AbstractIntlMessages } from "next-intl";
 import { IoCheckmark } from "react-icons/io5";
 import Link from "next/link";
 
 export default function Page(props: any) {
+  const [email, setEmail] = useState<any>("");
   const t = useTranslations("Success");
+  
+  useEffect(() => {
+    // Check if email is stored in local storage
+    if (localStorage.getItem("email")) {
+      setEmail(localStorage.getItem("email"));
+    }
+  }, [email]);
 
   return (
     <div className="h-screen bg-[#6aacb8] px-5 flex justify-center items-center">
@@ -40,7 +50,7 @@ export default function Page(props: any) {
           <div
             dangerouslySetInnerHTML={{ __html: t.raw("body") }}
             className="max-w-lg mt-5"></div>
-          <span className="font-bold">Hier komt de email</span>
+          <span className="font-bold">{email}</span>
           <div
             dangerouslySetInnerHTML={{ __html: t.raw("addInfo") }}
             className="max-w-lg mt-5 [&>a]:hover:no-underline [&>a]:underline"></div>
