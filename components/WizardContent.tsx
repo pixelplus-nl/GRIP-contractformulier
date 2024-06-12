@@ -124,7 +124,7 @@ export default function WizardContent() {
     return () => {
       document.body.classList.remove("overflow-hidden");
     };
-  }, [openModal, activeIndex]);
+  }, [openModal, activeIndex, isMobile]);
 
   return (
     <>
