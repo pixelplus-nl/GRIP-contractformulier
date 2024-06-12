@@ -354,7 +354,7 @@ export default function SlideFour(props: any) {
                         className="w-full outline-none">
                         {Object.keys(countries).map((code: any) => (
                           <option key={code} value={code}>
-                            {countries[code]}
+                            {countries[code][locale]}
                           </option>
                         ))}
                       </select>
