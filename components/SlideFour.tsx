@@ -477,7 +477,7 @@ export default function SlideFour(props: any) {
                         name="participants"
                         onChange={handleFileChange}
                         type="file"
-                        accept="application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                        accept="image/jpeg,image/png,application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                       />
                       {props.fileName && (
                         <p className="flex items-center gap-2">
