@@ -129,7 +129,7 @@
     "invalidParticipantsData": "The file containing the names of the participants is invalid.",
     "invalidEmergencyPhone": "The emergency phone number is invalid.",
     "invalidSignature": "The signature is invalid.",
-    "memberAlreadyRegistered": "You are already registered as a member at Grip.",
+    "memberAlreadyRegistered": "You are already registered as a member at Grip."
   },
   "Pag": {
     "introduction": "Introduction",
