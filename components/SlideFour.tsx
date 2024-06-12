@@ -11,6 +11,7 @@ import { DateField } from "@mui/x-date-pickers/DateField";
 import "dayjs/locale/nl-be";
 import { MdOutlineDelete } from "react-icons/md";
 import PrevButton, { PrevButtonMob } from "./PrevButton";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 import countries from "@/lib/countries";
 
@@ -343,19 +344,23 @@ export default function SlideFour(props: any) {
                   <div className="w-full">
                     <label
                       htmlFor="counrty"
-                      className="block text-sm font-medium leading-6 text-gray-900"></label>
-                    <div className="mt-2">
-
+                      className="block text-sm font-medium leading-6"></label>
+                    <div className="mt-2 flex items-center  px-3 group  outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]">
                       <select
                         name="country"
                         id="country"
-                        className="block px-3  w-full outline-none border-0 py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]">
+                        className="w-full outline-none">
                         {Object.keys(countries).map((code: any) => (
                           <option key={code} value={code}>
                             {countries[code]}
                           </option>
                         ))}
                       </select>
+                      <MdOutlineKeyboardArrowDown
+                        size="1.5rem"
+                        color="#000"
+                        className="rotate-180 transition-all group-hover:rotate-0"
+                      />
                     </div>
                   </div>
                 </div>

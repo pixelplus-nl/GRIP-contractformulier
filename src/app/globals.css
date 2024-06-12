@@ -121,3 +121,9 @@ input[type="checkbox"] {
 label > input[placeholder=" "]:not(:focus):placeholder-shown + span {
   transform: translateY(1em) scale(1.25);
 }
+
+select {
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+}
