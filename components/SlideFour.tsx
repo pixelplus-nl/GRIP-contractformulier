@@ -246,24 +246,21 @@ export default function SlideFour(props: any) {
                 <h3 className="text-xl text-black font-semibold">
                   {t("dateOfBirth")}
                 </h3>
-                <label htmlFor="date-of-birth"></label>
-                <div className="mt-2 overflow">
-                  <LocalizationProvider
-                    dateAdapter={AdapterDayjs}
-                    adapterLocale="nl-be">
-                    <DateField
-                      id="date-of-birth"
-                      name="date-of-birth"
-                      format="DD-MM-YYYY"
-                      InputLabelProps={{
-                        style: { color: "#9ca3af", fontSize: "0.875rem" },
-                      }}
-                      inputProps={{ style: { fontSize: "0.875rem" } }}
-                      className="w-full  !outline-none !duration-300 !ring-0 !border-0"
-                      size="small"
-                      label={t("dateOfBirthPlaceHolder")}
-                    />
-                  </LocalizationProvider>
+
+                <div className="mt-2 relative">
+                  <input
+                    type="date"
+                    placeholder=" "
+                    max={new Date().toISOString().split("T")[0]}
+                    id="date-of-birth"
+                    value={new Date().toISOString().split("T")[0]}
+                    className="bg-transparent bg-white text-left h-[2.5rem]  rounded-none border-1 border-gray-200 appearance-none focus:outline-none peer block px-3  w-full outline-none  py-1.5  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                  />
+                  <label
+                    className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                    htmlFor="date-of-birth">
+                    {t("dateOfBirthPlaceHolder")}
+                  </label>
                 </div>
               </div>
 

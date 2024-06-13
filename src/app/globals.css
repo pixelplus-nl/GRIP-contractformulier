@@ -127,3 +127,14 @@ select {
   -webkit-appearance: none; /* Safari and Chrome */
   appearance: none;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 0.5;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+input::-webkit-date-and-time-value {
+  text-align: left;
+}
