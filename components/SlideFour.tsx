@@ -251,6 +251,7 @@ export default function SlideFour(props: any) {
                   <input
                     type="date"
                     placeholder=" "
+                    name="date-of-birth"
                     max={new Date().toISOString().split("T")[0]}
                     id="date-of-birth"
                     defaultValue={new Date().toISOString().split("T")[0]}
