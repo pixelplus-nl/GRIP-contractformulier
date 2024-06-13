@@ -253,7 +253,7 @@ export default function SlideFour(props: any) {
                     placeholder=" "
                     max={new Date().toISOString().split("T")[0]}
                     id="date-of-birth"
-                    value={new Date().toISOString().split("T")[0]}
+                    defaultValue={new Date().toISOString().split("T")[0]}
                     className="bg-transparent bg-white text-left h-[2.5rem]  rounded-none border-1 border-gray-200 appearance-none focus:outline-none peer block px-3  w-full outline-none  py-1.5  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
                   />
                   <label
