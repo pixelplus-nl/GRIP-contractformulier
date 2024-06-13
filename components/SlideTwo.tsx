@@ -41,7 +41,7 @@ export default function SlideTwo(props: any) {
             })}
           </ul>
 
-          <div className="mt-3 mb-10 hover:opacity-50 w-fit transition-all flex gap-2 items-center">
+          <div className="mt-3 mb-10 betterhover:hover:opacity-50 w-fit transition-all flex gap-2 items-center">
             <input
               onChange={(e) => handleCheckboxChange(e, setBaseChecked)}
               id="secBaseCheck"

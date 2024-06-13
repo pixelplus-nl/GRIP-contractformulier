@@ -448,7 +448,7 @@ export default function SlideFour(props: any) {
                 </h3>
                 <fieldset className="mt-2 flex gap-5">
                   <div>
-                    <div className="flex gap-2 hover:opacity-50 w-fit items-center">
+                    <div className="flex gap-2 betterhover:hover:opacity-50 w-fit items-center">
                       <input
                         type="radio"
                         name="accompanist"
@@ -464,7 +464,7 @@ export default function SlideFour(props: any) {
                     </div>
                   </div>
 
-                  <div className="flex gap-2 hover:opacity-50 w-fit items-center">
+                  <div className="flex gap-2 betterhover:hover:opacity-50 w-fit items-center">
                     <input
                       type="radio"
                       name="accompanist"
@@ -502,7 +502,7 @@ export default function SlideFour(props: any) {
                         <p className="flex items-center gap-2">
                           {props.fileName}
                           <MdOutlineDelete
-                            className="hover:opacity-50 w-14 lg:w-6 h-full transition-all"
+                            className="betterhover:hover:opacity-50 w-14 lg:w-6 h-full transition-all"
                             color="#c10000"
                             size="1.3rem"
                             onClick={handleDeleteFile}
