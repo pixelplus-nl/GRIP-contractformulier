@@ -145,12 +145,12 @@
     "cancel": "Annuleer"
   },
   "Success": {
-    "title": "Bedankt voor het inschrijven",
-    "body": "<p>Je inschrijving is succesvol verwerkt.<br /> Er is een bevestigingsmail verstuurt naar het volgende email adress:</p>",
+    "title": "Bedankt voor je inschrijving",
+    "body": "Er is een bevestigingsmail verstuurd naar:</p>",
     "noteReservation": "Let op: Dit is geen reservering.",
     "link": "Reserveren kan via onze website ›",
     "question": "Heb je een vraag?",
     "contact": "Neem contact op",
-    "addInfo": "Wil je meer informatie kijk dan op <a href='https://gripnijmegen.nl/boulderhal/'>gripnijmegen.nl/boulderhal/</a><br/> Veel plezier met boulderen!"
+    "addInfo": "Kijk voor meer informatie op <a href='https://gripnijmegen.nl/boulderhal/'>www.gripnijmegen.nl</a><br/> <b>Veel plezier met boulderen!</b>"
   }
 }

@@ -147,8 +147,8 @@
     "cancel": "Cancel"
   },
   "Success": {
-    "title": "Thank you!",
-    "body": "Your registration has been successfully processed.<br /> A confirmation email has been sent to the following email address:",
+    "title": "Thanks for registering",
+    "body": "A confirmation email has been sent to:",
     "noteReservation": "Please note: This is not a reservation.",
     "link": "Reservations can be made via our website.",
     "question": "Do you have a question?",

@@ -9,7 +9,7 @@ import Link from "next/link";
 export default function Page(props: any) {
   const [email, setEmail] = useState<any>("");
   const t = useTranslations("Success");
-  
+
   useEffect(() => {
     // Check if email is stored in local storage
     if (localStorage.getItem("email")) {
@@ -25,7 +25,16 @@ export default function Page(props: any) {
         </div>
         <div className="px-5 my-10">
           <h1 className="text-4xl font-bold mb-5">{t("title")}</h1>
-          <p className="font-bold">{t("noteReservation")}</p>
+          <div
+            dangerouslySetInnerHTML={{ __html: t.raw("body") }}
+            className="max-w-lg mt-5"></div>
+          <span className="font-bold">{email}</span>
+          
+          <div
+            dangerouslySetInnerHTML={{ __html: t.raw("addInfo") }}
+            className="max-w-lg mt-3 [&>a]:hover:no-underline [&>a]:underline"></div>
+
+          <p className="font-bold mt-5">{t("noteReservation")}</p>
           <div className="relative overflow-hidden w-fit">
             <Link
               target="_blank"
@@ -37,7 +46,7 @@ export default function Page(props: any) {
             </Link>
           </div>
 
-          <p className="font-bold mt-5">{t("question")}</p>
+          <p className="font-bold mt-3">{t("question")}</p>
           <Link
             target="_blank"
             className="cursor-pointer group transition"
@@ -46,14 +55,6 @@ export default function Page(props: any) {
               {t("contact")} ›
             </span>
           </Link>
-
-          <div
-            dangerouslySetInnerHTML={{ __html: t.raw("body") }}
-            className="max-w-lg mt-5"></div>
-          <span className="font-bold">{email}</span>
-          <div
-            dangerouslySetInnerHTML={{ __html: t.raw("addInfo") }}
-            className="max-w-lg mt-5 [&>a]:hover:no-underline [&>a]:underline"></div>
         </div>
       </div>
     </div>
