@@ -1,7 +1,6 @@
 export default function NextButton(props: any) {
   const handleNextClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     props.handleNext();
   };
 

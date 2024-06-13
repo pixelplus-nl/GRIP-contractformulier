@@ -137,7 +137,7 @@ export default function WizardContent() {
         />
       )}
       <div className="pt-24 pb-12 gap-3 flex justify-center">
-        <div className="swiper-pagination !w-fit"></div>
+        <div id="nav" className="swiper-pagination !w-fit"></div>
       </div>
       <Swiper
         effect={"creative"}
@@ -154,6 +154,9 @@ export default function WizardContent() {
         grabCursor={true}
         ref={sliderRef}
         allowTouchMove={false}
+        onSlideChangeTransitionEnd={() => {
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        }}
         autoHeight={true}
         onSlideChange={handleSlideChange}
         speed={750}
