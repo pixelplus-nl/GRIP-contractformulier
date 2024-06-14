@@ -78,19 +78,11 @@ export default function SlideFour(props: any) {
 
     const response = await submitForm(formData);
 
-    if (!response.success) {
-      try {
-        props.setErrorModal({
-          title: errorModal("titleError"),
-          body: errorMessages(response.code),
-        });
-        // Fall back to the default error message
-      } catch (e: any) {
-        props.setErrorModal({
-          title: errorModal("titleError"),
-          body: errorMessages("__default"),
-        });
-      }
+    if (!response.success) {      
+      props.setErrorModal({
+        title: errorModal("titleError"),
+        body: errorMessages(response.code),
+      });
     } else {
       // Set email address to local storage
       localStorage.setItem("email", formData.get("email"));

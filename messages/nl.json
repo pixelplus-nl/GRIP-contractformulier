@@ -117,7 +117,13 @@
     "bodySuccess": "Veel plezier met boulderen!"
   },
   "errorMessages": {
-    "__default": "Er is iets misgegaan. Probeer het opnieuw.",
+    "missingAuthorizationHeader": "Er is iets misgegaan. Probeer het opnieuw.",
+    "invalidAuthorizationToken": "Er is iets misgegaan. Probeer het opnieuw.",
+    "dewiFailedToCreateMember": "E-mailadres is reeds in gebruik. Probeer het opnieuw met een ander e-mailadres.",
+    "dewiDocumentCategoryNotFound": "Er is iets misgegaan. Probeer het opnieuw.",
+    "dewiFailedSignatureUpload": "Er is iets misgegaan. Probeer het opnieuw.",
+    "dewiFailedParticipantsUpload": "Er is iets misgegaan. Probeer het opnieuw.",
+    "invalidLocale": "Er is iets misgegaan. Probeer het opnieuw.",
     "missingFields": "Er ontbreken één of meerdere verplichte velden.",
     "invalidDateOfBirth": "De geboortedatum is ongeldig.",
     "invalidCountry": "De landcode is ongeldig.",
