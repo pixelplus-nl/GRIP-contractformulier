@@ -4,6 +4,7 @@ import "../globals.css";
 import Header from "@/components/Header";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const assistant = Assistant({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default async function RootLayout({
   const messages = await getMessages();
   return (
     <html lang={locale}>
+      <GoogleTagManager gtmId="G-2P1EH90QC3" />
       <body className={`${assistant.className} min-h-screen`}>
         <NextIntlClientProvider messages={messages}>
           <Header />
