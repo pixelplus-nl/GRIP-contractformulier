@@ -12,7 +12,7 @@
 
   "Warning": {
     "title": "Know the rules!",
-    "paragraph": "For your own safety and the safety of other climbers, it is important that everyone knows the rules. Acknowledge each section to indicate that you have read and understood the text and the rules. You only need to register once. If you have been bouldering at Grip before, you do not need to register again.",
+    "paragraph": "For your own safety and the safety of other climbers, it is important that everyone knows the rules. Acknowledge each section to indicate that you have read and understood the text and the rules. Have you registered before? Then sign in directly at the check-in desk",
     "noteReservation": "Please note: This is not a reservation.",
     "link": "Reservations can be made via our website.",
     "question": "Do you have a question?",
@@ -31,6 +31,7 @@
       "Sporting with a bare upper body is not allowed.",
       "Bouldering under the influence of alcohol and/or drugs is not allowed.",
       "Use glassware or tableware only in the café and on the terrace.",
+      "Equipment in the training areas is dangerous if used improperly. Use it correctly or do not use it.",
       "Assistance dogs are welcome, other pets are not."
     ],
     "subTitleSecond": "Fall Zones",
@@ -47,12 +48,11 @@
       "Respect each other's boundaries. For example, ask for permission before offering beta.",
       "GRIP is a special place. Help keep it that way by welcoming and encouraging newcomers."
     ],
-    "subTitleFourth": "If you are a minor or climbing with a minor",
+    "subTitleFourth": "Additional points regarding minors",
     "listFourth": [
       "Independent bouldering is allowed from the age of 12. For any form of independent bouldering, GRIP applies competency and admission requirements, including attending the instruction and signing this agreement.",
       "Children aged 11 and under must be supervised by an adult. One adult is required for every two children.",
       "Do not run in the bouldering hall.",
-      "Equipment in the training areas is dangerous if used improperly. Use it correctly or do not use it.",
       "Under 18 years old requires permission from GRIP to use the training area."
     ],
     "subTitleFifth": "Emergency Procedure",
@@ -99,7 +99,9 @@
     "country": "Country",
     "contact": "Contact Information",
     "email": "example@email.com",
+    "emailNotValid": "This is not a valid email address.",
     "phoneNumber": "+31 0 00 00 00 00",
+    "phoneNotValid": "This is not a valid phone number.",
     "subTitleSecond": "Are you a supervisor of a group of students?",
     "no": "No",
     "yes": "Yes",

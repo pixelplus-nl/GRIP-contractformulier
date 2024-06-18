@@ -11,7 +11,7 @@
   },
   "Warning": {
     "title": "Ken de regels!",
-    "paragraph": "Voor je eigen veiligheid en de veiligheid van andere klimmers is het belangrijk dat iedereen de regels kent.<br></br> Accordeer elk onderdeel om aan te geven dat je de tekst hebt gelezen en de regels begrijpt.<br></br><br></br> Je hoeft je maar één keer te registreren. Ben je eerder komen boulderen bij Grip? Dan hoef je je dus niet opnieuw te registeren.",
+    "paragraph": "Voor je eigen veiligheid en de veiligheid van andere klimmers is het belangrijk dat iedereen de regels kent.<br></br> Accordeer elk onderdeel om aan te geven dat je de tekst hebt gelezen en de regels begrijpt.<br></br><br></br> Heb je jezelf al eerder ingeschreven? Meld je dan bij de incheckbalie.",
     "noteReservation": "Let op: Dit is geen reservering.",
     "link": "Reserveren kan via onze website ›",
     "question": "Heb je een vraag?",
@@ -30,6 +30,7 @@
       "Sporten met ontbloot bovenlichaam is niet toegestaan.",
       "Boulderen onder invloed van alcohol en/of drugs is niet toegestaan.",
       "Gebruik glaswerk of serviesgoed alleen in het café en op het terras.",
+      "Apparatuur in de trainingsruimten is gevaarlijk bij onjuist gebruik. Gebruik het goed of gebruik het niet.",
       "Hulphonden zijn welkom, overige huisdieren niet."
     ],
     "subTitleSecond": "Valzones",
@@ -43,15 +44,14 @@
       "Klim om de beurt op plekken waar ook anderen boulderen. Wie als eerste aan de boulder begint, heeft voorrang in de wand.",
       "Wees altijd hoffelijk tegenover andere klimmers.",
       "Oordeel niet te snel over anderen – ga uit van goede intenties.",
-      "Respecteer elkaars grenzen. Vraag bijvoorbeeld toestemming voordat je beta verstrekt.",
-      "GRIP is een speciale plek. Help mee dit zo te houden door nieuwkomers te verwelkomen en aan te moedigen."
+      "Respecteer elkaars grenzen. Vraag bijvoorbeeld toestemming voordat je tips geeft.",
+      "GRIP is een speciale plek. Help mee dit zo te houden door beginners te verwelkomen en aan te moedigen."
     ],
-    "subTitleFourth": "Als je minderjarig bent of klimt met een minderjarige",
+    "subTitleFourth": "Aanvullende punten t.a.v. minderjarigen’",
     "listFourth": [
       "Zelfstandig boulderen is toegestaan vanaf 12 jaar. Voor elke vorm van zelfstandig boulderen hanteert GRIP competentie- en toelatingseisen, waaronder het volgen van de instructie en ondertekening van deze overeenkomst.",
       "Kinderen van 11 jaar en jonger moeten worden begeleid door een volwassene. Per twee kinderen is één volwassene nodig.",
       "Niet rondrennen in de boulderhal.",
-      "Apparatuur in de trainingsruimten is gevaarlijk bij onjuist gebruik. Gebruik het goed of gebruik het niet.",
       "Onder 18 jaar is toestemming voor gebruik van de trainingsruimte nodig van GRIP."
     ],
     "subTitleFifth": "Noodprocedure",
@@ -97,7 +97,9 @@
     "country": "Land",
     "contact": "Contactgegevens",
     "email": "voorbeeld@email.nl",
+    "emailNotValid": "Dit is geen correct e-mailadres.",
     "phoneNumber": "+31 0 00 00 00 00",
+    "phoneNotValid": "Dit is geen correct telefoonnummer.",
     "subTitleSecond": "Ben je begeleider van een groep leerlingen of studenten?",
     "no": "Nee",
     "yes": "Ja",

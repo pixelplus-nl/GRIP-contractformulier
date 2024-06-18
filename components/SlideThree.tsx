@@ -8,7 +8,7 @@ import PrevButton, { PrevButtonMob } from "./PrevButton";
 
 const variants = {
   closed: {
-    height: "50px",
+    height: "220px",
   },
   open: {
     height: "auto",

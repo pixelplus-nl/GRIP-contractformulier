@@ -78,7 +78,7 @@ export default function SlideFour(props: any) {
 
     const response = await submitForm(formData);
 
-    if (!response.success) {      
+    if (!response.success) {
       props.setErrorModal({
         title: errorModal("titleError"),
         body: errorMessages(response.code),
@@ -403,9 +403,7 @@ export default function SlideFour(props: any) {
                     </label>
                   </div>
                   {emailNotValid && (
-                    <p className="text-[#c10000]">
-                      Email is not filled in correctly
-                    </p>
+                    <p className="text-[#c10000]">{t("emailNotValid")}</p>
                   )}
                 </div>
                 <div>
@@ -429,7 +427,7 @@ export default function SlideFour(props: any) {
                     </label>
                   </div>
                   {phoneNotValid && (
-                    <p className="text-[#c10000]">Phonenumber is not valid</p>
+                    <p className="text-[#c10000]">{t("phoneNotValid")}</p>
                   )}
                 </div>
               </div>
