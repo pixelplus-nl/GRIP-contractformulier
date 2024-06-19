@@ -121,7 +121,7 @@
   "errorMessages": {
     "missingAuthorizationHeader": "Er is iets misgegaan. Probeer het opnieuw.",
     "invalidAuthorizationToken": "Er is iets misgegaan. Probeer het opnieuw.",
-    "dewiFailedToCreateMember": "E-mailadres is reeds in gebruik. Probeer het opnieuw met een ander e-mailadres.",
+    "dewiFailedToCreateMember": "Er is iets misgegaan. Probeer het opnieuw.",
     "dewiDocumentCategoryNotFound": "Er is iets misgegaan. Probeer het opnieuw.",
     "dewiFailedSignatureUpload": "Er is iets misgegaan. Probeer het opnieuw.",
     "dewiFailedParticipantsUpload": "Er is iets misgegaan. Probeer het opnieuw.",

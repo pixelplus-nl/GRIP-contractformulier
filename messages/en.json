@@ -123,7 +123,7 @@
   "errorMessages": {
     "missingAuthorizationHeader": "Something went wrong. Please try again later.",
     "invalidAuthorizationToken": "Something went wrong. Please try again later.",
-    "dewiFailedToCreateMember": "Email address already in use. Please try using a different email address.",
+    "dewiFailedToCreateMember": "Something went wrong. Please try again later.",
     "dewiDocumentCategoryNotFound": "Something went wrong. Please try again later.",
     "dewiFailedSignatureUpload": "Something went wrong. Please try again later.",
     "dewiFailedParticipantsUpload": "Something went wrong. Please try again later.",
