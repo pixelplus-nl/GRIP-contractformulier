@@ -52,6 +52,34 @@ export default function WizardContent() {
 
   const t = useTranslations("Pag");
 
+  const pagination = isMobile
+    ? {
+        clickable: process.env.NODE_ENV === "development",
+        el: ".swiper-pagination",
+        renderBullet: (index: number, className: string) => {
+          return `<p class="${className} pagination_text">${t("step")}<span>${
+            index + 1
+          }</span></p>`;
+        },
+      }
+    : {
+        clickable: process.env.NODE_ENV === "development",
+        el: ".swiper-pagination",
+        renderBullet: (index: number, className: string) => {
+          return `<p class="${className} pagination_text"><span>${
+            index + 1
+          }</span> ${
+            index === 0
+              ? t("introduction")
+              : index === 1
+              ? t("validity")
+              : index === 2
+              ? t("tAndC")
+              : t("personalInformation")
+          }</p>`;
+        },
+      };
+
   const handleSlideChange = () => {
     if (!sliderRef.current) return;
     const newIndex = sliderRef.current.swiper.activeIndex;
@@ -109,15 +137,7 @@ export default function WizardContent() {
         />
       )}
       <div className="pt-24 pb-12 gap-3 flex justify-center">
-        {activeIndex > 0 && (
-          <button onClick={handlePrev}>&lt;</button>
-        )}
-
-        <span>{t('step')} {activeIndex + 1}/4</span>
-
-        {activeIndex < 3 && (
-          <button onClick={handleNext}>&gt;</button>
-        )}
+        <div id="nav" className="swiper-pagination !w-fit"></div>
       </div>
       <Swiper
         effect={"creative"}
@@ -141,6 +161,7 @@ export default function WizardContent() {
         onSlideChange={handleSlideChange}
         speed={750}
         loop={false}
+        pagination={pagination}
         modules={[EffectCreative, Pagination, Navigation]}
         className={`mySwiper3 ${heightClassName} bg-white`}>
         <SwiperSlide className="!bg-white">
