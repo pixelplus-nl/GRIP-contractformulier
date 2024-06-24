@@ -108,16 +108,27 @@ export default function WizardContent() {
           setErrorModal={setErrorModal}
         />
       )}
-      <div className="pt-24 pb-12 gap-3 flex justify-center">
-        {activeIndex > 0 && (
-          <button onClick={handlePrev}>&lt;</button>
-        )}
+      <div className="pt-24 items-center pb-12 gap-20 flex justify-center">
+        <button
+          className={`${
+            activeIndex > 0 ? "visible" : "invisible"
+          } text-5xl px-2 betterhover:hover:-translate-x-2 transition-all text-[#8cbe44]`}
+          onClick={handlePrev}>
+          ‹
+        </button>
 
-        <span>{t('step')} {activeIndex + 1}/4</span>
+        <span className="font-semibold text-xl pt-2">
+          {t("step")}{" "}
+          <span className="text-[#8cbe44]">{activeIndex + 1}/4</span>
+        </span>
 
-        {activeIndex < 3 && (
-          <button onClick={handleNext}>&gt;</button>
-        )}
+        <button
+          className={`${
+            activeIndex < 3 ? "visible" : "invisible"
+          } text-5xl px-2 betterhover:hover:translate-x-2 transition-all text-[#8cbe44]`}
+          onClick={handleNext}>
+          ›
+        </button>
       </div>
       <Swiper
         effect={"creative"}

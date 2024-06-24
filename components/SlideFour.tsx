@@ -1,13 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import Warning from "./RulesWarning";
 import SendInButton from "./SendInButton";
 import { RxCross1 } from "react-icons/rx";
 import submitForm from "@/lib/submitForm";
 import { useLocale, useTranslations } from "next-intl";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DateField } from "@mui/x-date-pickers/DateField";
 import "dayjs/locale/nl-be";
 import { MdOutlineDelete } from "react-icons/md";
 import PrevButton, { PrevButtonMob } from "./PrevButton";
@@ -22,8 +19,21 @@ export default function SlideFour(props: any) {
   const [url, setUrl] = useState<string>("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [allFilled, setAllfilled] = useState(false);
+
   const [emailNotValid, setEmailNotValid] = useState(false);
   const [phoneNotValid, setPhoneNotValid] = useState(false);
+
+  const [firstNameNotValid, setFirstNameNotValid] = useState(false);
+  const [lastNameNotValid, setLastNameNotValid] = useState(false);
+  const [dayNotValid, setDayNotValid] = useState(false);
+  const [monthNotValid, setMonthNotValid] = useState(false);
+  const [yearNotValid, setYearNotValid] = useState(false);
+  const [streetNotValid, setStreetNotValid] = useState(false);
+  const [houseNumberNotValid, setHouseNumberNotValid] = useState(false);
+  const [zipcodeNotValid, setZipcodeNotValid] = useState(false);
+  const [cityNotValid, setCityNotValid] = useState(false);
+  const [emergencyNameNotValid, setEmergencyNameNotValid] = useState(false);
+  const [emergencyPhoneNotValid, setEmergencyPhoneNotValid] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -84,9 +94,8 @@ export default function SlideFour(props: any) {
         body: errorMessages(response.code),
       });
     } else {
-      // Set email address to local storage
       localStorage.setItem("email", formData.get("email"));
-      // Redirect to success page (probably not the best way to do it in Next.js, but it works)
+
       window.location.href = `/${locale}/success`;
     }
   };
@@ -110,7 +119,7 @@ export default function SlideFour(props: any) {
     checkFields();
     const intervalId = setInterval(checkFields, 100);
 
-    return () => clearInterval(intervalId); // Cleanup interval on unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   useEffect(() => {
@@ -189,8 +198,15 @@ export default function SlideFour(props: any) {
                         name="first-name"
                         id="first-name"
                         placeholder=" "
+                        onBlur={(e) => {
+                          e.target.value.trim() === ""
+                            ? setFirstNameNotValid(true)
+                            : setFirstNameNotValid(false);
+                        }}
                         autoComplete="given-name"
-                        className="bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className={`bg-transparent ${
+                          firstNameNotValid ? "ring-red-500" : ""
+                        } rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]`}
                       />
                       <label
                         htmlFor="first-name"
@@ -220,9 +236,16 @@ export default function SlideFour(props: any) {
                         type="text"
                         name="last-name"
                         id="last-name"
+                        onBlur={(e) => {
+                          e.target.value.trim() === ""
+                            ? setLastNameNotValid(true)
+                            : setLastNameNotValid(false);
+                        }}
                         placeholder=" "
                         autoComplete="family-name"
-                        className="bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className={`${
+                          lastNameNotValid ? "ring-red-500" : ""
+                        } bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]`}
                       />
                       <label
                         htmlFor="last-name"
@@ -238,22 +261,73 @@ export default function SlideFour(props: any) {
                 <h3 className="text-xl text-black font-semibold">
                   {t("dateOfBirth")}
                 </h3>
-
-                <div className="mt-2 relative">
-                  <input
-                    type="date"
-                    placeholder=" "
-                    name="date-of-birth"
-                    max={new Date().toISOString().split("T")[0]}
-                    id="date-of-birth"
-                    defaultValue={new Date().toISOString().split("T")[0]}
-                    className="bg-transparent bg-white text-left h-[2.5rem]  rounded-none border-1 border-gray-200 appearance-none focus:outline-none peer block px-3  w-full outline-none  py-1.5  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
-                  />
-                  <label
-                    className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
-                    htmlFor="date-of-birth">
-                    {t("dateOfBirthPlaceHolder")}
-                  </label>
+                <div className="flex  gap-1">
+                  <div className="mt-2 w-1/3 relative">
+                    <input
+                      type="text"
+                      name="day"
+                      onBlur={(e) => {
+                        e.target.value.trim() === ""
+                          ? setDayNotValid(true)
+                          : setDayNotValid(false);
+                      }}
+                      placeholder=" "
+                      id="day"
+                      autoComplete="day"
+                      className={`${
+                        dayNotValid ? "ring-red-500" : ""
+                      } bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]`}
+                    />
+                    <label
+                      htmlFor="day"
+                      className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                      {t("day")}
+                    </label>
+                  </div>
+                  <div className="mt-2 w-1/3 relative">
+                    <input
+                      type="text"
+                      name="month"
+                      placeholder=" "
+                      id="month"
+                      onBlur={(e) => {
+                        e.target.value.trim() === ""
+                          ? setMonthNotValid(true)
+                          : setMonthNotValid(false);
+                      }}
+                      autoComplete="month"
+                      className={`${
+                        monthNotValid ? "ring-red-500" : ""
+                      } bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]  `}
+                    />
+                    <label
+                      htmlFor="month"
+                      className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                      {t("month")}
+                    </label>
+                  </div>
+                  <div className="mt-2 w-1/3 relative">
+                    <input
+                      type="text"
+                      name="year"
+                      placeholder=" "
+                      id="year"
+                      onBlur={(e) => {
+                        e.target.value.trim() === ""
+                          ? setYearNotValid(true)
+                          : setYearNotValid(false);
+                      }}
+                      autoComplete="year"
+                      className={`${
+                        yearNotValid ? "ring-red-500" : ""
+                      } bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44] `}
+                    />
+                    <label
+                      htmlFor="year"
+                      className="absolute  text-gray-400  duration-300 transform -translate-y-4 scale-75 top-[2px] z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-gray-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-[2px] peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                      {t("year")}
+                    </label>
+                  </div>
                 </div>
               </div>
 
@@ -268,9 +342,16 @@ export default function SlideFour(props: any) {
                         type="text"
                         name="street-address"
                         placeholder=" "
+                        onBlur={(e) => {
+                          e.target.value.trim() === ""
+                            ? setStreetNotValid(true)
+                            : setStreetNotValid(false);
+                        }}
                         id="street-address"
                         autoComplete="street-address"
-                        className="bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className={`${
+                          streetNotValid ? "ring-red-500" : ""
+                        } bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]`}
                       />
                       <label
                         htmlFor="street-address"
@@ -286,8 +367,15 @@ export default function SlideFour(props: any) {
                         name="house-number"
                         id="house-number"
                         placeholder=" "
+                        onBlur={(e) => {
+                          e.target.value.trim() === ""
+                            ? setHouseNumberNotValid(true)
+                            : setHouseNumberNotValid(false);
+                        }}
                         autoComplete="house-number"
-                        className="bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className={`${
+                          houseNumberNotValid ? "ring-red-500" : ""
+                        } bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]`}
                       />
                       <label
                         htmlFor="house-number"
@@ -305,9 +393,16 @@ export default function SlideFour(props: any) {
                         type="text"
                         name="postal-code"
                         placeholder=" "
+                        onBlur={(e) => {
+                          e.target.value.trim() === ""
+                            ? setZipcodeNotValid(true)
+                            : setZipcodeNotValid(false);
+                        }}
                         id="postal-code"
                         autoComplete="postal-code"
-                        className="bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className={`${
+                          zipcodeNotValid ? "ring-red-500" : ""
+                        } bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44] `}
                       />
                       <label
                         htmlFor="postal-code"
@@ -321,10 +416,17 @@ export default function SlideFour(props: any) {
                       <input
                         type="text"
                         name="city"
+                        onBlur={(e) => {
+                          e.target.value.trim() === ""
+                            ? setCityNotValid(true)
+                            : setCityNotValid(false);
+                        }}
                         id="city"
                         placeholder=" "
                         autoComplete="address-level2"
-                        className="bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                        className={`${
+                          cityNotValid ? "ring-red-500" : ""
+                        } bg-transparent rounded-none border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]`}
                       />
                       <label
                         htmlFor="city"
@@ -514,9 +616,16 @@ export default function SlideFour(props: any) {
                       type="text"
                       name="emergency-name"
                       placeholder=" "
+                      onBlur={(e) => {
+                        e.target.value.trim() === ""
+                          ? setEmergencyNameNotValid(true)
+                          : setEmergencyNameNotValid(false);
+                      }}
                       id="emergency-name"
                       autoComplete="name"
-                      className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                      className={`${
+                        emergencyNameNotValid ? "ring-red-500" : ""
+                      } bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]`}
                     />
                     <label
                       htmlFor="emergency-name"
@@ -531,9 +640,16 @@ export default function SlideFour(props: any) {
                       type="text"
                       name="emergency-tel"
                       placeholder=" "
+                      onBlur={(e) => {
+                        e.target.value.trim() === ""
+                          ? setEmergencyPhoneNotValid(true)
+                          : setEmergencyPhoneNotValid(false);
+                      }}
                       id="emergency-tel"
                       autoComplete="tel"
-                      className="bg-transparent border-1 border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]"
+                      className={`bg-transparent border-1 ${
+                        emergencyPhoneNotValid ? "ring-red-500" : ""
+                      } border-gray-200 appearance-none focus:outline-none   peer block px-3  w-full outline-none  py-1.5 text-gray-900  ring-2 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-[#8CBE44]`}
                     />
                     <label
                       htmlFor="emergency-tel"
