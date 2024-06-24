@@ -173,6 +173,21 @@ export default function SlideFour(props: any) {
     }
   };
 
+  const handleKeyPress = (event: any) => {
+    const keyCode = event.keyCode || event.which;
+
+    if (
+      !(keyCode >= 48 && keyCode <= 57) &&
+      keyCode !== 8 &&
+      keyCode !== 9 &&
+      keyCode !== 13
+    ) {
+      event.preventDefault();
+    }
+  };
+
+  const date = new Date();
+
   return (
     <>
       <div className="md:flex mb-12 md:w-full md:px-5 gap-5 max-w-6xl lg:justify-between xl:px-0 mx-auto lg:gap-10">
@@ -264,15 +279,22 @@ export default function SlideFour(props: any) {
                 <div className="flex  gap-1">
                   <div className="mt-2 w-1/3 relative">
                     <input
-                      type="text"
+                      type="number"
                       name="day"
+                      maxLength={2}
                       onBlur={(e) => {
+                        const inputValue = parseInt(e.target.value, 10);
+                        if (inputValue > 31) {
+                          e.target.value = "31";
+                        }
+
                         e.target.value.trim() === ""
                           ? setDayNotValid(true)
                           : setDayNotValid(false);
                       }}
                       placeholder=" "
-                      id="day"
+                      id="number"
+                      onKeyDown={handleKeyPress}
                       autoComplete="day"
                       className={`${
                         dayNotValid ? "ring-red-500" : ""
@@ -286,11 +308,19 @@ export default function SlideFour(props: any) {
                   </div>
                   <div className="mt-2 w-1/3 relative">
                     <input
-                      type="text"
+                      type="number"
                       name="month"
+                      maxLength={2}
                       placeholder=" "
+                      max={12}
+                      onKeyDown={handleKeyPress}
                       id="month"
                       onBlur={(e) => {
+                        const inputValue = parseInt(e.target.value, 10);
+                        if (inputValue > 12) {
+                          e.target.value = "12";
+                        }
+
                         e.target.value.trim() === ""
                           ? setMonthNotValid(true)
                           : setMonthNotValid(false);
@@ -308,11 +338,20 @@ export default function SlideFour(props: any) {
                   </div>
                   <div className="mt-2 w-1/3 relative">
                     <input
-                      type="text"
+                      type="number"
                       name="year"
+                      maxLength={4}
+                      max={date.getFullYear()}
+                      onKeyDown={handleKeyPress}
                       placeholder=" "
                       id="year"
                       onBlur={(e) => {
+                        const inputValue = parseInt(e.target.value, 10);
+                        console.log(inputValue);
+                        if (inputValue > date.getFullYear()) {
+                          e.target.value = date.getFullYear().toString();
+                        }
+
                         e.target.value.trim() === ""
                           ? setYearNotValid(true)
                           : setYearNotValid(false);
