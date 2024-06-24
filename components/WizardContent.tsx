@@ -63,22 +63,53 @@ export default function WizardContent() {
 
     if (activeIndex === 3 && openList) {
       timerId = setTimeout(() => {
-        setHeightClassName("[&>div]:h-auto");
-      }, 10);
+        setHeightClassName("[&>div]:!h-auto");
 
+        setTimeout(() => {
+          setHeightClassName("");
+        }, 10);
+      }, 10);
+      return () => clearTimeout(timerId);
+    }
+
+    if (fileName !== "") {
+      setHeightClassName("[&>div]:!h-auto");
+
+      timerId = setTimeout(() => {
+        setHeightClassName("[&>div]:!h-auto");
+
+        setTimeout(() => {
+          setHeightClassName("");
+        }, 10);
+      }, 10);
+      return () => clearTimeout(timerId);
+    }
+
+    if (activeIndex === 3 && !openList) {
+      timerId = setTimeout(() => {
+        setHeightClassName("[&>div]:!h-auto");
+
+        setTimeout(() => {
+          setHeightClassName("");
+        }, 10);
+      }, 10);
       return () => clearTimeout(timerId);
     }
 
     if (activeIndex === 2 && openModal) {
       timerId = setTimeout(() => {
-        setHeightClassName("[&>div]:h-auto");
+        setHeightClassName("[&>div]:!h-auto");
+
+        setTimeout(() => {
+          setHeightClassName("");
+        }, 10);
       }, 1000);
 
       return () => clearTimeout(timerId);
     }
 
     setHeightClassName("");
-  }, [activeIndex, openModal, openList]);
+  }, [activeIndex, openModal, openList, fileName]);
 
   useEffect(() => {
     const toggleBodyClass = () => {
