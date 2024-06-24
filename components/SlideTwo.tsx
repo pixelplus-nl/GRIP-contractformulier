@@ -19,6 +19,10 @@ export default function SlideTwo(props: any) {
     setCheckedState(event.target.checked);
   };
 
+  !baseChecked
+    ? props.setSlideTwoChecked(false)
+    : props.setSlideTwoChecked(true);
+
   const isButtonDisabled = !baseChecked;
 
   const t = useTranslations("SlideTwo");

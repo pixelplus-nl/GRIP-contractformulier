@@ -14,7 +14,7 @@ import SlideTwo from "@/components/SlideTwo";
 import SlideFour from "@/components/SlideFour";
 import SlideThree from "@/components/SlideThree";
 import ErrorModal from "./ErrorModal";
-import { useTranslations } from "next-intl";
+import CustomPagination from "./CustomPagination";
 
 interface ErrorModalContent {
   title?: string;
@@ -32,6 +32,12 @@ export default function WizardContent() {
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth <= 640 : false
   );
+
+  const [slideOneChecked, setSlideOneChecked] = useState(false);
+  const [slideTwoChecked, setSlideTwoChecked] = useState(false);
+  const [slideThreeChecked, setSlideThreeChecked] = useState(false);
+  const [slideFourChecked, setSlideFourChecked] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 630);
@@ -49,8 +55,6 @@ export default function WizardContent() {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slideNext();
   }, []);
-
-  const t = useTranslations("Pag");
 
   const handleSlideChange = () => {
     if (!sliderRef.current) return;
@@ -139,28 +143,7 @@ export default function WizardContent() {
           setErrorModal={setErrorModal}
         />
       )}
-      <div className="pt-24 items-center pb-12 gap-20 flex justify-center">
-        <button
-          className={`${
-            activeIndex > 0 ? "visible" : "invisible"
-          } text-5xl px-2 betterhover:hover:-translate-x-2 transition-all text-[#8cbe44]`}
-          onClick={handlePrev}>
-          ‹
-        </button>
 
-        <span className="font-semibold text-xl pt-2">
-          {t("step")}{" "}
-          <span className="text-[#8cbe44]">{activeIndex + 1}/4</span>
-        </span>
-
-        <button
-          className={`${
-            activeIndex < 3 ? "visible" : "invisible"
-          } text-5xl px-2 betterhover:hover:translate-x-2 transition-all text-[#8cbe44]`}
-          onClick={handleNext}>
-          ›
-        </button>
-      </div>
       <Swiper
         effect={"creative"}
         creativeEffect={{
@@ -186,25 +169,55 @@ export default function WizardContent() {
         modules={[EffectCreative, Pagination, Navigation]}
         className={`mySwiper3 ${heightClassName} bg-white`}>
         <SwiperSlide className="!bg-white">
-          <SlideOne handleNext={handleNext} handlePrev={handlePrev} />
+          <CustomPagination
+            handlePrev={handlePrev}
+            handleNext={handleNext}
+            slideChecked={slideOneChecked}
+            activeIndex={activeIndex}
+          />
+          <SlideOne
+            setSlideOneChecked={setSlideOneChecked}
+            handleNext={handleNext}
+            handlePrev={handlePrev}
+          />
         </SwiperSlide>
         <SwiperSlide className="!bg-white">
+          <CustomPagination
+            handlePrev={handlePrev}
+            handleNext={handleNext}
+            slideChecked={slideTwoChecked}
+            activeIndex={activeIndex}
+          />
           <SlideTwo
+            setSlideTwoChecked={setSlideTwoChecked}
             activeIndex={activeIndex}
             handleNext={handleNext}
             handlePrev={handlePrev}
           />
         </SwiperSlide>
         <SwiperSlide className="!bg-white min-h-screen">
+          <CustomPagination
+            handlePrev={handlePrev}
+            slideChecked={slideThreeChecked}
+            handleNext={handleNext}
+            activeIndex={activeIndex}
+          />
           <SlideThree
             activeIndex={activeIndex}
             openModal={openModal}
             setOpenModal={setOpenModal}
+            setSlideThreeChecked={setSlideThreeChecked}
             handleNext={handleNext}
             handlePrev={handlePrev}
           />
         </SwiperSlide>
         <SwiperSlide className="!bg-white ">
+          <CustomPagination
+            handlePrev={handlePrev}
+            slideChecked={slideFourChecked}
+            handleNext={handleNext}
+            activeIndex={activeIndex}
+          />
           <SlideFour
             fileName={fileName}
             setFileName={setFileName}

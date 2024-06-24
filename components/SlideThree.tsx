@@ -24,6 +24,10 @@ export default function SlideThree(props: any) {
 
   const t = useTranslations("SlideThree");
 
+  !tandcChecked
+    ? props.setSlideThreeChecked(false)
+    : props.setSlideThreeChecked(true);
+
   const isButtonDisabled = !tandcChecked;
   return (
     <>

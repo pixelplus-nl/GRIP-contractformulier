@@ -26,6 +26,18 @@ export default function SlideOne(props: any) {
     setCheckedState(event.target.checked);
   };
 
+  if (
+    !fallZonesChecked ||
+    !baseChecked ||
+    !etiquetteChecked ||
+    !minorChecked ||
+    !emergencyChecked
+  ) {
+    props.setSlideOneChecked(false);
+  } else {
+    props.setSlideOneChecked(true);
+  }
+
   const isButtonDisabled =
     !fallZonesChecked ||
     !baseChecked ||
