@@ -7,7 +7,7 @@ export default function CustomPagination(props: any) {
       <button
         className={`${
           props.activeIndex > 0 ? "visible" : "invisible"
-        } text-5xl px-2 betterhover:hover:-translate-x-2 transition-all text-[#8cbe44]`}
+        } text-5xl w-4 cursor-pointer betterhover:hover:-translate-x-1 transition-all text-[#8cbe44]`}
         onClick={props.handlePrev}>
         ‹
       </button>
@@ -22,7 +22,7 @@ export default function CustomPagination(props: any) {
           props.activeIndex < 3 && props.slideChecked === true
             ? "visible"
             : "invisible"
-        } text-5xl px-2 betterhover:hover:translate-x-2 transition-all text-[#8cbe44]`}
+        } text-5xl w-4 cursor-pointer betterhover:hover:translate-x-1 transition-all text-[#8cbe44]`}
         onClick={props.handleNext}>
         ›
       </button>

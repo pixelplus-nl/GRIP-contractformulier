@@ -177,10 +177,16 @@ export default function SlideFour(props: any) {
     const keyCode = event.keyCode || event.which;
 
     if (
-      !(keyCode >= 48 && keyCode <= 57) &&
+      !(
+        (keyCode >= 48 && keyCode <= 57) ||
+        (keyCode >= 96 && keyCode <= 105)
+      ) &&
       keyCode !== 8 &&
       keyCode !== 9 &&
-      keyCode !== 13
+      keyCode !== 13 &&
+      keyCode !== 46 &&
+      keyCode !== 37 &&
+      keyCode !== 39 
     ) {
       event.preventDefault();
     }
