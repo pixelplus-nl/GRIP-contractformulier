@@ -102,7 +102,7 @@ export default function WizardContent() {
 
         setTimeout(() => {
           setHeightClassName("");
-        }, 10);
+        }, 1010);
       }, 1000);
 
       return () => clearTimeout(timerId);
