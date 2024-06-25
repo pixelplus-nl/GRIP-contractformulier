@@ -86,6 +86,18 @@ export default function SlideFour(props: any) {
     const signature = sign.getTrimmedCanvas().toDataURL("image/png");
     formData.set("signature", signature);
 
+    // Combine 'day', 'month' and 'year' into one field called 'date-of-birth'
+    const day = formData.get("day");
+    const month = formData.get("month");
+    const year = formData.get("year");
+
+    formData.set("date-of-birth", `${day}/${month}/${year}`);
+
+    // Unset day, month and year for a more sane request body
+    formData.delete("day");
+    formData.delete("month");
+    formData.delete("year");
+
     const response = await submitForm(formData);
 
     if (!response.success) {
