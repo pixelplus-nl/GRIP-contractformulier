@@ -169,12 +169,16 @@ export default function WizardContent() {
         modules={[EffectCreative, Pagination, Navigation]}
         className={`mySwiper3 ${heightClassName} bg-white`}>
         <SwiperSlide className="!bg-white">
-          <CustomPagination
-            handlePrev={handlePrev}
-            handleNext={handleNext}
-            slideChecked={slideOneChecked}
-            activeIndex={activeIndex}
-          />
+          <div className="w-full md:flex justify-end">
+            <div className="w-full md:w-7/12 ">
+              <CustomPagination
+                handlePrev={handlePrev}
+                handleNext={handleNext}
+                slideChecked={slideOneChecked}
+                activeIndex={activeIndex}
+              />
+            </div>
+          </div>
           <SlideOne
             setSlideOneChecked={setSlideOneChecked}
             handleNext={handleNext}
@@ -182,12 +186,16 @@ export default function WizardContent() {
           />
         </SwiperSlide>
         <SwiperSlide className="!bg-white">
-          <CustomPagination
-            handlePrev={handlePrev}
-            handleNext={handleNext}
-            slideChecked={slideTwoChecked}
-            activeIndex={activeIndex}
-          />
+          <div className="w-full md:flex justify-end">
+            <div className="w-full md:w-7/12 ">
+              <CustomPagination
+                handlePrev={handlePrev}
+                handleNext={handleNext}
+                slideChecked={slideTwoChecked}
+                activeIndex={activeIndex}
+              />
+            </div>
+          </div>
           <SlideTwo
             setSlideTwoChecked={setSlideTwoChecked}
             activeIndex={activeIndex}
@@ -196,12 +204,16 @@ export default function WizardContent() {
           />
         </SwiperSlide>
         <SwiperSlide className="!bg-white min-h-screen">
-          <CustomPagination
-            handlePrev={handlePrev}
-            slideChecked={slideThreeChecked}
-            handleNext={handleNext}
-            activeIndex={activeIndex}
-          />
+          <div className="w-full md:flex justify-end">
+            <div className="w-full md:w-7/12 ">
+              <CustomPagination
+                handlePrev={handlePrev}
+                slideChecked={slideThreeChecked}
+                handleNext={handleNext}
+                activeIndex={activeIndex}
+              />
+            </div>
+          </div>
           <SlideThree
             activeIndex={activeIndex}
             openModal={openModal}
@@ -212,12 +224,16 @@ export default function WizardContent() {
           />
         </SwiperSlide>
         <SwiperSlide className="!bg-white ">
-          <CustomPagination
-            handlePrev={handlePrev}
-            slideChecked={slideFourChecked}
-            handleNext={handleNext}
-            activeIndex={activeIndex}
-          />
+          <div className="w-full md:flex justify-end">
+            <div className="w-full md:w-7/12 ">
+              <CustomPagination
+                handlePrev={handlePrev}
+                slideChecked={slideFourChecked}
+                handleNext={handleNext}
+                activeIndex={activeIndex}
+              />
+            </div>
+          </div>
           <SlideFour
             fileName={fileName}
             setFileName={setFileName}
