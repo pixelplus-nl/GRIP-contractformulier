@@ -169,7 +169,7 @@ export default function WizardContent() {
         modules={[EffectCreative, Pagination, Navigation]}
         className={`mySwiper3 ${heightClassName} bg-white`}>
         <SwiperSlide className="!bg-white">
-          <div className="w-full md:flex justify-end">
+          <div className="w-full max-w-6xl mx-auto md:flex justify-end">
             <div className="w-full md:w-7/12 ">
               <CustomPagination
                 handlePrev={handlePrev}
@@ -186,7 +186,7 @@ export default function WizardContent() {
           />
         </SwiperSlide>
         <SwiperSlide className="!bg-white">
-          <div className="w-full md:flex justify-end">
+          <div className="w-full max-w-6xl mx-auto md:flex justify-end">
             <div className="w-full md:w-7/12 ">
               <CustomPagination
                 handlePrev={handlePrev}
@@ -204,7 +204,7 @@ export default function WizardContent() {
           />
         </SwiperSlide>
         <SwiperSlide className="!bg-white min-h-screen">
-          <div className="w-full md:flex justify-end">
+          <div className="w-full max-w-6xl mx-auto md:flex justify-end">
             <div className="w-full md:w-7/12 ">
               <CustomPagination
                 handlePrev={handlePrev}
@@ -224,7 +224,7 @@ export default function WizardContent() {
           />
         </SwiperSlide>
         <SwiperSlide className="!bg-white ">
-          <div className="w-full md:flex justify-end">
+          <div className="w-full max-w-6xl mx-auto md:flex justify-end">
             <div className="w-full md:w-7/12 ">
               <CustomPagination
                 handlePrev={handlePrev}
